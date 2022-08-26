@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>2048</title>
+  <title>2048 Bitcoin</title>
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
@@ -29,7 +29,43 @@
 
     <div class="above-game">
       <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button">New Game</a>
+      <a class="restart-button">Cash Out</a>
+      <div class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h1>Congrats!</h1>
+        <h2>You have Bitcoin to claim!</h2>
+        <h2>Bitcoin</h2>
+        <h2>
+          Enter in your ZEBEDEE username to claim your bitcoin!
+        </h2>
+        <h2>
+        ZEBEDEE Username
+        </h2>
+        <h2>
+        Redeem
+        </h2>
+      </div>
+</div>
+      <script>
+	const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".restart-button");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+</script>
     </div>
 
     <div class="game-container">
