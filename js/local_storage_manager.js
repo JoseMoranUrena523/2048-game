@@ -19,7 +19,7 @@ window.fakeStorage = {
 };
 
 function LocalStorageManager() {
-  this.bestScoreKey     = "bestScore";
+  this.satoshisScoreKey     = "satoshisScore";
   this.gameStateKey     = "gameState";
 
   var supported = this.localStorageSupported();
@@ -40,12 +40,12 @@ LocalStorageManager.prototype.localStorageSupported = function () {
 };
 
 // Best score getters/setters
-LocalStorageManager.prototype.getBestScore = function () {
-  return this.storage.getItem(this.bestScoreKey) || 0;
+LocalStorageManager.prototype.getSatoshisScore = function () {
+  return this.storage.getItem(this.SatoshisScoreKey) || 0;
 };
 
-LocalStorageManager.prototype.setBestScore = function (score) {
-  this.storage.setItem(this.bestScoreKey, score);
+LocalStorageManager.prototype.setSatoshisScore = function (score) {
+  this.storage.setItem(this.satoshisScoreKey, score);
 };
 
 // Game state getters/setters and clearing

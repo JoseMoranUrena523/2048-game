@@ -1,7 +1,7 @@
 function HTMLActuator() {
   this.tileContainer    = document.querySelector(".tile-container");
   this.scoreContainer   = document.querySelector(".score-container");
-  this.bestContainer    = document.querySelector(".best-container");
+  this.satoshisContainer   = document.querySelector(".satoshis-container");
   this.messageContainer = document.querySelector(".game-message");
 
   this.score = 0;
@@ -22,7 +22,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     });
 
     self.updateScore(metadata.score);
-    self.updateBestScore(metadata.bestScore);
+    self.updateSatoshisScore(metadata.satoshisScore);
 
     if (metadata.terminated) {
       if (metadata.over) {
@@ -120,8 +120,8 @@ HTMLActuator.prototype.updateScore = function (score) {
   }
 };
 
-HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  this.bestContainer.textContent = bestScore;
+HTMLActuator.prototype.updateSatoshisScore = function (satoshisScore) {
+  this.satoshisContainer.textContent = satoshisScore * 200;
 };
 
 HTMLActuator.prototype.message = function (won) {

@@ -64,7 +64,7 @@ h1.title {
   text-align: right;
 }
 
-.score-container, .best-container {
+.score-container, .satoshis-container {
   $height: 25px;
 
   position: relative;
@@ -110,8 +110,8 @@ h1.title {
   content: "Score";
 }
 
-.best-container:after {
-  content: "Best";
+.satoshis-container:after {
+  content: "Satoshis";
 }
 
 p {
@@ -500,7 +500,7 @@ hr {
     margin: 0 auto;
   }
 
-  .score-container, .best-container {
+  .score-container, .satoshis-container {
     margin-top: 0;
     padding: 15px 10px;
     min-width: 40px;
