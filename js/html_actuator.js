@@ -22,7 +22,11 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     });
 
     self.updateScore(metadata.score);
-    self.updateSatoshisScore(metadata.satoshisScore);
+    
+    let sat
+    
+        
+    self.updateSatoshisScore(metadata.score * 200);
 
     if (metadata.terminated) {
       if (metadata.over) {
