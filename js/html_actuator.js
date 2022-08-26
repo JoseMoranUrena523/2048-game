@@ -23,7 +23,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 
     self.updateScore(metadata.score);
     
-    self.updateSatoshisScore(metadata.score * 0.005);
+    self.updateSatoshisScore(metadata.score / 250);
 
     if (metadata.terminated) {
       if (metadata.over) {
@@ -122,8 +122,7 @@ HTMLActuator.prototype.updateScore = function (score) {
 };
 
 HTMLActuator.prototype.updateSatoshisScore = function (satoshisScore) {
-  this.satoshisContainer.textContent = satoshisScore / 200;
-  console.log(satoshisScore / 200);
+  this.satoshisContainer.textContent = satoshisScore;
 };
 
 HTMLActuator.prototype.message = function (won) {
