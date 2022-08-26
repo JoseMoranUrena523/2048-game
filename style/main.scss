@@ -461,7 +461,7 @@ hr {
   margin-bottom: 0;
 }
 
-.cashout-button {
+.restart-button {
   @include button;
   display: block;
   text-align: center;
@@ -518,7 +518,7 @@ hr {
     line-height: 1.65;
   }
 
-  .cashout-button {
+  .restart-button {
     width: 42%;
     padding: 0;
     display: block;
