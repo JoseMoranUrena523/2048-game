@@ -1,3 +1,6 @@
+let modal = document.querySelector(".modal")
+let closeBtn = document.querySelector(".close-btn")
+
 function KeyboardInputManager() {
   this.events = {};
 
@@ -70,8 +73,9 @@ KeyboardInputManager.prototype.listen = function () {
 
   // Respond to button presses
   this.bindButtonPress(".retry-button", this.restart);
-  this.bindButtonPress(".cashout-button", this.restart);
+  this.bindButtonPress(".cashout-button", modal.style.display = "block");
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
+  this.bindButtonPress(".close-btn", modal.style.display = "block");
 
   // Respond to swipe events
   var touchStartClientX, touchStartClientY;
