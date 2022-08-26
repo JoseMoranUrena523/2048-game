@@ -75,7 +75,13 @@ KeyboardInputManager.prototype.listen = function () {
   this.bindButtonPress(".retry-button", this.restart);
   this.bindButtonPress(".cashout-button", modal.style.display = "block");
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
-  this.bindButtonPress(".close-btn", modal.style.display = "block");
+  this.bindButtonPress(".close-btn", modal.style.display = "none");
+  this.bindButtonPress("window", modal.style.display = "none");
+  window.onclick = function(e){
+  if(e.target == modal){
+    modal.style.display = "none"
+  }
+}
 
   // Respond to swipe events
   var touchStartClientX, touchStartClientY;
