@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="https://2048bitcoin.tk/meta/mstile-150x150.png"/>
+            <TileColor>#fff1cc</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
