@@ -528,7 +528,8 @@ hr {
   line-height: 42px;
   display: block;
   text-align: center;
-  float: right; }
+  float: right;
+  }
 
 .game-explanation {
   margin-top: 50px; }
@@ -766,8 +767,9 @@ hr {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.1);
+    transform: scale(1.0);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    z-index: 5;
 }
 
 .modal-content {
@@ -798,6 +800,6 @@ hr {
 .show-modal {
     opacity: 1;
     visibility: visible;
-    transform: scale(1.4);
+    transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
