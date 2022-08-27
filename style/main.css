@@ -774,11 +774,11 @@ hr {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     background-color: white;
     padding: 1rem 1.5rem;
     width: 24rem;
     border-radius: 0.5rem;
+    transform: translate(-50%, -50%);
 }
 
 .close-button {
@@ -798,6 +798,6 @@ hr {
 .show-modal {
     opacity: 1;
     visibility: visible;
-    transform: scale(1.0);
+    transform: scale(1.4);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
