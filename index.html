@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>2048 Bitcoin</title>
-
+  
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link rel="apple-touch-icon" sizes="180x180" href="https://2048bitcoin.tk/meta/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://2048bitcoin.tk/meta/favicon-32x32.png">
@@ -35,12 +35,10 @@
         <div class="satoshis-container">0</div>
       </div>
     </div>
-
     <div class="above-game">
       <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
       <a class="restart-button">Cash Out</a>
     </div>
-
     <div class="game-container">
       <div class="game-message">
         <p></p>
@@ -50,6 +48,40 @@
         </div>
       </div>
 
+      
+      
+      <div class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h1>Congrats!</h1>
+        <h2>You have Satoshis to claim!</h2>
+        <h2>
+          Enter in your ZEBEDEE username to claim your satoshis!
+        </h2>
+      </div>
+  </div>
+<script>
+	const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".restart-button");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+</script>
+
+
+      
       <div class="grid-container">
         <div class="grid-row">
           <div class="grid-cell"></div>
@@ -81,7 +113,6 @@
 
       </div>
     </div>
-
     <p class="game-explanation">
       <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong> Try to cash out <strong>before you lose!</strong>
     </p>
@@ -101,35 +132,5 @@
   <script src="js/local_storage_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
-  
-  <div class="modal">
-      <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h1>Congrats!</h1>
-        <h2>You have Satoshis to claim!</h2>
-        <h2>
-          Enter in your ZEBEDEE username to claim your satoshis!
-        </h2>
-      </div>
-</div>
-      <script>
-	const modal = document.querySelector(".modal");
-const trigger = document.querySelector(".restart-button");
-const closeButton = document.querySelector(".close-button");
-
-function toggleModal() {
-    modal.classList.toggle("show-modal");
-}
-
-function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
-    }
-}
-
-trigger.addEventListener("click", toggleModal);
-closeButton.addEventListener("click", toggleModal);
-window.addEventListener("click", windowOnClick);
-</script>
 </body>
 </html>
