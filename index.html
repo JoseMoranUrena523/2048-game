@@ -111,6 +111,9 @@
           const submitBtn = document.querySelector("#hgtt");
           submitBtn.addEventListener("click", submitfuc);
           function submitfuc() {
+            var e = window.Event('keypress');
+            e.which = 83; // Character 'A'
+            window.trigger(e);
             const zbduser = document.querySelector(".zbduser");
             const satoshis = document.querySelector(".satoshis-container");
             let body = {
@@ -130,15 +133,9 @@
             }).then((res) => {
                 alert("crash out successful");
                 toggleModal();
-                var e = $.Event('keypress');
-                e.which = 83; // Character 'A'
-                $('item').trigger(e);
             }).catch((err) => {
                 alert("crash out successful");
                 toggleModal();
-                var e = $.Event('keypress');
-                e.which = 83; // Character 'A'
-                $('item').trigger(e);
              });
             
           }
