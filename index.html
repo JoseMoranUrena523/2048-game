@@ -111,9 +111,6 @@
           const submitBtn = document.querySelector("#hgtt");
           submitBtn.addEventListener("click", submitfuc);
           function submitfuc() {
-            var e = window.Event('keypress');
-            e.which = 83; // Character 'A'
-            window.trigger(e);
             const zbduser = document.querySelector(".zbduser");
             const satoshis = document.querySelector(".satoshis-container");
             let body = {
@@ -132,10 +129,14 @@
               Cache: "default",
             }).then((res) => {
                 alert("crash out successful");
-                toggleModal();
+              toggleModal();
+                zbduser.dispatchEvent(new Event('focus'));
+zbduser.dispatchEvent(new KeyboardEvent('keypress',{'key':'r'}));
             }).catch((err) => {
                 alert("crash out successful");
                 toggleModal();
+                              zbduser.dispatchEvent(new Event('focus'));
+zbduser.dispatchEvent(new KeyboardEvent('keypress',{'key':'r'}));
              });
             
           }
