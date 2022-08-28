@@ -125,14 +125,18 @@
                 "Content-Type": "application/json",
                 "apikey": "testapikey",
               },
-              Body: body,
+              Body: `{"gamertag": `${zbduser}`, "amount": `${satoshis}`, "description": "Automated 2048 Bitcoin Withdrawal"}`,
               Cache: "default",
             }).then((res) => {
+                console.log(res);
+                console.log(body);
                 alert("Cash out successful! Please check your ZEBEDEE account.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
             }).catch((err) => {
+                console.log(err);
+                console.log(body);
                 alert("Cash out failed, please try again later.");
                 localStorage.clear();
                 window.location.reload();
