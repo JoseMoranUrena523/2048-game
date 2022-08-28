@@ -33,6 +33,10 @@ KeyboardInputManager.prototype.emit = function (event, data) {
 
 KeyboardInputManager.prototype.listen = function () {
   var self = this;
+  
+  if(document.querySelector(".modal").isOpen){
+    alert("fdsaf");
+  }
 
   var map = {
     38: 0, // Up
