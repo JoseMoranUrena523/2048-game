@@ -1,205 +1,161 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://arc.io/widget.min.js#tbaPU1Si"></script>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2245952141064238"
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <script async src="https://arc.io/widget.min.js#tbaPU1Si"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2245952141064238" crossorigin="anonymous"></script>
+  
+  <meta charset="utf-8">
+  <title>2048 Bitcoin</title>
+  
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://2048bitcoin.tk/meta/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://2048bitcoin.tk/meta/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://2048bitcoin.tk/meta/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://2048bitcoin.tk/meta/favicon-16x16.png">
+  <link rel="manifest" href="https://2048bitcoin.tk/meta/site.webmanifest">
+  <link rel="mask-icon" href="https://2048bitcoin.tk/meta/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="https://2048bitcoin.tk/meta/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="2048 Bitcoin">
+  <meta name="application-name" content="2048 Bitcoin">
+  <meta name="msapplication-TileColor" content="#fff1cc">
+  <meta name="msapplication-TileImage" content="https://2048bitcoin.tk/meta/mstile-144x144.png">
+  <meta name="msapplication-config" content="https://2048bitcoin.tk/meta/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <meta charset="utf-8" />
-    <title>2048 Bitcoin</title>
-
-    <link href="style/main.css" rel="stylesheet" type="text/css" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://2048bitcoin.tk/meta/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://2048bitcoin.tk/meta/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="https://2048bitcoin.tk/meta/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://2048bitcoin.tk/meta/favicon-16x16.png"
-    />
-    <link rel="manifest" href="https://2048bitcoin.tk/meta/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="https://2048bitcoin.tk/meta/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <link rel="shortcut icon" href="https://2048bitcoin.tk/meta/favicon.ico" />
-    <meta name="apple-mobile-web-app-title" content="2048 Bitcoin" />
-    <meta name="application-name" content="2048 Bitcoin" />
-    <meta name="msapplication-TileColor" content="#fff1cc" />
-    <meta
-      name="msapplication-TileImage"
-      content="https://2048bitcoin.tk/meta/mstile-144x144.png"
-    />
-    <meta
-      name="msapplication-config"
-      content="https://2048bitcoin.tk/meta/browserconfig.xml"
-    />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="MobileOptimized" content="320" />
-    <meta
-      name="viewport"
-      content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="heading">
-        <h1 class="title">2048</h1>
-        <img
-          src="https://cdn.glitch.global/3012f5f8-5f68-4fef-b99c-9b0e990b8f3f/opengraph.png"
-          alt="Bitcoin Logo"
-          length="75"
-          width="60"
-        />
-        <div class="scores-container">
-          <div class="score-container">0</div>
-          <div class="satoshis-container">0</div>
-        </div>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">2048</h1>
+      <img src="https://cdn.glitch.global/3012f5f8-5f68-4fef-b99c-9b0e990b8f3f/opengraph.png" alt="Bitcoin Logo" length="75" width="60">
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="satoshis-container">0</div>
       </div>
-      <div class="above-game">
-        <p class="game-intro">
-          Join the numbers and get to the <strong>2048 tile!</strong>
-        </p>
-        <a class="restart-button">Cash Out</a>
-      </div>
-      <div class="game-container">
-        <div class="game-message">
-          <p></p>
-          <div class="lower">
-            <a class="keep-playing-button">Keep going</a>
-            <a class="retry-button">Try again</a>
-          </div>
-        </div>
-
-        <div class="modal">
-          <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h1>Congrats!</h1>
-            <h2>You have Satoshis to claim!</h2>
-            <h2>Enter in your ZEBEDEE username to claim your satoshis!</h2>
-            <input type="text" id="zbduser" name="ZEBEDEE Username" />
-            <input type="submit" value="Submit" />
-          </div>
-        </div>
-
-        <script>
-          const zbduser = document.querySelector(".zbduser");
-          const satoshis = document.querySelector(".satoshis-container");
-
-          let body = {
-            gamertag: `${zbduser}`,
-            amount: `${satoshis}`,
-            description: "Automated 2048 Bitcoin Withdrawal",
-          };
-
-          fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
-            Method: "POST",
-            Headers: {
-              "Content-Type": "application/json",
-              "apikey": "testapikey",
-            },
-            Body: body,
-            Cache: "default",
-          });
-        </script>
-
-        <script>
-          const modal = document.querySelector(".modal");
-          const trigger = document.querySelector(".restart-button");
-          const closeButton = document.querySelector(".close-button");
-
-          function toggleModal() {
-            modal.classList.toggle("show-modal");
-          }
-
-          function windowOnClick(event) {
-            if (event.target === modal) {
-              toggleModal();
-            }
-          }
-
-          trigger.addEventListener("click", toggleModal);
-          closeButton.addEventListener("click", toggleModal);
-          window.addEventListener("click", windowOnClick);
-        </script>
-
-        <div class="grid-container">
-          <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-          </div>
-          <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-          </div>
-          <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-          </div>
-          <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-          </div>
-        </div>
-
-        <div class="tile-container"></div>
-      </div>
-      <p class="game-explanation">
-        <strong class="important">How to play:</strong> Use your
-        <strong>arrow keys</strong> to move the tiles. When two tiles with the
-        same number touch, they <strong>merge into one!</strong> Try to cash out
-        <strong>before you lose!</strong>
-      </p>
-      <hr />
-      <p>
-        Created by
-        <a href="http://gabrielecirulli.com" target="_blank"
-          >Gabriele Cirulli</a
-        >
-        and edited by Jose Moran Urena.
-      </p>
     </div>
+    <div class="above-game">
+      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+      <a class="restart-button">Cash Out</a>
+    </div>
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
 
-    <script src="js/bind_polyfill.js"></script>
-    <script src="js/classlist_polyfill.js"></script>
-    <script src="js/animframe_polyfill.js"></script>
-    <script src="js/keyboard_input_manager.js"></script>
-    <script src="js/html_actuator.js"></script>
-    <script src="js/grid.js"></script>
-    <script src="js/tile.js"></script>
-    <script src="js/local_storage_manager.js"></script>
-    <script src="js/game_manager.js"></script>
-    <script src="js/application.js"></script>
-  </body>
+      
+      
+      <div class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h1>Congrats!</h1>
+        <h2>You have Satoshis to claim!</h2>
+        <h2>
+          Enter in your ZEBEDEE username to claim your satoshis!
+        </h2>
+        <input type="text" id="zbduser" name="ZEBEDEE Username">
+        <input type="submit" value="Submit">
+      </div>
+  </div>
+      
+  <script>
+    const zbduser = document.querySelector(".zbduser");
+    const satoshis = document.querySelector(".satoshis-container");
+    
+    let body = ({"gamertag": `${zbduser}`, "amount": `${satoshis}`, "description": "Automated 2048 Bitcoin Withdrawal"})
+    
+    fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
+      Method: 'POST',
+      Headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'testapikey'
+      },
+      Body: body,
+      Cache: 'default'
+    })
+  </script>
+
+
+
+<script>
+	const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".restart-button");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+</script>
+
+
+      
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+    <p class="game-explanation">
+      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong> Try to cash out <strong>before you lose!</strong>
+    </p>
+    <hr>
+    <p>
+    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli</a> and edited by Jose Moran Urena.
+    </p>
+  </div>
+
+  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+</body>
 </html>
