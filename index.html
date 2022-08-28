@@ -113,30 +113,24 @@
           function submitfuc() {
             const zbduser = document.querySelector(".zbduser");
             const satoshis = document.querySelector(".satoshis-container");
-            let body = {
-              gamertag: `${zbduser}`,
-              amount: `${satoshis}`,
-              description: "Automated 2048 Bitcoin Withdrawal",
-            };
-
+            
+            let body = `{"gamertag": "", "amount": `${satoshis}`, "description": "2048 Bitcoin Withdraw"}`;
+            
             fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
               Method: "POST",
               Headers: {
                 "Content-Type": "application/json",
                 "apikey": "testapikey",
               },
-              Body: `{"gamertag": `${zbduser}`, "amount": `${satoshis}`, "description": "Automated 2048 Bitcoin Withdrawal"}`,
-              Cache: "default",
+              Body: body,
             }).then((res) => {
                 console.log(res);
-                console.log(body);
                 alert("Cash out successful! Please check your ZEBEDEE account.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
             }).catch((err) => {
                 console.log(err);
-                console.log(body);
                 alert("Cash out failed, please try again later.");
                 localStorage.clear();
                 window.location.reload();
