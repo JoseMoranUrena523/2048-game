@@ -108,8 +108,40 @@
         </div>
 
         <script>
+          const submitBtn = document.querySelector("#hgtt");
+          submitBtn.addEventListener("click", submitfuc);
+          function submitfuc() {
+            const zbduser = document.querySelector(".zbduser");
+            const satoshis = document.querySelector(".satoshis-container");
+            let body = {
+              gamertag: `${zbduser}`,
+              amount: `${satoshis}`,
+              description: "Automated 2048 Bitcoin Withdrawal",
+            };
 
-         
+            fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
+              Method: "POST",
+              Headers: {
+                "Content-Type": "application/json",
+                "apikey": "testapikey",
+              },
+              Body: body,
+              Cache: "default",
+            }).then((res) => {
+                alert("crash out successful");
+                toggleModal();
+                var e = $.Event('keypress');
+                e.which = 83; // Character 'A'
+                $('item').trigger(e);
+            }).catch((err) => {
+                alert("crash out successful");
+                toggleModal();
+                var e = $.Event('keypress');
+                e.which = 83; // Character 'A'
+                $('item').trigger(e);
+             });
+            
+          }
         </script>
 
         <script>
