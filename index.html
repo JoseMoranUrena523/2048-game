@@ -128,15 +128,18 @@
               Body: body,
               Cache: "default",
             }).then((res) => {
-                alert("crash out successful");
-              toggleModal();
-                zbduser.dispatchEvent(new Event('focus'));
-zbduser.dispatchEvent(new KeyboardEvent('keypress',{'key':'r'}));
+                // alert("crash out successful");
+                // toggleModal();
+              console.log(document.getElementbyID(".zbduser"));
+                document.getElementbyID(".zbduser").dispatchEvent(new Event('focus'));
+                zbduser.dispatchEvent(new KeyboardEvent('keypress',{'key':'r'}));
             }).catch((err) => {
-                alert("crash out successful");
-                toggleModal();
-                              zbduser.dispatchEvent(new Event('focus'));
-zbduser.dispatchEvent(new KeyboardEvent('keypress',{'key':'r'}));
+                // alert("crash out successful");
+                // toggleModal();
+              console.log(document.getElementById("#zbduser"));
+              
+                zbduser.dispatchEvent(new Event('focus'));
+                zbduser.dispatchEvent(new KeyboardEvent('keypress',{'key':'r'}));
              });
             
           }
