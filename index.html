@@ -62,18 +62,21 @@
           Enter in your ZEBEDEE username to claim your satoshis!
         </h2>
         <input type="text" id="zbduser" name="ZEBEDEE Username">
-        
+        <input type="submit" value="Submit">
       </div>
   </div>
       
   <script>
-    let body = ({ "gamertag": , "amount": "1000","description": "Sending to ZBD Gamertag"})
+    const zbduser = document.querySelector(".zbduser");
+    const satoshis = document.querySelector(".satoshis-container");
+    
+    let body = ({"gamertag": `${zbduser}`, "amount": `${satoshis}`, "description": "Automated 2048 Bitcoin Withdrawal"})
     
     fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
       Method: 'POST',
       Headers: {
         'Content-Type': 'application/json',
-        'apikey': ''
+        'apikey': 'testapikey'
       },
       Body: body,
       Cache: 'default'
