@@ -128,12 +128,12 @@
               Body: body,
               Cache: "default",
             }).then((res) => {
-                alert("crash out successful");
+                alert("Cash out successful! Please check your ZEBEDEE account.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
             }).catch((err) => {
-                alert("crash out successful");
+                alert("Cash out failed, please try again later.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
