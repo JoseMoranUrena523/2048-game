@@ -124,13 +124,11 @@
               },
               Body: body,
             }).then((res) => {
-                console.log(res);
                 alert("Cash out successful! Please check your ZEBEDEE account.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
             }).catch((err) => {
-                console.log(err);
                 alert("Cash out failed, please try again later.");
                 localStorage.clear();
                 window.location.reload();
