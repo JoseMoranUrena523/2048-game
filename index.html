@@ -61,8 +61,24 @@
         <h2>
           Enter in your ZEBEDEE username to claim your satoshis!
         </h2>
+        <input type="text" id="zbduser" name="ZEBEDEE Username">
+        
       </div>
   </div>
+      
+  <script>
+    let body = ({ "gamertag": , "amount": "1000","description": "Sending to ZBD Gamertag"})
+    
+    fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
+      Method: 'POST',
+      Headers: {
+        'Content-Type': 'application/json',
+        'apikey': ''
+      },
+      Body: body,
+      Cache: 'default'
+    })
+  </script>
 
 
 
