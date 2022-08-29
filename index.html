@@ -112,12 +112,13 @@
           submitBtn.addEventListener("click", submitfuc);
           function submitfuc() {
             const zbduser = document.querySelector(".zbduser");
-            const satoshis = document.querySelector(".satoshis-container");
+            const satoshis = document.querySelector(".satoshis-container")
+            const satoshiSent = (satoshi * 1000);
             
             
             let body = {
               "gamertag": `${zbduser}`,
-              "amount": `${satoshis}`,
+              "amount": `${satoshiSent}`,
               "description": "Automated 2048 Bitcoin Withdrawal"
             };
 
