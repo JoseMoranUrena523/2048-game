@@ -112,8 +112,9 @@
           submitBtn.addEventListener("click", submitfuc);
           function submitfuc() {
             const zbduser = document.querySelector(".zbduser");
-            const satoshis = document.querySelector(".satoshis-container")
-            const satoshiSent = (satoshi * 1000);
+            const satoshis = Math.round(document.querySelector(".satoshis-container"));
+            const satoshiSent = (satoshis * 1000);
+            console.log(satoshiSent);
             
             
             let body = {
@@ -135,13 +136,13 @@
                 console.log(res);
                 alert("Cash out successful! Please check your ZEBEDEE account.");
                 localStorage.clear();
-                window.location.reload();
+              
                 toggleModal();
             }).catch((err) => {
                 console.log(err);
                 alert("Cash out failed, try contacting the developers of the project for help!");
                 localStorage.clear();
-                window.location.reload();
+
                 toggleModal();
              });
             
