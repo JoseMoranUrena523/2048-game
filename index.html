@@ -113,16 +113,7 @@
           function submitfuc() {
             const zbduser = document.querySelector(".zbduser");
             const satoshis = Math.round(document.querySelector(".satoshis-container"));
-            const satoshiSent = (satoshis * 1000);
-            console.log(satoshiSent);
-            
-            
-            let body = {
-              "gamertag": `${zbduser}`,
-              "amount": `${satoshiSent}`,
-              "description": "Automated 2048 Bitcoin Withdrawal"
-            };
-
+            const satoshiSending = (satoshis * 1000);
             
             fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
               Method: "POST",
@@ -130,7 +121,7 @@
                 "Content-Type": "application/json",
                 "apikey": "TYesuUwVS8j5FYnhnlIBYY0YYOR44UC5",
               },
-              Body: body,
+              Body: JSON.stringify({ gamertag: zbduser, amount: satoshiSending, description: "Automated 2048 Bitcoin Withdrawal" }),
               Cache: "default",
             }).then((res) => {
                 console.log(res);
