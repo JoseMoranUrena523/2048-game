@@ -111,22 +111,30 @@
           const submitBtn = document.querySelector("#hgtt");
           submitBtn.addEventListener("click", submitfuc);
           function submitfuc() {
-            const laddress = document.querySelector(".laddress");
+            const gamertag = document.querySelector(".gamertag");
             const satoshis = (Math.round(document.querySelector(".satoshis-container")) * 1000);
             
             fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
               Method: "POST",
               Headers: {
                 "Content-Type": "application/json",
-                "apikey": "TYesuUwVS8j5FYnhnlIBYY0YYOR44UC5",
+                "apikey": "4VM5EDIdn7Z6aay9imWflUoEnGXjgt4d",
               },
-              Body: JSON.stringify({ gamertag: laddress, amount: satoshis, description: "Automated 2048 Bitcoin Withdrawal" }),
+              Body: JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Automated 2048 Bitcoin Withdrawal" }),
             }).then((res) => {
+                if (res.statusCode === 200) {
                 console.log(res);
                 alert("Cash out successful! Please check your ZEBEDEE wallet.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
+                } else {
+                  console.log(res);
+                  alert("Cash out failed, try contacting the developers of the project for help!");
+                  localStorage.clear();
+                  window.location.reload();
+                  toggleModal();
+                }
             }).catch((err) => {
                 console.log(err);
                 alert("Cash out failed, try contacting the developers of the project for help!");
