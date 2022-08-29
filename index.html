@@ -99,9 +99,9 @@
             <span class="close-button">&times;</span>
             <h1>Congrats!</h1>
             <h2>You have Satoshis to claim!</h2>
-            <h2>Enter in your ZEBEDEE username to claim your satoshis!</h2>
+            <h2>Enter in your ZEBEDEE gamertag to claim your satoshis!</h2>
             
-              <input type="text" id="zbduser" name="ZEBEDEE Username" required/>
+              <input type="text" id="gamertag" name="Gamertag" required/>
               <input type="submit" id="hgtt" value="Submit" />
             
           </div>
@@ -111,9 +111,8 @@
           const submitBtn = document.querySelector("#hgtt");
           submitBtn.addEventListener("click", submitfuc);
           function submitfuc() {
-            const zbduser = document.querySelector(".zbduser");
-            const satoshis = Math.round(document.querySelector(".satoshis-container"));
-            const satoshiSending = (satoshis * 1000);
+            const laddress = document.querySelector(".laddress");
+            const satoshis = (Math.round(document.querySelector(".satoshis-container")) * 1000);
             
             fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
               Method: "POST",
@@ -121,11 +120,10 @@
                 "Content-Type": "application/json",
                 "apikey": "TYesuUwVS8j5FYnhnlIBYY0YYOR44UC5",
               },
-              Body: JSON.stringify({ gamertag: zbduser, amount: satoshiSending, description: "Automated 2048 Bitcoin Withdrawal" }),
-              Cache: "default",
+              Body: JSON.stringify({ gamertag: laddress, amount: satoshis, description: "Automated 2048 Bitcoin Withdrawal" }),
             }).then((res) => {
                 console.log(res);
-                alert("Cash out successful! Please check your ZEBEDEE account.");
+                alert("Cash out successful! Please check your ZEBEDEE wallet.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
