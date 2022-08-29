@@ -102,7 +102,7 @@
             <h2>Enter in your ZEBEDEE username to claim your satoshis!</h2>
             
               <input type="text" id="zbduser" name="ZEBEDEE Username" required/>
-              <input type="submit" id="hgtt" />
+              <input type="submit" id="hgtt" value="Submit" />
             
           </div>
         </div>
@@ -118,7 +118,7 @@
             let body = {
               "gamertag": `${zbduser}`,
               "amount": `${satoshis}`,
-              "description": "Automated 2048 Bitcoin Withdrawal",
+              "description": "Automated 2048 Bitcoin Withdrawal"
             };
 
             
@@ -131,12 +131,14 @@
               Body: body,
               Cache: "default",
             }).then((res) => {
+                console.log(res);
                 alert("Cash out successful! Please check your ZEBEDEE account.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
             }).catch((err) => {
-                alert("Cash out failed, please try again later.");
+                console.log(err);
+                alert("Cash out failed, try contacting the developers of the project for help!");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
