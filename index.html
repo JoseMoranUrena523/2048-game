@@ -114,7 +114,13 @@
             const zbduser = document.querySelector(".zbduser");
             const satoshis = document.querySelector(".satoshis-container");
             
-            let body = `{"gamertag": `${zbduser}`, "amount": `${satoshis}`, "description": "2048 Bitcoin Withdraw"}`;
+            
+            let body = {
+              "gamertag": `${zbduser}`,
+              "amount": `${satoshis}`,
+              "description": "Automated 2048 Bitcoin Withdrawal",
+            };
+
             
             fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
               Method: "POST",
