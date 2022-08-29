@@ -136,13 +136,13 @@
                 console.log(res);
                 alert("Cash out successful! Please check your ZEBEDEE account.");
                 localStorage.clear();
-              
+                window.location.reload();
                 toggleModal();
             }).catch((err) => {
                 console.log(err);
                 alert("Cash out failed, try contacting the developers of the project for help!");
                 localStorage.clear();
-
+                window.location.reload();
                 toggleModal();
              });
             
