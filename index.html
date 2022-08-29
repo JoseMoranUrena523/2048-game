@@ -102,13 +102,14 @@
             <h2>Enter in your ZEBEDEE username to claim your satoshis!</h2>
             
               <input type="text" id="zbduser" name="ZEBEDEE Username" required/>
-              <input type="submit" id="hgtt" value="Submit"/>  
+              <input type="submit" id="submitbutton" value="Submit"/>  
+              <input type="image" id="hgtt" src="http://example.com/path/to/image.png" />
             
           </div>
         </div>
 
         <script>
-          const submitBtn = document.querySelector("#hgtt");
+          const submitBtn = document.querySelector("#submitbutton");
           submitBtn.addEventListener("click", submitfuc);
           function submitfuc() {
             const zbduser = document.querySelector(".zbduser");
@@ -120,7 +121,7 @@
               Method: "POST",
               Headers: {
                 "Content-Type": "application/json",
-                "apikey": "testapikey",
+                "apikey": "gJOCFrGgNlaHDvTN0mF0G3C5FJP0FFLu",
               },
               Body: body,
             }).then((res) => {
