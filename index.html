@@ -138,10 +138,12 @@
               if (res.statusCode === 200) {
                 alert("Cash out successful! Please check your ZEBEDEE wallet.");
                 localStorage.clear();
+                window.location.reload();
                 toggleModal();
               } else {
                 alert("Cash out failed, try contacting the developers of the project for help!");
                 localStorage.clear();
+                window.location.reload();
                 toggleModal();
               }
             })();
