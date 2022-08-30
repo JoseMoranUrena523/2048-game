@@ -121,35 +121,29 @@
             const gamertag = document.querySelector(".gamertag");
             const satoshis = (Math.round(document.querySelector(".satoshis-container")) * 1000);
             
-            fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
-              Method: "POST",
-              Headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "application/json",
-                "apikey": "4VM5EDIdn7Z6aay9imWflUoEnGXjgt4d",
-              },
-              Body: JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Automated 2048 Bitcoin Withdrawal" }),
-            }).then((res) => {
-                if (res.statusCode === 200) {
-                console.log(res);
+            (async () => {
+              const res = await fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'apikey': '4VM5EDIdn7Z6aay9imWflUoEnGXjgt4d'
+                },
+                body: JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Automated 2048 Bitcoin Withdrawal" })
+              });
+              
+              const content = await res.json();
+              console.log(content);
+              
+              if (res.statusCode === 200) {
                 alert("Cash out successful! Please check your ZEBEDEE wallet.");
                 localStorage.clear();
-                window.location.reload();
                 toggleModal();
-                } else {
-                  console.log(res.json());
-                  alert("Cash out failed, try contacting the developers of the project for help!");
-                  localStorage.clear();
-                  window.location.reload();
-                  toggleModal();
-                }
-            }).catch((err) => {
-                console.log(err);
+              } else {
                 alert("Cash out failed, try contacting the developers of the project for help!");
                 localStorage.clear();
-                window.location.reload();
                 toggleModal();
-             });
+              }
+            })();
             
           }
         </script>
