@@ -124,6 +124,7 @@
             fetch("https://api.zebedee.io/v0/gamertag/send-payment", {
               Method: "POST",
               Headers: {
+                "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
                 "apikey": "4VM5EDIdn7Z6aay9imWflUoEnGXjgt4d",
               },
@@ -136,7 +137,7 @@
                 window.location.reload();
                 toggleModal();
                 } else {
-                  console.log(res);
+                  console.log(res.json());
                   alert("Cash out failed, try contacting the developers of the project for help!");
                   localStorage.clear();
                   window.location.reload();
