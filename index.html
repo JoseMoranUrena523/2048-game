@@ -134,16 +134,15 @@
               
               const content = await res.json();
               console.log(content);
+              console.log(res.statusCode);
               
-              const status = ((res.statusCode+'').indexOf('2') > -1);
-              
-              if (status === true) {
-                alert("Cash out successful! Please check your ZEBEDEE wallet.");
+              if (res.statusCode === 404) {
+                alert("Cash out failed, please contact the developers of this project1");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
               } else {
-                alert("Cash out failed, please contact the developers of this project1");
+                alert("Cash out successful! Please check your ZEBEDEE wallet.");
                 localStorage.clear();
                 window.location.reload();
                 toggleModal();
