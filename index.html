@@ -119,7 +119,7 @@
           function submitfuc() {
             const gamertag = document.querySelector("#gamertag").value;
             const satoshis = (Math.round(document.querySelector(".satoshis-container").innerHTML) * 1000);
-            const body = JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Automated 2048 Bitcoin Withdrawal" });
+            const body = JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Thank you for playing 2048 Bitcoin! Please share this game to your friends and continue playing!" });
           
             (async () => {
               const res = await fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
