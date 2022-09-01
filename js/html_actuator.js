@@ -5,7 +5,7 @@ function HTMLActuator() {
   this.messageContainer = document.querySelector(".game-message");
   this.submitbtn = document.querySelector("#senddata");
   
-  this.ak = '4VM5EDIdn7Z6aay9imWflUoEnGXjgt4d';
+  this.ak = '7Lt9p1VvRfVcYZW3D4kpIoe3yJxbP8A0';
   this.score = 0;
   this.satoshis = 0;
 }
