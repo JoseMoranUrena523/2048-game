@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html oncontextmenu="return false">
   <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HLND67CSV"></script>
     <script>
@@ -70,7 +70,15 @@
       content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui"
     />
   </head>
-  <body>
+  <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
+    <script>
+      $(document).keydown(function(e){ 
+        if(e.which === 123){ 
+         return false; 
+        } 
+      }); 
+    </script>
+    
     <div class="container">
       <div class="heading">
         <h1 class="title">2048</h1>
