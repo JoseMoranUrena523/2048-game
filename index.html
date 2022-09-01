@@ -108,48 +108,10 @@
             <h2>Enter in your ZEBEDEE gamertag to claim your satoshis!</h2>
             
               <input type="text" id="gamertag" name="Gamertag" required/>
-              <input type="submit" id="hgtt" style="background-color: #F8F8FF; border: none; color: #916EF7; font-size: 14px; padding: 2px 19px;" value="Submit" />
+              <input type="submit" id="senddata" style="background-color: #F8F8FF; border: none; color: #916EF7; font-size: 14px; padding: 2px 19px;" value="Submit" />
             
           </div>
         </div>
-
-        <script>
-          const submitBtn = document.querySelector("#hgtt");
-          submitBtn.addEventListener("click", submitfuc);
-          function submitfuc() {
-            const gamertag = document.querySelector("#gamertag").value;
-            const satoshis = (Math.round(document.querySelector(".satoshis-container").innerHTML) * 1000);
-            const body = JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Thank you for playing 2048 Bitcoin! Please share this game to your friends and continue playing!" });
-          
-            (async () => {
-              const res = await fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  'apikey': '4VM5EDIdn7Z6aay9imWflUoEnGXjgt4d'
-                },
-                body: body
-              });
-              
-              const content = await res.json();
-              console.log(content);
-              console.log(res.statusCode);
-              
-              if (res.statusCode === 404) {
-                alert("Cash out failed, please contact the developers of this project1");
-                localStorage.clear();
-                window.location.reload();
-                toggleModal();
-              } else {
-                alert("Cash out successful! Please check your ZEBEDEE wallet.");
-                localStorage.clear();
-                window.location.reload();
-                toggleModal();
-              }
-            })();
-            
-          }
-        </script>
 
         <script>
           const modal = document.querySelector(".modal");
@@ -228,3 +190,4 @@
     <script src="js/application.js"></script>
   </body>
 </html>
+ 

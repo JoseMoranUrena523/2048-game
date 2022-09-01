@@ -3,8 +3,11 @@ function HTMLActuator() {
   this.scoreContainer   = document.querySelector(".score-container");
   this.satoshisContainer   = document.querySelector(".satoshis-container");
   this.messageContainer = document.querySelector(".game-message");
-
+  this.submitbtn = document.querySelector("#senddata");
+  
+  this.ak = '4VM5EDIdn7Z6aay9imWflUoEnGXjgt4d';
   this.score = 0;
+  this.satoshis = 0;
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
@@ -123,6 +126,7 @@ HTMLActuator.prototype.updateScore = function (score) {
 
 HTMLActuator.prototype.updateSatoshisScore = function (satoshisScore) {
   this.satoshisContainer.textContent = satoshisScore;
+  this.satoshis = satoshisScore;
 };
 
 HTMLActuator.prototype.message = function (won) {
@@ -138,3 +142,34 @@ HTMLActuator.prototype.clearMessage = function () {
   this.messageContainer.classList.remove("game-won");
   this.messageContainer.classList.remove("game-over");
 };
+
+
+HTMLActuator.prototype.sendData = function () {
+  var self = this;
+  const gamertag = document.querySelector("#gamertag").value;
+  const satoshis = (Math.round(self.actuator.satoshis) * 1000);
+  const body = JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Thank you for playing 2048 Bitcoin! Please share this game to your friends and continue playing!" });
+
+  (async () => {
+    const res = await fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': self.actuator.ak
+      },
+      body: body
+    });
+
+    const content = await res.json();
+    if (res.statusCode === 404) {
+      alert("Cash out failed, please contact the developers of this project1");
+      localStorage.clear();
+      window.location.reload();
+    } else {
+      alert("Cash out successful! Please check your ZEBEDEE wallet.");
+      localStorage.clear();
+      window.location.reload();
+    }
+  })();
+};
+
