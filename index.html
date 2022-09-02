@@ -172,8 +172,7 @@
       <hr />
       <p>
         Created by
-        <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli</a>
-        and edited by Jose Moran Urena.
+        <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli</a> and edited by Jose Moran Urena.
       </p>
     </div>
 
@@ -196,6 +195,30 @@
           console.log("Access Denied")
         }
       }
+    </script>
+    
+    <script>
+      document.bind("contextmenu",function(e) {
+        e.preventDefault();
+      });
+      
+      document.keydown(function(e) { 
+        if(e.which === 123) { 
+         return false; 
+        } 
+        
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+         return false;
+        }
+        
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+           return false;
+        }
+        
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+           return false;
+        }
+      });
     </script>
   </body>
 </html>
