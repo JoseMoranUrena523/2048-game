@@ -72,11 +72,27 @@
   </head>
   <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
     <script>
+      $(document).bind("contextmenu",function(e) {
+        e.preventDefault();
+      });
+      
       $(document).keydown(function(e){ 
-        if(e.which === 123){ 
+        if(e.which === 123) { 
          return false; 
         } 
-      }); 
+        
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+         return false;
+        }
+        
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+           return false;
+        }
+        
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+           return false;
+        }
+      });
     </script>
     
     <div class="container">
