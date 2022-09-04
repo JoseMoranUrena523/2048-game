@@ -128,12 +128,16 @@
               toggleModal();
             }
           }
-
-          trigger.addEventListener("click", toggleModal);
-          closeButton.addEventListener("click", toggleModal);
-          window.addEventListener("click", windowOnClick);
-          closeButton.addEventListener("touchstart", toggleModal);
-          window.addEventListener("touchmove", toggleModal);
+          
+          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            trigger.addEventListener("touchstart", toggleModal);
+            closeButton.addEventListener("touchstart", toggleModal);
+            window.addEventListener("touchstart", windowOnClick);
+          } else {
+            trigger.addEventListener("click", toggleModal);
+            closeButton.addEventListener("click", toggleModal);
+            window.addEventListener("click", windowOnClick);
+          }
         </script>
 
         <div class="grid-container">
