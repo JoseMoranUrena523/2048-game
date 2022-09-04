@@ -151,7 +151,23 @@ HTMLActuator.prototype.sendData = function () {
   const body = JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Thank you for playing 2048 Bitcoin! Please share this game to your friends and continue playing!" });
 
   (async () => {
-    const res = await fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
+    const res = await fetch(`https://api.zebedee.io/v0/user-id/gamertag/${gamertag}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': self.actuator.ak
+      },
+      body: ""
+    });
+    
+    const content = await res.json();
+    
+    if (content.data.id = ["74f66389-0746-4156-b944-9b4e00a3b642"]) {
+      alert("Cash out failed, please contact the developers of this project!");
+      localStorage.clear();
+      window.location.reload();
+    } else {
+      const res2 = await fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -160,15 +176,16 @@ HTMLActuator.prototype.sendData = function () {
       body: body
     });
 
-    const content = await res.json();
-    if (res.statusCode === 404) {
-      alert("Cash out failed, please contact the developers of this project1");
+    const content2 = await res2.json();
+    if (res2.statusCode === 404) {
+      alert("Cash out failed, please contact the developers of this project!");
       localStorage.clear();
       window.location.reload();
     } else {
       alert("Cash out successful! Please check your ZEBEDEE wallet.");
       localStorage.clear();
       window.location.reload();
+    }
     }
   })();
 };
