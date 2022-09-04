@@ -10,22 +10,6 @@ html, body {
 body {
   margin: 80px 0; }
 
-@media screen and (max-width: 300px) {
-
-.form-input input[type="text"], .form-input input[type="email"], .form-input input[type="phone"], .form-input input[type="number"], .form-input input[type="tel"], .form-input-wide input[type="text"], .form-input-wide input[type="email"], .form-input-wide input[type="phone"], .form-input-wide input[type="number"], .form-input-wide input[type="tel"] {
-
-        width: 180px !important;
-
-}
-
-input.text {
-  -webkit-user-select: initial;
-  -khtml-user-select: initial;
-  -moz-user-select: initial;
-  -ms-user-select: initial;
-  user-select: initial;
-}
-
 .heading:after {
   content: "";
   display: block;
