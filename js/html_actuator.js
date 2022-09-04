@@ -148,7 +148,6 @@ HTMLActuator.prototype.sendData = function () {
   var self = this;
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.round(self.actuator.satoshis) * 1000);
-  const body = JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Thank you for playing 2048 Bitcoin! Please share this game to your friends and continue playing!" });
 
   (async () => {
     const res = await fetch(`https://api.zebedee.io/v0/user-id/gamertag/${gamertag}`, {
@@ -167,6 +166,8 @@ HTMLActuator.prototype.sendData = function () {
       localStorage.clear();
       window.location.reload();
     } else {
+      const body = JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Thank you for playing 2048 Bitcoin! Please share this game to your friends and continue playing!" });
+      
       const res2 = await fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
       method: 'POST',
       headers: {
