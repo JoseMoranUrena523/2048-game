@@ -161,10 +161,22 @@ HTMLActuator.prototype.sendData = function () {
     const content = await res.json();
     
     if (content.data.id = ["74f66389-0746-4156-b944-9b4e00a3b642"]) {
-      alert("Cash out failed, please contact the developers of this project!");
+      alert("You are banned from this game, if you feel like this is a mistake, contact the developers of this game.");
       localStorage.clear();
       window.location.reload();
     } else {
+      const res3 = await fetch(`https://api.zebedee.io/v0/ln-address/validate/${gamertag}@zbd.gg`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': self.actuator.ak
+        },
+        body: ""
+      });
+      
+      const content3 = await res3.json();
+      
+      if (content3.data.valid = true) {
       const body = JSON.stringify({ gamertag: gamertag, amount: satoshis, description: "Thank you for playing 2048 Bitcoin! Please share this game to your friends and continue playing!" });
       
       const res2 = await fetch('https://api.zebedee.io/v0/gamertag/send-payment', {
@@ -186,6 +198,9 @@ HTMLActuator.prototype.sendData = function () {
       localStorage.clear();
       window.location.reload();
     }
+      } else {
+      alert("Invalid ZEBEDEE Gamertag.");
+      }
     }
   })();
 };
