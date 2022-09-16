@@ -163,7 +163,7 @@ HTMLActuator.prototype.sendData = function () {
       alert("You are banned from this game, if you feel like this is a mistake, contact the developers of this game.");
       console.log(res);
       localStorage.clear();
-      // window.location.reload();
+      window.location.reload();
     } else {
       const res3 = await fetch(`https://api.zebedee.io/v0/ln-address/validate/${gamertag}@zbd.gg`, {
         method: 'GET',
@@ -192,12 +192,12 @@ HTMLActuator.prototype.sendData = function () {
       alert("Cash out failed, please contact the developers of this project!");
       console.log(res);
       localStorage.clear();
-      // window.location.reload();
+      window.location.reload();
     } else {
       alert("Cash out successful! Please check your ZEBEDEE wallet.");
       console.log(res);
       localStorage.clear();
-      // window.location.reload();
+      window.location.reload();
     }
       } else {
       alert("Invalid ZEBEDEE Gamertag.");
