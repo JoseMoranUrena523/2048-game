@@ -155,7 +155,7 @@ HTMLActuator.prototype.sendData = function () {
         'Content-Type': 'application/json',
         'apikey': self.actuator.ak
       },
-      body: ""
+      body: { }
     });
     
     const content = await res.json();
@@ -171,7 +171,7 @@ HTMLActuator.prototype.sendData = function () {
           'Content-Type': 'application/json',
           'apikey': self.actuator.ak
         },
-        body: ""
+        body: { }
       });
       
       const content3 = await res3.json();
