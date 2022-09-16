@@ -52,13 +52,12 @@ KeyboardInputManager.prototype.listen = function () {
   // Respond to direction keys
   document.addEventListener("keydown", function (event) {
     
-  if(document.querySelector(".modal.show-modal")){
-    return;
-  }
-  document.querySelector("body").onkeydown = function () {return false;};
+    if(document.querySelector(".modal.show-modal")){
+      return;
+    }
 
     var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
-                    event.shiftKey;
+                      event.shiftKey;
     var mapped    = map[event.which];
 
     if (!modifiers) {
