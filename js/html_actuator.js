@@ -161,7 +161,7 @@ HTMLActuator.prototype.sendData = function () {
     
     if (content.data.id === "74f66389-0746-4156-b944-9b4e00a3b642") {
       alert("You are banned from this game, if you feel like this is a mistake, contact the developers of this game.");
-      console.log(res.json());
+      console.log(res);
       localStorage.clear();
       // window.location.reload();
     } else {
@@ -190,12 +190,12 @@ HTMLActuator.prototype.sendData = function () {
     const content2 = await res2.json();
     if (res2.statusCode === 404) {
       alert("Cash out failed, please contact the developers of this project!");
-      console.log(res.json());
+      console.log(res);
       localStorage.clear();
       // window.location.reload();
     } else {
       alert("Cash out successful! Please check your ZEBEDEE wallet.");
-      console.log(res.json());
+      console.log(res);
       localStorage.clear();
       // window.location.reload();
     }
