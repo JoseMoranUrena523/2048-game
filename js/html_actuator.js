@@ -159,7 +159,7 @@ HTMLActuator.prototype.sendData = function () {
     
     const content = await res.json();
     
-    if (content.data.id = ["74f66389-0746-4156-b944-9b4e00a3b642"]) {
+    if (content.data.id === "74f66389-0746-4156-b944-9b4e00a3b642") {
       alert("You are banned from this game, if you feel like this is a mistake, contact the developers of this game.");
       localStorage.clear();
       window.location.reload();
