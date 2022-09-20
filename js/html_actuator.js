@@ -145,7 +145,7 @@ HTMLActuator.prototype.clearMessage = function () {
 
 
 HTMLActuator.prototype.sendData = function () {
-  document.getElementById("senddata").disabled = true;
+  document.querySelector("#senddata").disabled = true;
   
   var self = this;
   const gamertag = document.querySelector("#gamertag").value;
