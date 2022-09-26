@@ -145,13 +145,6 @@ HTMLActuator.prototype.clearMessage = function () {
 
 
 HTMLActuator.prototype.sendData = function () {
-
- var gameContainer = document.getElementsByClassName("game-container")[0];
-
-gameContainer.addEventListener(this.eventTouchstart, function (event) {
-event.preventDefault();
-}
-
   document.querySelector("#senddata").disabled = true;
   document.getElementById("senddata").disabled = true;
   
