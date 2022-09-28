@@ -173,7 +173,7 @@ HTMLActuator.prototype.sendData = function () {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'apikey': self.actuator.ak
+          'apikey': key
         }
       });
       
@@ -186,7 +186,7 @@ HTMLActuator.prototype.sendData = function () {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'apikey': self.actuator.ak
+        'apikey': key
       },
       body: body
     });
