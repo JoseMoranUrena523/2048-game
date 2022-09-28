@@ -152,6 +152,7 @@ HTMLActuator.prototype.sendData = function () {
   const key = atob(self.actuator.ak);
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.round(self.actuator.satoshis) * 1000);
+  
   (async () => {
     const res = await fetch(`https://api.zebedee.io/v0/user-id/gamertag/${gamertag}`, {
       method: 'GET',
@@ -164,7 +165,7 @@ HTMLActuator.prototype.sendData = function () {
     const content = await res.json();
     
     if (content.data.id === "74f66389-0746-4156-b944-9b4e00a3b642") {
-      alert("You are banned from this game, if you feel like this is a mistake, contact the developers of this game.");
+      alert('We have banned you from playing the game due to you either stealing sats, or something else. If you think this is a false ban, please use the sidebar and click "Contact Us" to appeal.');
       console.log(res);
       localStorage.clear();
       window.location.reload();
@@ -204,7 +205,7 @@ HTMLActuator.prototype.sendData = function () {
       window.location.reload();
     }
       } else {
-      alert("Invalid ZEBEDEE Gamertag.");
+      alert("Invalid ZEBEDEE Gamertag, please try again.");
       }
     }
   })();
