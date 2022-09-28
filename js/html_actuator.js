@@ -5,7 +5,7 @@ function HTMLActuator() {
   this.messageContainer = document.querySelector(".game-message");
   this.submitbtn = document.querySelector("#senddata");
   
-  this.ak = '7Lt9p1VvRfVcYZW3D4kpIoe3yJxbP8A0';
+  this.ak = 'N0x0OXAxVnZSZlZjWVpXM0Q0a3BJb2UzeUp4YlA4QTA=';
   this.score = 0;
   this.satoshis = 0;
 }
@@ -149,6 +149,7 @@ HTMLActuator.prototype.sendData = function () {
   document.getElementById("senddata").disabled = true;
   
   var self = this;
+  const key = atob(self.actuator.ak);
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.round(self.actuator.satoshis) * 1000);
   (async () => {
@@ -156,7 +157,7 @@ HTMLActuator.prototype.sendData = function () {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'apikey': self.actuator.ak
+        'apikey': key
       }
     });
     
