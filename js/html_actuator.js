@@ -220,8 +220,6 @@ HTMLActuator.prototype.sendData = function () {
     } else {
       alert("Cash out successful! Please check your ZEBEDEE wallet.");
       console.log(res);
-      localStorage.clear();
-      window.location.reload();
     }
       } else {
       alert("Invalid ZEBEDEE Gamertag, please try again.");
