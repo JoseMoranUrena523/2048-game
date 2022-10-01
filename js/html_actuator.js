@@ -145,25 +145,6 @@ HTMLActuator.prototype.clearMessage = function () {
 
 
 HTMLActuator.prototype.sendData = function () {
-  const queryString = window.location.search;
-  if (queryString === null) {
-    console.log("test");
-  } else {
-    const urlParams = new URLSearchParams(queryString);
-    
-    const code = urlParams.get('code');
-    const res = await fetch(`https://api.zebedee.io/v0/oauth2/user`, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${code}`,
-        'Content-Type': 'application/json',
-      }
-    });
-    
-    const content = await res.json();
-    console.log(content);
-  }
-  
   document.querySelector("#senddata").disabled = true;
   document.getElementById("senddata").disabled = true;
   
@@ -220,6 +201,8 @@ HTMLActuator.prototype.sendData = function () {
     } else {
       alert("Cash out successful! Please check your ZEBEDEE wallet.");
       console.log(res);
+      localStorage.clear();
+      window.location.reload();
     }
       } else {
       alert("Invalid ZEBEDEE Gamertag, please try again.");
