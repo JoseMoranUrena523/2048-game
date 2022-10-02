@@ -148,7 +148,7 @@ HTMLActuator.prototype.sendData = function () {
   document.querySelector("#senddata").disabled = true;
   document.getElementById("senddata").disabled = true;
   
-  const cashout = require("./cashout.js");
+  import cashout from "./cashout.js";
   var self = this;
   var key = atob(self.actuator.ak);
   
