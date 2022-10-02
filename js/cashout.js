@@ -1,8 +1,4 @@
-function cashout(apikey, self) {
-  document.querySelector("#senddata").disabled = true;
-  document.getElementById("senddata").disabled = true;
-  
-  const key = atob(self.actuator.ak);
+function cashout(key) {
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.round(self.actuator.satoshis) * 1000);
   
