@@ -152,23 +152,9 @@ HTMLActuator.prototype.sendData = function () {
   var key = atob(self.actuator.ak);
   
   const gamertag = document.querySelector("#gamertag").value;
-  var hCaptcha = document.getElementsByClassName("h-captcha")[0];
-  var hciFrame = hCaptcha.getElementsByTagName("iframe")[0];
-  const responseCap = hciFrame.getAttribute("data-hcaptcha-response");
   const satoshis = (Math.round(self.actuator.satoshis) * 1000);
   
   (async () => {
-    const resCap = await fetch(`https://hcaptcha.com/siteverify`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: `response=${responseCap}&secret=0x44Ae2CA631B530E4821d41367470335b411888e6`,
-    });
-    
-    const contentCap = await resCap.json();
-    
-    if (contentCap.success === true) {
     const res = await fetch(`https://api.zebedee.io/v0/user-id/gamertag/${gamertag}`, {
       method: 'GET',
       headers: {
@@ -222,9 +208,6 @@ HTMLActuator.prototype.sendData = function () {
       } else {
       alert("Invalid ZEBEDEE Gamertag, please try again.");
       }
-    }
-    } else {
-      alert("You failed the hCaptcha! Please try again.");
     }
   })();
 };
