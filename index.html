@@ -72,9 +72,38 @@
   <body oncontextmenu="return false">
 
 <script async="async" data-cfasync="false" src="//arsnivyr.com/1?z=5418251"></script>
-
     <script src="detectmobilebrowser.js"></script>
-
+    
+    <script>
+      const res = await fetch('http://ip-api.com/json', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    
+      const content = await res.json();
+      const ipAddress = content.query;
+      const key = atob("eFd3R0JJVFlEd0JjMzRTYXE2REhFR2t1NENldEJTbXE=");
+      
+      const resip = await fetch(`https://api.zebedee.io/v0/is-supported-region/${ipAddress}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey: key
+        }
+      });
+      
+      const contentip = await resip.json();
+      const success = contentip.data.isSupported;
+      
+      if (success === false) {
+        document.querySelector("#restart-button").disabled = true;
+      } else {
+        return;
+      }
+    </script>
+    
     <div class="container">
       <div class="heading">
         <h1 class="title">2048</h1>
