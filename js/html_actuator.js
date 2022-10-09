@@ -152,7 +152,9 @@ HTMLActuator.prototype.sendData = function () {
   var key = atob(self.actuator.ak);
   
   const gamertag = document.querySelector("#gamertag").value;
-  const responseCap = document.querySelector("#h-captcha-response").value;
+  var hCaptcha = document.getElementsByClassName("h-captcha")[0];
+  var hciFrame = hCaptcha.getElementsByTagName("iframe")[0];
+  const responseCap = hciFrame.getAttribute("data-hcaptcha-response");
   const satoshis = (Math.round(self.actuator.satoshis) * 1000);
   
   (async () => {
