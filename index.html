@@ -98,7 +98,7 @@
       const success = contentip.data.isSupported;
       
       if (success === false) {
-        document.querySelector("#restart-button").disabled = true;
+        document.getElementById("restart-button").disabled = true;
       } else {
         return;
       }
@@ -122,7 +122,7 @@
         <p class="game-intro">
           Join the numbers and get to the <strong>2048 tile!</strong>
         </p>
-        <a class="restart-button">Cash Out</a>
+        <a id="restart-button" class="restart-button">Cash Out</a>
       </div>
       <div class="game-container">
         <div class="game-message">
