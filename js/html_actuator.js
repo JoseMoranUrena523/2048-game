@@ -167,7 +167,7 @@ HTMLActuator.prototype.sendData = function () {
     
     if (content.data.id === "74f66389-0746-4156-b944-9b4e00a3b642" ||
         content.data.id === "f576c57f-afce-4b9a-8fee-774dcdfd1ef3") {
-      alert('We have banned you from playing the game due to you either stealing sats, or something else. If you think this is a false ban, please use the sidebar and click "Contact Us" to appeal.');
+      alert('We have banned you from playing the game due to you either stealing sats, or something else. If you think this is a false ban, email us at: 2048bitcoin@josemoranurena.tech.');
       console.log(res);
       localStorage.clear();
       window.location.reload();
