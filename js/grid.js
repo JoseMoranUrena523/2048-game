@@ -92,9 +92,6 @@ Grid.prototype.insertTile = function (tile) {
 
 Grid.prototype.removeTile = function (tile) {
   this.cells[tile.x][tile.y] = null;
-  if (document.querySelector("#satoshis-container").value > 1) {
-    document.querySelector("#restart-button").disabled = false;
-  }
 };
 
 Grid.prototype.withinBounds = function (position) {
