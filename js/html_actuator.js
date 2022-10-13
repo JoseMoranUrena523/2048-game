@@ -152,7 +152,7 @@ HTMLActuator.prototype.sendData = function () {
   var key = atob(self.actuator.ak);
   
   const gamertag = document.querySelector("#gamertag").value;
-  const satoshis = (Math.round(self.actuator.satoshis) * 1000);
+  const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
   
   (async () => {
     const res = await fetch(`https://api.zebedee.io/v0/user-id/gamertag/${gamertag}`, {
