@@ -1,4 +1,11 @@
-(async () => {
+function HTMLActuator() {
+  this.tileContainer    = document.querySelector(".tile-container");
+  this.scoreContainer   = document.querySelector(".score-container");
+  this.satoshisContainer   = document.querySelector(".satoshis-container");
+  this.messageContainer = document.querySelector(".game-message");
+  this.submitbtn = document.querySelector("#senddata");
+  
+  (async () => {
     const zbdkey1 = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
       method: 'GET',
       headers: {
@@ -8,15 +15,8 @@
     });
     
 const zbdcontent = await zbdkey1.json();
-var key = zbdcontent.data.data.key;
-
-function HTMLActuator() {
-  this.tileContainer    = document.querySelector(".tile-container");
-  this.scoreContainer   = document.querySelector(".score-container");
-  this.satoshisContainer   = document.querySelector(".satoshis-container");
-  this.messageContainer = document.querySelector(".game-message");
-  this.submitbtn = document.querySelector("#senddata");
-  
+var key = zbdcontent.data.data.key;  
+    
   this.ak = key;
   this.score = 0;
   this.satoshis = 0;
