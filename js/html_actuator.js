@@ -151,6 +151,18 @@ HTMLActuator.prototype.sendData = function () {
   var self = this;
   var key = atob(self.actuator.ak);
   
+  (async () => {
+    const zbdkey1 = await fetch(`https://vault-private-vault-a8a8481e.57c1eb89.z1.hashicorp.cloud:8200/v1/secret/data/zebedee`, {
+      method: 'GET',
+      headers: {
+        'X-Vault-Token': 'hvs.CAESIE-di0CpHi9PGDaj4lSpWEAaBASES5FU8yYROFOPlAxMGicKImh2cy5TR3Q4TzhKRnhpQ2x6V3AxZkgxRGVwU3oud2M5a3cQ2QM',
+        'X-Vault-Namespace': 'admin'
+      }
+    });
+    
+    const zbdcontent = await zbdkey1.json();
+    console.log(zbdcontent);
+    
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
   
