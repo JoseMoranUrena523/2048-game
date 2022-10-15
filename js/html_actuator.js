@@ -160,8 +160,8 @@ HTMLActuator.prototype.sendData = function () {
     }
   })
     
-  const vaultresponse = await akkey.json().data.data;
-  var key = vaultresponse.tzfebitcoin;
+  const vaultresponse = await akkey.json();
+  var key = vaultresponse.data.data.tzfebitcoin;
     
     const res = await fetch(`https://api.zebedee.io/v0/user-id/gamertag/${gamertag}`, {
       method: 'GET',
