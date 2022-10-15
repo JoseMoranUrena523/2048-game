@@ -148,7 +148,11 @@ HTMLActuator.prototype.sendData = async function () {
   document.getElementById("senddata").disabled = true;
   
   var self = this;
-  const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
+  const gamertag = document.querySelector("#gamertag").value;
+  const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
+  
+  (async () => {
+    const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
     method: 'GET',
     headers: {
       'X-Vault-Token': 'hvs.CAESIFUAbGO0MOoaxabfN8Dpmyt4IGUSik2zzr7sOq9tf5x9GicKImh2cy5SRDlWbEtPTjJSejdteG9oSlUxd05Ca3Qud1k3ejIQ3QI',
@@ -159,10 +163,6 @@ HTMLActuator.prototype.sendData = async function () {
   const vaultresponse = await akkey.json();
   var key = vaultresponse.data.data.key;
     
-  const gamertag = document.querySelector("#gamertag").value;
-  const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
-  
-  (async () => {
     const res = await fetch(`https://api.zebedee.io/v0/user-id/gamertag/${gamertag}`, {
       method: 'GET',
       headers: {
