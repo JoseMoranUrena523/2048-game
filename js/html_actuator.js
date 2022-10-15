@@ -155,7 +155,7 @@ HTMLActuator.prototype.sendData = async function () {
     const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
     method: 'GET',
     headers: {
-      'X-Vault-Token': 'hvs.CAESIOgp74U7NYTPShm3ybOM-3AG5aK9FExKkeYCd8-S2DXDGicKImh2cy5sQWh1empydDZiTDZwdm5lYnF2NUJrNzkud1k3ejIQwwc',
+      'X-Vault-Token': 'hvs.CAESIIWtCbIz3pzQ_aB4JO33uK-V9p5SkIwd4JFcil1L3WwMGicKImh2cy5iN0hBRUN2aTRIdEI5RWNxcENuUWgwdjcud1k3ejIQlAw',
       'X-Vault-Namespace': 'admin'
     }
   })
