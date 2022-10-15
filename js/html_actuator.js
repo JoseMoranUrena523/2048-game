@@ -1,20 +1,19 @@
-function HTMLActuator() {
+async function HTMLActuator() {
   this.tileContainer    = document.querySelector(".tile-container");
   this.scoreContainer   = document.querySelector(".score-container");
   this.satoshisContainer   = document.querySelector(".satoshis-container");
   this.messageContainer = document.querySelector(".game-message");
   this.submitbtn = document.querySelector("#senddata");
   
-  (async () => {
-    const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
-      method: 'GET',
-      headers: {
-        'X-Vault-Token': 'hvs.CAESIFUAbGO0MOoaxabfN8Dpmyt4IGUSik2zzr7sOq9tf5x9GicKImh2cy5SRDlWbEtPTjJSejdteG9oSlUxd05Ca3Qud1k3ejIQ3QI',
-        'X-Vault-Namespace': 'admin'
-      }
-    });
+  const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
+    method: 'GET',
+    headers: {
+      'X-Vault-Token': 'hvs.CAESIFUAbGO0MOoaxabfN8Dpmyt4IGUSik2zzr7sOq9tf5x9GicKImh2cy5SRDlWbEtPTjJSejdteG9oSlUxd05Ca3Qud1k3ejIQ3QI',
+      'X-Vault-Namespace': 'admin'
+    }
+  })
     
-    const vaultresponse = await akkey.json();
+  const vaultresponse = await akkey.json();
     
   this.ak = vaultresponse.data.data.key;
   this.score = 0;
