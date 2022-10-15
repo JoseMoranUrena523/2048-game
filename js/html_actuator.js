@@ -1,21 +1,10 @@
-async function HTMLActuator() {
+function HTMLActuator() {
   this.tileContainer    = document.querySelector(".tile-container");
   this.scoreContainer   = document.querySelector(".score-container");
   this.satoshisContainer   = document.querySelector(".satoshis-container");
   this.messageContainer = document.querySelector(".game-message");
   this.submitbtn = document.querySelector("#senddata");
-  
-  const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
-    method: 'GET',
-    headers: {
-      'X-Vault-Token': 'hvs.CAESIFUAbGO0MOoaxabfN8Dpmyt4IGUSik2zzr7sOq9tf5x9GicKImh2cy5SRDlWbEtPTjJSejdteG9oSlUxd05Ca3Qud1k3ejIQ3QI',
-      'X-Vault-Namespace': 'admin'
-    }
-  })
     
-  const vaultresponse = await akkey.json();
-    
-  this.ak = vaultresponse.data.data.key;
   this.score = 0;
   this.satoshis = 0;
 }
@@ -154,12 +143,21 @@ HTMLActuator.prototype.clearMessage = function () {
 };
 
 
-HTMLActuator.prototype.sendData = function () {
+HTMLActuator.prototype.sendData = async function () {
   document.querySelector("#senddata").disabled = true;
   document.getElementById("senddata").disabled = true;
   
   var self = this;
-  var key = self.actuator.ak;
+  const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
+    method: 'GET',
+    headers: {
+      'X-Vault-Token': 'hvs.CAESIFUAbGO0MOoaxabfN8Dpmyt4IGUSik2zzr7sOq9tf5x9GicKImh2cy5SRDlWbEtPTjJSejdteG9oSlUxd05Ca3Qud1k3ejIQ3QI',
+      'X-Vault-Namespace': 'admin'
+    }
+  })
+    
+  const vaultresponse = await akkey.json();
+  var key = vaultresponse.data.data.key;
     
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
