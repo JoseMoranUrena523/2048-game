@@ -6,7 +6,7 @@ function HTMLActuator() {
   this.submitbtn = document.querySelector("#senddata");
   
   (async () => {
-    const zbdkey1 = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
+    const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
       method: 'GET',
       headers: {
         'X-Vault-Token': 'hvs.CAESIF1klelnfPjAIvC9mc1NzD7Cpi-daOLTsGg2gdihBvfQGicKImh2cy52dllOTVJOTjF2dldDaEpYUUdXblNRY2oud1k3ejIQtQE',
@@ -14,10 +14,9 @@ function HTMLActuator() {
       }
     });
     
-const zbdcontent = await zbdkey1.json();
-var key = zbdcontent.data.data.key;  
+ const vaultresponse = await akkey.json();
     
-  this.ak = key;
+  this.ak = vaultresponse.data.data.key;
   this.score = 0;
   this.satoshis = 0;
 }
