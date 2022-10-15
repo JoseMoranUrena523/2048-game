@@ -143,7 +143,7 @@ HTMLActuator.prototype.clearMessage = function () {
 };
 
 
-HTMLActuator.prototype.sendData = async function () {
+HTMLActuator.prototype.sendData = function () {
   document.querySelector("#senddata").disabled = true;
   document.getElementById("senddata").disabled = true;
   
