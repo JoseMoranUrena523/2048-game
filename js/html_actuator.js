@@ -152,7 +152,7 @@ HTMLActuator.prototype.sendData = function () {
   const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
   
   (async () => {
-    const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
+    const akkey = await fetch("https://clbcors-proxy.herokuapp.com/https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
     method: 'GET',
     headers: {
       'X-Vault-Token': 'hvs.CAESIGoqFK3Bpaqh-UiPYskKujo1_2zqWauwHTPx02AlaXgtGicKImh2cy54bXI3WVZFUzRsazB0aXp4OEtDSnU1MFEud1k3ejIQiRE',
