@@ -9,12 +9,12 @@ function HTMLActuator() {
     const akkey = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
       method: 'GET',
       headers: {
-        'X-Vault-Token': 'hvs.CAESIF1klelnfPjAIvC9mc1NzD7Cpi-daOLTsGg2gdihBvfQGicKImh2cy52dllOTVJOTjF2dldDaEpYUUdXblNRY2oud1k3ejIQtQE',
+        'X-Vault-Token': 'hvs.CAESIFUAbGO0MOoaxabfN8Dpmyt4IGUSik2zzr7sOq9tf5x9GicKImh2cy5SRDlWbEtPTjJSejdteG9oSlUxd05Ca3Qud1k3ejIQ3QI',
         'X-Vault-Namespace': 'admin'
       }
     });
     
- const vaultresponse = await akkey.json();
+    const vaultresponse = await akkey.json();
     
   this.ak = vaultresponse.data.data.key;
   this.score = 0;
