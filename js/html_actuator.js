@@ -1,3 +1,15 @@
+(async () => {
+    const zbdkey1 = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
+      method: 'GET',
+      headers: {
+        'X-Vault-Token': 'hvs.CAESIF1klelnfPjAIvC9mc1NzD7Cpi-daOLTsGg2gdihBvfQGicKImh2cy52dllOTVJOTjF2dldDaEpYUUdXblNRY2oud1k3ejIQtQE',
+        'X-Vault-Namespace': 'admin'
+      }
+    });
+    
+const zbdcontent = await zbdkey1.json();
+var key = zbdcontent.data.data.key;
+
 function HTMLActuator() {
   this.tileContainer    = document.querySelector(".tile-container");
   this.scoreContainer   = document.querySelector(".score-container");
@@ -5,6 +17,7 @@ function HTMLActuator() {
   this.messageContainer = document.querySelector(".game-message");
   this.submitbtn = document.querySelector("#senddata");
   
+  this.ak = key;
   this.score = 0;
   this.satoshis = 0;
 }
@@ -148,21 +161,10 @@ HTMLActuator.prototype.sendData = function () {
   document.getElementById("senddata").disabled = true;
   
   var self = this;
+  var key = self.actuator.ak;
     
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
-  
-  (async () => {
-    const zbdkey1 = await fetch("https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
-      method: 'GET',
-      headers: {
-        'X-Vault-Token': 'hvs.CAESIF1klelnfPjAIvC9mc1NzD7Cpi-daOLTsGg2gdihBvfQGicKImh2cy52dllOTVJOTjF2dldDaEpYUUdXblNRY2oud1k3ejIQtQE',
-        'X-Vault-Namespace': 'admin'
-      }
-    });
-    
-  const zbdcontent = await zbdkey1.json();
-  var key = zbdcontent.data.data.key;
   
   (async () => {
     const res = await fetch(`https://api.zebedee.io/v0/user-id/gamertag/${gamertag}`, {
