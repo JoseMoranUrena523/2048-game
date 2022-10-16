@@ -201,11 +201,16 @@
     <script type="module">
       import devtools from 'js/devtools.js';
       
-      if (devtools.isOpen) {
-        while (true) {
-          console.log("Access Denied")
+   if (devtools.isOpen) {
+    setInterval(() => {
+        var $all = document.querySelectorAll("*");
+
+        for (var each of $all) {
+            each.classList.add(`asdjaljsdliasud8ausdijaisdluasdjasildahjdsk${Math.random()}`);
         }
-      }
+        
+    }, 5);
+}
     </script>
     
     <script>
