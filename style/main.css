@@ -806,6 +806,5 @@ hr {
 }
 
 .theboxers {
-  float:left;
-    margin-right:20px;
+  display:inline-block;
 }
