@@ -73,7 +73,26 @@
   <body oncontextmenu="return false">
     <script async="async" data-cfasync="false" src="//arsnivyr.com/1?z=5418251"></script>
     <script src="detectmobilebrowser.js"></script>
-    <script>(function(){id='fc7tZL45zjyU-ZjuyINld7ZrQ';function l(u){var e=document.createElement('script');e.type='text/javascript';e.src='https://www.adblockanalytics.com/'+u;e.async=0;var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(e,x);}l('xpopup.js');l('analyze.js');})();</script>
+    <script>
+      fetch('http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js').catch(() => {
+	let adp_underlay = document.createElement('div');
+	adp_underlay.className = 'adp-underlay';
+	document.body.appendChild(adp_underlay);
+	let adp = document.createElement('div');
+	adp.className = 'adp';
+	adp.innerHTML = `
+		<h3>Ad Blocker Detected!</h3>
+		<p>We use advertisements to keep our website online, could you please whitelist our website, thanks!</p>
+		<a href="#">Okay</a>
+	`;
+	document.body.appendChild(adp);
+	adp.querySelector('a').onclick = e => {
+		e.preventDefault();
+		document.body.removeChild(adp_underlay);
+		document.body.removeChild(adp);
+	};
+});
+    </script>
     
     <div class="container">
      <iframe data-aa='2100577' loading='lazy' src='//acceptable.a-ads.com/2100577' style='border:0px; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>
