@@ -151,6 +151,12 @@ HTMLActuator.prototype.sendData = function () {
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
   
+  if (satoshis > 75) {
+    alert("Stop trying to cheat.");
+    window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    return;
+  }
+  
   (async () => {
     const akkey = await fetch("https://clbcors-proxy.herokuapp.com/https://vault-public-vault-9b89d176.10622821.z1.hashicorp.cloud:8200/v1/zebedee/data/api", {
     method: 'GET',
