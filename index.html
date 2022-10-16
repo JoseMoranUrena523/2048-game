@@ -39,7 +39,7 @@
       sizes="16x16"
       href="https://precious-fairy-f1fe26.netlify.app/meta/favicon-16x16.png"
     />
-    <link rel="manifest" href="https://precious-fairy-f1fe26.netlify.app/meta/site.webmanifest" />
+    <link rel="manifest" href="https://clbcors-proxy.herokuapp.com/https://precious-fairy-f1fe26.netlify.app/meta/site.webmanifest" />
     <link
       rel="mask-icon"
       href="https://precious-fairy-f1fe26.netlify.app/meta/safari-pinned-tab.svg"
@@ -201,7 +201,7 @@
       <script src="js/devtools.js"></script>
     
     <script type="module">
-      import devtools from 'js/devtools.js';
+      import devtools from './js/devtools.js';
       
    if (devtools.isOpen) {
     setInterval(() => {
@@ -216,7 +216,7 @@
     </script>
     
     <script>
-      document.keydown(function(e) { 
+      document.addEventListener('keydown', function(e) { 
         if(e.which === 123) { 
          return false; 
         } 
