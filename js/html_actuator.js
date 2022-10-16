@@ -25,7 +25,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 
     self.updateScore(metadata.score);
     
-    self.updateSatoshisScore(metadata.score / 750);
+    self.updateSatoshisScore(metadata.score / 1000);
 
     if (metadata.terminated) {
       if (metadata.over) {
