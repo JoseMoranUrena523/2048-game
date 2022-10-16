@@ -151,7 +151,7 @@ HTMLActuator.prototype.sendData = function () {
   const gamertag = document.querySelector("#gamertag").value;
   const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
   
-  if (self.actuator.satoshis > 60) {
+  if (self.actuator.satoshis > 57) {
     alert("Stop trying to cheat. If you aren't cheating, DM me with proof, or else, frick off you low-life person.");
     window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     return;
