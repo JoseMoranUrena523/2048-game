@@ -78,7 +78,9 @@ GameManager.prototype.addRandomTile = function () {
 // Sends the updated grid to the actuator
 GameManager.prototype.actuate = function () {
   if (this.storageManager.getSatoshisScore() < this.score) {
-    this.storageManager.setSatoshisScore(this.score / 1500);
+    let score1 = (this.score / 1500);
+    let score2 = parseFloat(score1);
+    this.storageManager.setSatoshisScore(score2.toFixed(2));
   }
 
   // Clear the state when the game is over (game over only, not win)
