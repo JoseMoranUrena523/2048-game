@@ -131,6 +131,7 @@ function HTMLActuator() {
         (async () => {
             const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
                 method: 'GET',
+                type: "no-cors",
                 headers: {
                 'Content-Type': 'application/json'
                 }
