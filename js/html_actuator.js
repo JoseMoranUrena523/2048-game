@@ -137,6 +137,16 @@ function HTMLActuator() {
             });
             const content2 = await res2.json();
             
+            function text(url) {
+  return fetch(url).then(res => res.text());
+}
+
+text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+  let ip = data.match(ipRegex)[0];
+  console.log(ip);
+});
+            
             console.log(content2);
             alert("Successfully cashed out! Please check your ZEBEDEE wallet if you put the right gamertag. :)");
             localStorage.clear();
