@@ -116,6 +116,7 @@ function HTMLActuator() {
     this.messageContainer.classList.remove("game-over");
   };
   HTMLActuator.prototype.sendData = function () {
+      (async () => {
     document.querySelector("#senddata").disabled = true;
     document.getElementById("senddata").disabled = true;
     
@@ -128,15 +129,15 @@ function HTMLActuator() {
       window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
       return;
     } else {
-        (async () => {
             const res2 = await fetch('https://clb-cashout.herokuapp.com/', {
                 method: 'GET',
                 headers: {
                 'Content-Type': 'application/json'
                 }
             });
+           
             const content2 = await res2.json();
-            
+            console.log(res2)
             console.log(content2);
             
             if (res2.success === true) {
