@@ -129,7 +129,7 @@ function HTMLActuator() {
       window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
       return;
     } else {
-            const res2 = await fetch('https://clb-cashout.herokuapp.com/', {
+            const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
                 method: 'GET',
                 headers: {
                 'Content-Type': 'application/json'
@@ -137,13 +137,17 @@ function HTMLActuator() {
             });
            
             const content2 = await res2.json();
-            console.log(res2)
-            console.log(content2);
             
             if (res2.success === true) {
                 alert("Successfully cashed out! Please check your wallet.")
+                console.log(content2);
+                localStorage.clear();
+                window.location.reload();
             } else {
                 alert("There has been an error trying to cash out, please contact the developers of the game.")
+                console.log(content2);
+                localStorage.clear();
+                window.location.reload();
             }
         });
     };
