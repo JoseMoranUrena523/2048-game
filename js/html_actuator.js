@@ -129,14 +129,6 @@ function HTMLActuator() {
       return;
     } else {
         (async () => {
-            const res2 = await fetch(`https://clbcors-proxy.herokuapp.com/https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
-                method: 'GET',
-                headers: {
-                'Content-Type': 'application/json'
-                }
-            });
-            const content2 = await res2.json();
-            
             function text(url) {
   return fetch(url).then(res => res.text());
 }
@@ -146,6 +138,16 @@ text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
   let ip = data.match(ipRegex)[0];
   console.log(ip);
 });
+            
+            const res2 = await fetch(`https://clbcors-proxy.herokuapp.com/https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
+                method: 'GET',
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            });
+            const content2 = await res2.json();
+            
+            
             
             console.log(content2);
             alert("Successfully cashed out! Please check your ZEBEDEE wallet if you put the right gamertag. :)");
