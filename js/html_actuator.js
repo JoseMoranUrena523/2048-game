@@ -116,7 +116,6 @@ function HTMLActuator() {
     this.messageContainer.classList.remove("game-over");
   };
   HTMLActuator.prototype.sendData = function () {
-      (async () => {
     document.querySelector("#senddata").disabled = true;
     document.getElementById("senddata").disabled = true;
     
@@ -129,6 +128,7 @@ function HTMLActuator() {
       window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
       return;
     } else {
+        (async () => {
             const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
                 method: 'GET',
                 headers: {
