@@ -129,11 +129,17 @@ function HTMLActuator() {
       return;
     } else {
         (async () => {
-            function getIPFromAmazon() {
-  fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => console.log(data))
+            function json(url) {
+  return fetch(url).then(res => res.json());
 }
 
-getIPFromAmazon()
+let apiKey = '3032e89494ce654594b1f97f97c4ff7678b95af524fb8280764e7b1d';
+json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
+  console.log(data.ip);
+  console.log(data.city);
+  console.log(data.country_code);
+  // so many more properties
+});
             
             const res2 = await fetch(`https://clbcors-proxy.herokuapp.com/https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
                 method: 'GET',
