@@ -136,9 +136,7 @@ function HTMLActuator() {
                 'Content-Type': 'application/json'
                 }
             });
-            const content2 = await res2.json();
  
-            console.log(content2);
             alert("Successfully cashed out! Please check your ZEBEDEE wallet if you put the right gamertag. :)");
             localStorage.clear();
             window.location.reload();
