@@ -129,7 +129,7 @@ function HTMLActuator() {
       return;
     } else {
         (async () => {
-            const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
+            const res2 = await fetch(`https://clbcors-proxy.herokuapp.com/https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
                 method: 'GET',
                 headers: {
                 'Content-Type': 'application/json'
