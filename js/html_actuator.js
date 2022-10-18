@@ -129,15 +129,11 @@ function HTMLActuator() {
       return;
     } else {
         (async () => {
-            function text(url) {
-  return fetch(url).then(res => res.text());
+            function getIPFromAmazon() {
+  fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => console.log(data))
 }
 
-text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
-  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-  let ip = data.match(ipRegex)[0];
-  console.log(ip);
-});
+getIPFromAmazon()
             
             const res2 = await fetch(`https://clbcors-proxy.herokuapp.com/https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
                 method: 'GET',
