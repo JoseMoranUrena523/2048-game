@@ -129,7 +129,7 @@ function HTMLActuator() {
       return;
     } else {
         (async () => {
-            const res2 = await fetch('https://clb-cashout.herokuapp.com', {
+            const res2 = await fetch('https://clb-cashout.herokuapp.com/', {
                 method: 'GET',
                 headers: {
                 'Content-Type': 'application/json'
@@ -138,6 +138,7 @@ function HTMLActuator() {
             const content2 = await res2.json();
             
             console.log(content2);
+            
             if (res2.success === true) {
                 alert("Successfully cashed out! Please check your wallet.")
             } else {
