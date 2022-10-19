@@ -1,1 +1,145 @@
-function _0x4285(_0x56f4a5,_0x2e5300){var _0x415149=_0x4151();return _0x4285=function(_0x4285d3,_0x5d62fd){_0x4285d3=_0x4285d3-0x1e1;var _0x3302d6=_0x415149[_0x4285d3];return _0x3302d6;},_0x4285(_0x56f4a5,_0x2e5300);}var _0x497e96=_0x4285;(function(_0x5a2908,_0x2b437f){var _0x5c1aeb=_0x4285,_0x2f90d2=_0x5a2908();while(!![]){try{var _0xd78a7b=parseInt(_0x5c1aeb(0x243))/0x1*(parseInt(_0x5c1aeb(0x1f1))/0x2)+-parseInt(_0x5c1aeb(0x220))/0x3+-parseInt(_0x5c1aeb(0x21b))/0x4*(-parseInt(_0x5c1aeb(0x219))/0x5)+-parseInt(_0x5c1aeb(0x1f5))/0x6*(-parseInt(_0x5c1aeb(0x240))/0x7)+-parseInt(_0x5c1aeb(0x1ea))/0x8+-parseInt(_0x5c1aeb(0x241))/0x9*(-parseInt(_0x5c1aeb(0x20e))/0xa)+-parseInt(_0x5c1aeb(0x234))/0xb*(parseInt(_0x5c1aeb(0x1f3))/0xc);if(_0xd78a7b===_0x2b437f)break;else _0x2f90d2['push'](_0x2f90d2['shift']());}catch(_0x3f6b0b){_0x2f90d2['push'](_0x2f90d2['shift']());}}}(_0x4151,0xd63f1));function _0x4151(){var _0x565fa9=['satoshis','setAttribute','clearContainer','Invalid\x20ZEBEDEE\x20Gamertag,\x20please\x20try\x20again.','1613704MAaXNF','querySelector','positionClass','prototype','disabled','hvs.BQY69xXai48gAEOhFqeM374Q','updateScore','218622pwzetQ','Cash\x20out\x20successful!\x20Please\x20check\x20your\x20ZEBEDEE\x20wallet.','888804QukVnl','stringify','97002YPciPr','.satoshis-container','actuator','game-won','data','We\x20have\x20banned\x20you\x20from\x20playing\x20the\x20game\x20due\x20to\x20you\x20either\x20stealing\x20sats,\x20or\x20something\x20else.\x20If\x20you\x20think\x20this\x20is\x20a\x20false\x20ban,\x20email\x20us\x20at:\x202048bitcoin@josemoranurena.tech.','push','over','clearMessage','textContent','application/json','admin','statusCode','https://api.zebedee.io/v0/user-id/gamertag/','removeChild','https://clbcors-proxy.herokuapp.com/http://clbvault.eastus.cloudapp.azure.com:8200/v1/clbproductions/data/zebedee','createElement','tile-position-','toFixed','satoshisContainer','remove','trunc','normalizePosition','submitbtn','tile-','31370UaqLQH','mergedFrom','clear','tile-super','cells','requestAnimationFrame','forEach','message','valid','.score-container','getElementById','25WYrXvF','class','657580RtwppB','POST','log','add','https://api.zebedee.io/v0/ln-address/validate/','3681654UBpGTA','appendChild','tile-new','@zbd.gg','location','e51272e0-64d3-45f6-a46e-e2705d3d1541','senddata','messageContainer','actuate','score','tile-inner','json','#gamertag','firstChild','previousPosition','tileContainer','https://api.zebedee.io/v0/gamertag/send-payment','continueGame','https://www.youtube.com/watch?v=dQw4w9WgXcQ','.game-message','209CySPuF','classList','join','terminated','GET','score-addition','tile-merged','game-over','applyClasses','won','updateSatoshisScore','scoreContainer','357lUkKHX','1854XuLXMW','#senddata','13aDUrTZ','reload','value','getElementsByTagName','sendData','Thank\x20you\x20for\x20playing\x202048\x20Bitcoin!\x20Please\x20share\x20this\x20game\x20to\x20your\x20friends\x20and\x20continue\x20playing!','addTile'];_0x4151=function(){return _0x565fa9;};return _0x4151();}function HTMLActuator(){var _0x56441c=_0x4285;this[_0x56441c(0x22f)]=document['querySelector']('.tile-container'),this[_0x56441c(0x23f)]=document[_0x56441c(0x1eb)](_0x56441c(0x217)),this[_0x56441c(0x208)]=document['querySelector'](_0x56441c(0x1f6)),this[_0x56441c(0x227)]=document[_0x56441c(0x1eb)](_0x56441c(0x233)),this[_0x56441c(0x20c)]=document['querySelector'](_0x56441c(0x242)),this[_0x56441c(0x229)]=0x0,this['satoshis']=0x0;}HTMLActuator[_0x497e96(0x1ed)][_0x497e96(0x228)]=function(_0x1967b8,_0x301d85){var _0x580fc1=_0x497e96,_0x47f429=this;window[_0x580fc1(0x213)](function(){var _0x36b819=_0x580fc1;_0x47f429[_0x36b819(0x1e8)](_0x47f429[_0x36b819(0x22f)]),_0x1967b8[_0x36b819(0x212)]['forEach'](function(_0xd3628e){var _0x31d312=_0x36b819;_0xd3628e[_0x31d312(0x214)](function(_0x136c1c){var _0x57dff8=_0x31d312;_0x136c1c&&_0x47f429[_0x57dff8(0x1e5)](_0x136c1c);});}),_0x47f429[_0x36b819(0x1f0)](_0x301d85[_0x36b819(0x229)]);const _0x5bb019=_0x301d85[_0x36b819(0x229)]/0x3e8,_0x35bd54=parseFloat(_0x5bb019);_0x47f429[_0x36b819(0x23e)](_0x35bd54[_0x36b819(0x207)](0x2));if(_0x301d85[_0x36b819(0x237)]){if(_0x301d85[_0x36b819(0x1fc)])_0x47f429['message'](![]);else _0x301d85[_0x36b819(0x23d)]&&_0x47f429[_0x36b819(0x215)](!![]);}});},HTMLActuator[_0x497e96(0x1ed)][_0x497e96(0x231)]=function(){var _0x3b1232=_0x497e96;this[_0x3b1232(0x1fd)]();},HTMLActuator['prototype']['clearContainer']=function(_0x5a4627){var _0x333d6a=_0x497e96;while(_0x5a4627['firstChild']){_0x5a4627[_0x333d6a(0x203)](_0x5a4627[_0x333d6a(0x22d)]);}},HTMLActuator[_0x497e96(0x1ed)]['addTile']=function(_0x22a905){var _0xfe558c=_0x497e96,_0x5d1097=this,_0x418cc9=document[_0xfe558c(0x205)]('div'),_0x424dde=document[_0xfe558c(0x205)]('div'),_0x1457b5=_0x22a905[_0xfe558c(0x22e)]||{'x':_0x22a905['x'],'y':_0x22a905['y']},_0x3c9355=this['positionClass'](_0x1457b5),_0x562094=['tile',_0xfe558c(0x20d)+_0x22a905['value'],_0x3c9355];if(_0x22a905[_0xfe558c(0x1e1)]>0x800)_0x562094[_0xfe558c(0x1fb)](_0xfe558c(0x211));this[_0xfe558c(0x23c)](_0x418cc9,_0x562094),_0x424dde[_0xfe558c(0x235)]['add'](_0xfe558c(0x22a)),_0x424dde[_0xfe558c(0x1fe)]=_0x22a905[_0xfe558c(0x1e1)];if(_0x22a905[_0xfe558c(0x22e)])window[_0xfe558c(0x213)](function(){var _0x476527=_0xfe558c;_0x562094[0x2]=_0x5d1097[_0x476527(0x1ec)]({'x':_0x22a905['x'],'y':_0x22a905['y']}),_0x5d1097[_0x476527(0x23c)](_0x418cc9,_0x562094);});else _0x22a905[_0xfe558c(0x20f)]?(_0x562094['push'](_0xfe558c(0x23a)),this[_0xfe558c(0x23c)](_0x418cc9,_0x562094),_0x22a905[_0xfe558c(0x20f)]['forEach'](function(_0x1cfc4f){var _0x157013=_0xfe558c;_0x5d1097[_0x157013(0x1e5)](_0x1cfc4f);})):(_0x562094[_0xfe558c(0x1fb)](_0xfe558c(0x222)),this['applyClasses'](_0x418cc9,_0x562094));_0x418cc9[_0xfe558c(0x221)](_0x424dde),this[_0xfe558c(0x22f)][_0xfe558c(0x221)](_0x418cc9);},HTMLActuator[_0x497e96(0x1ed)][_0x497e96(0x23c)]=function(_0x3d9b38,_0x6fe248){var _0x2774c5=_0x497e96;_0x3d9b38[_0x2774c5(0x1e7)](_0x2774c5(0x21a),_0x6fe248[_0x2774c5(0x236)]('\x20'));},HTMLActuator[_0x497e96(0x1ed)][_0x497e96(0x20b)]=function(_0x3614ea){return{'x':_0x3614ea['x']+0x1,'y':_0x3614ea['y']+0x1};},HTMLActuator[_0x497e96(0x1ed)][_0x497e96(0x1ec)]=function(_0x310713){var _0x3b31c6=_0x497e96;return _0x310713=this['normalizePosition'](_0x310713),_0x3b31c6(0x206)+_0x310713['x']+'-'+_0x310713['y'];},HTMLActuator[_0x497e96(0x1ed)][_0x497e96(0x1f0)]=function(_0x33ecfa){var _0x58130d=_0x497e96;this[_0x58130d(0x1e8)](this[_0x58130d(0x23f)]);var _0x5d5c79=_0x33ecfa-this[_0x58130d(0x229)];this[_0x58130d(0x229)]=_0x33ecfa,this[_0x58130d(0x23f)][_0x58130d(0x1fe)]=this[_0x58130d(0x229)];if(_0x5d5c79>0x0){var _0x1e2444=document['createElement']('div');_0x1e2444[_0x58130d(0x235)][_0x58130d(0x21e)](_0x58130d(0x239)),_0x1e2444['textContent']='+'+_0x5d5c79,this['scoreContainer'][_0x58130d(0x221)](_0x1e2444);}},HTMLActuator[_0x497e96(0x1ed)]['updateSatoshisScore']=function(_0x3f90b4){var _0x2a2a30=_0x497e96;this[_0x2a2a30(0x208)]['textContent']=_0x3f90b4,this[_0x2a2a30(0x1e6)]=_0x3f90b4;},HTMLActuator[_0x497e96(0x1ed)][_0x497e96(0x215)]=function(_0x51598c){var _0x5016d4=_0x497e96,_0x5dc65d=_0x51598c?_0x5016d4(0x1f8):'game-over',_0x51cc20=_0x51598c?'You\x20win!':'Game\x20over!';this[_0x5016d4(0x227)][_0x5016d4(0x235)][_0x5016d4(0x21e)](_0x5dc65d),this[_0x5016d4(0x227)][_0x5016d4(0x1e2)]('p')[0x0][_0x5016d4(0x1fe)]=_0x51cc20;},HTMLActuator[_0x497e96(0x1ed)]['clearMessage']=function(){var _0x40a559=_0x497e96;this[_0x40a559(0x227)][_0x40a559(0x235)][_0x40a559(0x209)](_0x40a559(0x1f8)),this['messageContainer'][_0x40a559(0x235)][_0x40a559(0x209)](_0x40a559(0x23b));},HTMLActuator[_0x497e96(0x1ed)][_0x497e96(0x1e3)]=function(){var _0x1e2b4a=_0x497e96;document[_0x1e2b4a(0x1eb)]('#senddata')['disabled']=!![],document[_0x1e2b4a(0x218)](_0x1e2b4a(0x226))[_0x1e2b4a(0x1ee)]=!![];var _0x48863d=this;const _0x30e4ea=document['querySelector'](_0x1e2b4a(0x22c))[_0x1e2b4a(0x1e1)],_0x4b0d6b=Math[_0x1e2b4a(0x20a)](_0x48863d[_0x1e2b4a(0x1f7)][_0x1e2b4a(0x1e6)])*0x3e8;if(_0x48863d[_0x1e2b4a(0x1f7)][_0x1e2b4a(0x1e6)]>0x39){alert('Stop\x20trying\x20to\x20cheat.\x20If\x20you\x20aren\x27t\x20cheating,\x20DM\x20me\x20with\x20proof,\x20or\x20else,\x20frick\x20off\x20you\x20low-life\x20person.'),window[_0x1e2b4a(0x224)]['replace'](_0x1e2b4a(0x232));return;}else((async()=>{var _0x4f47e7=_0x1e2b4a;const _0x377675=await fetch(_0x4f47e7(0x204),{'method':'GET','headers':{'X-Vault-Token':_0x4f47e7(0x1ef),'X-Vault-Namespace':_0x4f47e7(0x200)}}),_0x30436c=await _0x377675['json']();var _0x4d2653=_0x30436c['data'][_0x4f47e7(0x1f9)]['tzfebitcoin'];const _0x5dbcd9=await fetch(_0x4f47e7(0x202)+_0x30e4ea,{'method':_0x4f47e7(0x238),'headers':{'Content-Type':_0x4f47e7(0x1ff),'apikey':_0x4d2653}}),_0x507184=await _0x5dbcd9['json']();if(_0x507184[_0x4f47e7(0x1f9)]['id']===_0x4f47e7(0x225))alert(_0x4f47e7(0x1fa)),console[_0x4f47e7(0x21d)](_0x5dbcd9),localStorage[_0x4f47e7(0x210)](),window[_0x4f47e7(0x224)][_0x4f47e7(0x244)]();else{const _0x280ae7=await fetch(_0x4f47e7(0x21f)+_0x30e4ea+_0x4f47e7(0x223),{'method':'GET','headers':{'Content-Type':'application/json','apikey':_0x4d2653}}),_0x421cb5=await _0x280ae7[_0x4f47e7(0x22b)]();if(_0x421cb5['data'][_0x4f47e7(0x216)]=!![]){const _0x258d96=JSON[_0x4f47e7(0x1f4)]({'gamertag':_0x30e4ea,'amount':_0x4b0d6b,'description':_0x4f47e7(0x1e4)}),_0x35ceb4=await fetch(_0x4f47e7(0x230),{'method':_0x4f47e7(0x21c),'headers':{'Content-Type':_0x4f47e7(0x1ff),'apikey':_0x4d2653},'body':_0x258d96}),_0x4f352b=await _0x35ceb4[_0x4f47e7(0x22b)]();_0x35ceb4[_0x4f47e7(0x201)]===0x194?(alert('Cash\x20out\x20failed,\x20please\x20contact\x20the\x20developers\x20of\x20this\x20project!'),console[_0x4f47e7(0x21d)](_0x5dbcd9),localStorage['clear'](),window[_0x4f47e7(0x224)][_0x4f47e7(0x244)]()):(alert(_0x4f47e7(0x1f2)),console[_0x4f47e7(0x21d)](_0x5dbcd9),localStorage[_0x4f47e7(0x210)](),window['location'][_0x4f47e7(0x244)]());}else alert(_0x4f47e7(0x1e9));}})());};
+function HTMLActuator() {
+    this.tileContainer    = document.querySelector(".tile-container");
+    this.scoreContainer   = document.querySelector(".score-container");
+    this.satoshisContainer   = document.querySelector(".satoshis-container");
+    this.messageContainer = document.querySelector(".game-message");
+    this.submitbtn = document.querySelector("#senddata");
+      
+    this.score = 0;
+    this.satoshis = 0;
+  }
+  HTMLActuator.prototype.actuate = function (grid, metadata) {
+    var self = this;
+    window.requestAnimationFrame(function () {
+      self.clearContainer(self.tileContainer);
+      grid.cells.forEach(function (column) {
+        column.forEach(function (cell) {
+          if (cell) {
+            self.addTile(cell);
+          }
+        });
+      });
+  
+      self.updateScore(metadata.score);
+      
+      const score1 = parseFloat(metadata.score / 1000);
+      const score2 = score1.toFixed(2);
+      self.updateSatoshisScore(score2);
+  
+      if (metadata.terminated) {
+        if (metadata.over) {
+          self.message(false); // You lose
+        } else if (metadata.won) {
+          self.message(true); // You win!
+        }
+      }
+    });
+  };
+  // Continues the game (both restart and keep playing)
+  HTMLActuator.prototype.continueGame = function () {
+    this.clearMessage();
+  };
+  HTMLActuator.prototype.clearContainer = function (container) {
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+  };
+  HTMLActuator.prototype.addTile = function (tile) {
+    var self = this;
+    var wrapper   = document.createElement("div");
+    var inner     = document.createElement("div");
+    var position  = tile.previousPosition || { x: tile.x, y: tile.y };
+    var positionClass = this.positionClass(position);
+    // We can't use classlist because it somehow glitches when replacing classes
+    var classes = ["tile", "tile-" + tile.value, positionClass];
+    if (tile.value > 2048) classes.push("tile-super");
+    this.applyClasses(wrapper, classes);
+    inner.classList.add("tile-inner");
+    inner.textContent = tile.value;
+    if (tile.previousPosition) {
+      // Make sure that the tile gets rendered in the previous position first
+      window.requestAnimationFrame(function () {
+        classes[2] = self.positionClass({ x: tile.x, y: tile.y });
+        self.applyClasses(wrapper, classes); // Update the position
+      });
+    } else if (tile.mergedFrom) {
+      classes.push("tile-merged");
+      this.applyClasses(wrapper, classes);
+      // Render the tiles that merged
+      tile.mergedFrom.forEach(function (merged) {
+        self.addTile(merged);
+      });
+    } else {
+      classes.push("tile-new");
+      this.applyClasses(wrapper, classes);
+    }
+    // Add the inner part of the tile to the wrapper
+    wrapper.appendChild(inner);
+    // Put the tile on the board
+    this.tileContainer.appendChild(wrapper);
+  };
+  HTMLActuator.prototype.applyClasses = function (element, classes) {
+    element.setAttribute("class", classes.join(" "));
+  };
+  HTMLActuator.prototype.normalizePosition = function (position) {
+    return { x: position.x + 1, y: position.y + 1 };
+  };
+  HTMLActuator.prototype.positionClass = function (position) {
+    position = this.normalizePosition(position);
+    return "tile-position-" + position.x + "-" + position.y;
+  };
+  HTMLActuator.prototype.updateScore = function (score) {
+    this.clearContainer(this.scoreContainer);
+    var difference = score - this.score;
+    this.score = score;
+    this.scoreContainer.textContent = this.score;
+    if (difference > 0) {
+      var addition = document.createElement("div");
+      addition.classList.add("score-addition");
+      addition.textContent = "+" + difference;
+      this.scoreContainer.appendChild(addition);
+    }
+  };
+  HTMLActuator.prototype.updateSatoshisScore = function (satoshisScore) {
+    this.satoshisContainer.textContent = satoshisScore;
+    this.satoshis = satoshisScore;
+  };
+  HTMLActuator.prototype.message = function (won) {
+    var type    = won ? "game-won" : "game-over";
+    var message = won ? "You win!" : "Game over!";
+    this.messageContainer.classList.add(type);
+    this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+  };
+  HTMLActuator.prototype.clearMessage = function () {
+    // IE only takes one value to remove at a time.
+    this.messageContainer.classList.remove("game-won");
+    this.messageContainer.classList.remove("game-over");
+  };
+  HTMLActuator.prototype.sendData = function () {
+    document.querySelector("#senddata").disabled = true;
+    document.getElementById("senddata").disabled = true;
+    
+    var self = this;
+    const gamertag = document.querySelector("#gamertag").value;
+    const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
+    
+    if (self.actuator.satoshis > 57) {
+      alert("Stop trying to cheat. If you aren't cheating, DM me with proof, or else, frick off you low-life person.");
+      window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+      return;
+    } else {
+        (async () => {
+            const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
+                method: 'GET',
+                mode: "no-cors",
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            });
+           
+            alert("Successfully cashed out! Please check your ZEBEDEE wallet if you put the right gamertag. :)");
+            localStorage.clear();
+            window.location.reload();
+        })();
+    };
+  };
