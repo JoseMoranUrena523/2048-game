@@ -118,7 +118,10 @@ function HTMLActuator() {
   HTMLActuator.prototype.sendData = function () {
     document.querySelector("#senddata").disabled = true;
     document.getElementById("senddata").disabled = true;
-
+    
+    const btn = document.querySelector("#senddata");
+    btn.innerHTML = "Cashing out...";
+      
     var self = this;
     const gamertag = document.querySelector("#gamertag").value;
     const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
