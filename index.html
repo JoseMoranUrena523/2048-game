@@ -98,7 +98,15 @@
 })();
 	  </script>
     <div class="container">
-     
+	    <div>
+     <button onclick="darkMode()">Toggle Light/Dark Mode</button>
+	    </div>
+	    <script>
+      function darkMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
+    </script>
       <div class="heading">
         <h1 class="title">2048</h1>
         <img
