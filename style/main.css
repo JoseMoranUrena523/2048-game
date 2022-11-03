@@ -855,3 +855,7 @@ hr {
 	left: 0;
 	z-index: 99998;
 }
+.dark-mode {
+        background-color: #5d511c;
+        color: #dedcd9;
+      }
