@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="https://2048bitcoin.tk/meta/mstile-150x150.png"/>
+            <square150x150logo src="https://precious-fairy-f1fe26.netlify.app/meta/mstile-150x150.png"/>
             <TileColor>#fff1cc</TileColor>
         </tile>
     </msapplication>
