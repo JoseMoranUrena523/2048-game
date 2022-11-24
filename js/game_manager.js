@@ -22,7 +22,7 @@ GameManager.prototype.restart = function () {
 
 // Keep playing after winning (allows going over 2048)
 GameManager.prototype.keepPlaying = function () {
-  this.keepPlaying = true;
+  this.keepPlaying = false;
   this.actuator.continueGame(); // Clear the game won/lost message
 };
 
