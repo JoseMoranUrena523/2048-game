@@ -112,9 +112,29 @@ Please disable your adblock and script blockers to view this page.
         Hey guys! Did I forget to tell you that we now have a desktop app? Click <a href="https://drive.google.com/drive/folders/1UL98tG91zDuxHu7OogNiTgOAXFvSARP1?usp=sharing">here</a> to download the new apps! If on Chromebook, you can click the little computer with a down arrow to install it.<br> Also, official partnership with our friends at ZEBEDEE is happening today! Stay tuned at their <a href="https://blog.zebedee.io" target="_blank">blog</a>! :)
         <br><br>
       Also, do not cash out before the satoshi count is equal to 1, only cash out when it is 1 or above.
-   <br>     
-	    
-	  <br><div class="game-container">
+   <br><br>
+	    <p id="countdown"></p>
+	    <script>
+var countDownDate = 1669305600000;
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = hours + "h "
+  + minutes + "m " + seconds + "s ";
+	
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "🎉🎉🎉 Countdown complete!";
+  }
+}, 1000);
+</script><br>
+	    <div class="game-container">
         <div class="game-message">
           <p></p>
           <div class="lower">
