@@ -90,7 +90,7 @@ window.addEventListener("load", () => {
   }).catch((err) => {
     alert("We detected that you have an ad-blocker. For this, we are going to disable cash out functionality until you disable it.");
     const button = document.querySelector("restart-button");
-    button.disabled = true;
+    button.style = "pointer-events: none;"
   });
 });
 </script>
