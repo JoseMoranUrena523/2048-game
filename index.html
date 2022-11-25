@@ -90,7 +90,7 @@ window.addEventListener("load", () => {
   }).catch((err) => {
     alert("We detected that you have an ad-blocker. For this, we are going to disable cash out functionality until you disable it.");
     const button = document.querySelector("restart-button");
-    button.style = "pointer-events: none;"
+    button.disabled = true;
   });
 });
 </script>
@@ -117,7 +117,7 @@ window.addEventListener("load", () => {
         <p class="game-intro">
           Join the numbers and get to the <strong>2048 tile!</strong>
         </p>
-        <a id="restart-button" class="restart-button">Cash Out</a>
+        <button id="restart-button" class="restart-button">Cash Out</button>
       </div>
       <br>
         Hey guys! We now have a desktop app for Windows and Mac! Click <a href="https://drive.google.com/drive/folders/1UL98tG91zDuxHu7OogNiTgOAXFvSARP1?usp=sharing">here</a> to download the new apps! You can click the computer button on Chromebook. :)
