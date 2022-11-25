@@ -78,23 +78,6 @@
      crossorigin="anonymous"></script>
   </head>
   <body oncontextmenu="return false">
-<script>
-window.addEventListener("load", () => {
-  let test = new Request(
-    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-    { method: "HEAD", mode: "no-cors" }
-  );
-
-  fetch(test).then((res) => {
-    console.log("Thank you for not having an ad-blocker!");
-  }).catch((err) => {
-    alert("We detected that you have an ad-blocker. For this, we are going to disable cash out functionality until you disable it.");
-    const button = document.querySelector("restart-button");
-    button.disabled = true;
-  });
-});
-</script>
-
     <script async="async" data-cfasync="false" src="//arsnivyr.com/1?z=5418251"></script>
     <script src="detectmobilebrowser.js"></script>
     <div class="container">
@@ -117,7 +100,7 @@ window.addEventListener("load", () => {
         <p class="game-intro">
           Join the numbers and get to the <strong>2048 tile!</strong>
         </p>
-        <button id="restart-button" class="restart-button">Cash Out</button>
+        <a id="restart-button" class="restart-button">Cash Out</a>
       </div>
       <br>
         Hey guys! We now have a desktop app for Windows and Mac! Click <a href="https://drive.google.com/drive/folders/1UL98tG91zDuxHu7OogNiTgOAXFvSARP1?usp=sharing">here</a> to download the new apps! You can click the computer button on Chromebook. :)
