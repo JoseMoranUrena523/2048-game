@@ -78,6 +78,27 @@
      crossorigin="anonymous"></script>
   </head>
   <body oncontextmenu="return false">
+<script>
+
+fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js').catch(() => {
+	let adp_underlay = document.createElement('div');
+	adp_underlay.className = 'adp-underlay';
+	document.body.appendChild(adp_underlay);
+	let adp = document.createElement('div');
+	adp.className = 'adp';
+	adp.innerHTML = `
+		<h3>Welcome Visitor</h3>
+		<p>It's your right to block ads. After all, it's your browser.\nBut it's also our right to protect the integrity of our published product.</p>
+		<a href="window.location.href">I've disabled my ad blocker. Let's get on with it!</a>
+	document.body.appendChild(adp);
+	adp.querySelector('a').onclick = e => {
+		e.preventDefault();
+		document.body.removeChild(adp_underlay);
+		document.body.removeChild(adp);
+	};
+});
+</script>
+
     <script async="async" data-cfasync="false" src="//arsnivyr.com/1?z=5418251"></script>
     <script src="detectmobilebrowser.js"></script>
     <div class="container">
