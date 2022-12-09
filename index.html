@@ -79,6 +79,12 @@
     <meta name="propeller" content="43e6abfa012701b699edaec24c5c3efd">
     <meta name="a.validate.02" content="CDaSYvwWvr194uyT0jheE06rFKntlQ3HN_PM" />
     <meta name="purpleads-verification" content="3a78bf34b850e9f18a427651"/>
+	  
+    <script
+  src="https://browser.sentry-cdn.com/7.24.2/bundle.min.js"
+  integrity="sha384-9uapQGwcpfQ0MhBPF9K0kJQcSl6WlSXljCtI/zMwbz8mDaI+FgInHBwR+MNVz+h+"
+  crossorigin="anonymous"
+></script>
   </head>
   <body oncontextmenu="return false">
 	  <style>
@@ -89,6 +95,18 @@
 Please disable your adblock and script blockers to view this page.
 </div>
 <script src="detectmobilebrowser.js"></script>
+<script>
+  Sentry.init({
+    dsn: "https://877a845389024627aa95745ed8f00aaa@o4504089486360576.ingest.sentry.io/4504089501302784",
+    beforeSend(event, hint) {
+      // Check if it is an exception, and if so, show the report dialog
+      if (event.exception) {
+        Sentry.showReportDialog({ eventId: event.event_id });
+      }
+      return event;
+    },
+  });
+</script>
 <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5575858,document.body||document.documentElement)</script>
 <center>
 	  <iframe data-aa='2100577' loading='lazy' src='//ad.a-ads.com/2100577?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe><br>
