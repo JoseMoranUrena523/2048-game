@@ -82,39 +82,6 @@
   </head>
   <body oncontextmenu="return false">
 <script src="detectmobilebrowser.js"></script>
-
-<div id="detect"></div>
-  <div class="wrapper">
-    <div class="content">
-      <div class="warn-icon">
-        <span class="icon"><i class="fas fa-exclamation"></i></span>
-      </div>
-      <h2>AdBlock Detected!</h2>
-      <p>Our website is made possible by displaying ads to our visitors. Please supporting us by whitelisting our website.</p>
-      <div class="btn">
-        <div class="bg-layer"></div>
-        <button>Okay, I'll Whitelist</button>
-      </div>
-    </div>
-  </div>
-	  
-  <script>
-    const detect = document.querySelector("#detect");
-    const wrapper = document.querySelector(".wrapper");
-    const button = wrapper.querySelector("button");
-    let adClasses = ["ad", "ads", "adsbox", "doubleclick", "ad-placement", "ad-placeholder", "adbadge", "BannerAd"];
-    for(let item of adClasses){
-      detect.classList.add(item);
-    }
-    let getProperty = window.getComputedStyle(detect).getPropertyValue("display");
-    if(!wrapper.classList.contains("show")){
-      getProperty == "none" ? wrapper.classList.add("show") : wrapper.classList.remove("show");
-    }
-    button.addEventListener("click", ()=>{
-      wrapper.classList.remove("show");
-    });
-  </script>
-
 <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5575858,document.body||document.documentElement)</script>
 <center>
 	  <iframe data-aa='2100577' loading='lazy' id="examplea" src='//ad.a-ads.com/2100577?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe><br>
