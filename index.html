@@ -91,7 +91,6 @@
 <script type="text/javascript">
 	if(!document.getElementById('GzBrXMDRKlbt')){
 		document.getElementById('lDIEaGoAxNJp').style.display='block';
-		document.getElementById('#restart-button').style.display='none';
 	}
 </script>
 
@@ -157,6 +156,9 @@
         </div>
 
         <script>
+if(!document.getElementById('GzBrXMDRKlbt')){
+	return;
+} else {
           const modal = document.querySelector(".modal");
           const trigger = document.querySelector(".restart-button");
           const closeButton = document.querySelector(".close-button");
@@ -174,6 +176,7 @@
             trigger.addEventListener("click", toggleModal);
             closeButton.addEventListener("click", toggleModal);
             window.addEventListener("click", windowOnClick);
+}
         </script>
         <div class="grid-container">
           <div class="grid-row">
