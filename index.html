@@ -156,9 +156,13 @@
         </div>
 
         <script>
-        if (!document.getElementById('GzBrXMDRKlbt')) return;
+	  if (document.getElementById('lDIEaGoAxNJp').style.display === 'block') {
+            const modal = document.querySelector(".modal");
+	    modal.style.display === 'none';
+	    return alert('Cash Out System will be off until you remove your ad-blocker.');
+	  }
 		
-	  const modal = document.querySelector(".modal");
+          const modal = document.querySelector(".modal");
           const trigger = document.querySelector(".restart-button");
           const closeButton = document.querySelector(".close-button");
 
