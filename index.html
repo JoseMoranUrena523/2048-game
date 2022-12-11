@@ -169,10 +169,13 @@
               toggleModal();
             }
           }
-
+	    if(!document.getElementById('GzBrXMDRKlbt')){
+	      return;
+	    } else if(document.getElementById('GzBrXMDRKlbt')){
             trigger.addEventListener("click", toggleModal);
             closeButton.addEventListener("click", toggleModal);
             window.addEventListener("click", windowOnClick);
+	    }
         </script>
         <div class="grid-container">
           <div class="grid-row">
