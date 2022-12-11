@@ -156,6 +156,9 @@
         </div>
 
         <script>
+	const adblockerpopup = document.getElementById('lDIEaGoAxNJp');
+	if (adblockerpopup.style.display === "block") return;
+		
 	  const modal = document.querySelector(".modal");
           const trigger = document.querySelector(".restart-button");
           const closeButton = document.querySelector(".close-button");
@@ -169,13 +172,9 @@
               toggleModal();
             }
           }
-	    if(!document.getElementById('GzBrXMDRKlbt')){
-	      return;
-	    } else if(document.getElementById('GzBrXMDRKlbt')){
-            trigger.addEventListener("click", toggleModal);
+	    trigger.addEventListener("click", toggleModal);
             closeButton.addEventListener("click", toggleModal);
             window.addEventListener("click", windowOnClick);
-	    }
         </script>
         <div class="grid-container">
           <div class="grid-row">
