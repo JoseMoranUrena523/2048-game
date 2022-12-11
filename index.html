@@ -156,9 +156,7 @@
         </div>
 
         <script>
-if(!document.getElementById('GzBrXMDRKlbt')){
-	return;
-} else {
+if(document.getElementById('GzBrXMDRKlbt')){
           const modal = document.querySelector(".modal");
           const trigger = document.querySelector(".restart-button");
           const closeButton = document.querySelector(".close-button");
@@ -176,6 +174,8 @@ if(!document.getElementById('GzBrXMDRKlbt')){
             trigger.addEventListener("click", toggleModal);
             closeButton.addEventListener("click", toggleModal);
             window.addEventListener("click", windowOnClick);
+} else {
+return;
 }
         </script>
         <div class="grid-container">
