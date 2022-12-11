@@ -82,6 +82,21 @@
   </head>
   <body oncontextmenu="return false">
 <script src="detectmobilebrowser.js"></script>
+<script>
+window.addEventListener("load", () => {
+  let test = new Request(
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+    "https://static.ads-twitter.com/uwt.js",
+    { method: "HEAD", mode: "no-cors" }
+  );
+
+  fetch(test).then((res) => {
+    return;
+  }).catch((err) => {
+    window.location.replace("https://www.2048bitcoin.tk/ad-detect.html");
+  });
+});
+</script>
 <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5575858,document.body||document.documentElement)</script>
 <center>
 	  <iframe data-aa='2100577' loading='lazy' id="examplea" src='//ad.a-ads.com/2100577?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe><br>
