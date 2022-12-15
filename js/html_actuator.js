@@ -19,7 +19,7 @@ function HTMLActuator() {
         });
       });
       self.updateScore(metadata.score);
-      const score1 = parseFloat(metadata.score / 1100);
+      const score1 = parseFloat(metadata.score / 1150);
       const score2 = score1.toFixed(2);
       self.updateSatoshisScore(score2);
       if (metadata.terminated) {
