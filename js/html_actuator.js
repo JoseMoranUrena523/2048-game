@@ -114,12 +114,16 @@ function HTMLActuator() {
    HTMLActuator.prototype.sendData = function () {
      document.querySelector("#senddata").disabled = true;
      document.getElementById("senddata").disabled = true;
-
      var self = this;
      const gamertag = document.querySelector("#gamertag").value;
      const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
+       
+     var randomId = Math.random().toString();
+     var message = (satoshis + randomId);
+     var hash = CryptoJS.SHA256(message);
+       
      (async () => {
-            const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}`, {
+            const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}&hash=${hash}&id=${randomId}`, {
                 method: 'GET',
                 mode: "no-cors",
                 headers: {
