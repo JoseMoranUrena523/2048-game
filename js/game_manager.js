@@ -78,7 +78,7 @@ GameManager.prototype.addRandomTile = function () {
 // Sends the updated grid to the actuator
 GameManager.prototype.actuate = function () {
   if (this.storageManager.getSatoshisScore() < this.score) {
-    let score1 = (this.score / 800);
+    let score1 = (this.score / 500);
     let score2 = parseFloat(score1);
     this.storageManager.setSatoshisScore(score2.toFixed(2));
   }
