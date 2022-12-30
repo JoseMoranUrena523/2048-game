@@ -1,3 +1,3 @@
 User-Agent: *
 Disallow:
-Sitemap: https://a296402.sitemaphosting6.com/4343956/sitemap_4343956.xml
+Sitemap: https://a285805.sitemaphosting6.com/4347083/sitemap_4347083.xml
