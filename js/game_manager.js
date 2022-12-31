@@ -33,18 +33,6 @@ GameManager.prototype.isGameTerminated = function () {
 
 // Set up the game
 GameManager.prototype.setup = function () {
-  (async () => {
-  const generate = await fetch(`https://clb-cashout.herokuapp.com/generate-session`, {
-                method: 'GET',
-                mode: "no-cors",
-                headers: {
-                'Content-Type': 'application/json'
-                }
-            });
-    const genjson = await generate.json();
-    localStorage.setItem('sessionId', genjson.id);
-  })();
-  
   var previousState = this.storageManager.getGameState();
 
   // Reload the game from a previous game if present
@@ -68,6 +56,19 @@ GameManager.prototype.setup = function () {
 
   // Update the actuator
   this.actuate();
+  
+  fetch('https://clb-cashout.herokuapp.com/generate-session')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      if (data.id) {
+        localStorage.setItem('sessionId', data.id);
+      }
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
 };
 
 // Set up the initial tiles to start the game with
