@@ -58,19 +58,21 @@ GameManager.prototype.setup = function () {
   this.actuate();
   
   fetch('https://clb-cashout.herokuapp.com/generate-session', {
-  mode: 'no-cors'
-})
-.then(function(response) {
-  return response.json();
-})
-.then(function(data) {
-  if (data.id) {
-    localStorage.setItem('sessionId', data.id);
-  }
-})
-.catch(function(error) {
-  console.error(error);
-});
+    mode: 'no-cors'
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    if (data.id) {
+      localStorage.setItem('sessionId', data.id);
+    } else {
+      console.log("No session ID here.");
+    }
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
 };
 
 // Set up the initial tiles to start the game with
