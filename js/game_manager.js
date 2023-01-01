@@ -61,10 +61,10 @@ GameManager.prototype.setup = async function () {
     mode: 'no-cors'
   });
   
-  const response = await response.json();
+  const res = await response.json();
   
-  if (data.id) {
-    localStorage.setItem('sessionId', data.id);
+  if (res.id) {
+    localStorage.setItem('sessionId', res.id);
   } else {
     console.log("No session ID here.");
   }
