@@ -28,6 +28,11 @@ GameManager.prototype.keepPlaying = function () {
 
 // Return true if the game is lost, or has won and the user hasn't kept playing
 GameManager.prototype.isGameTerminated = function () {
+  const sessionId = localStorage.getItem('sessionId');
+  const sat = localStorage.getItem('satoshisScore');
+  const sats = Math.trunc(sat);
+  
+  fetch(`https://clb-cashout.herokuapp.com/update-session?id=${sessionId}&sats=${sats}`);
   return this.over || (this.won && !this.keepPlaying);
 };
 
