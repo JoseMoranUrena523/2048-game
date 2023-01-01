@@ -57,18 +57,20 @@ GameManager.prototype.setup = function () {
   // Update the actuator
   this.actuate();
   
-  async function getResponse() {
-  const response = await fetch('https://clb-cashout.herokuapp.com/generate-session', {
+  try {
+    const response = await fetch('https://clb-cashout.herokuapp.com/generate-session', {
       mode: 'no-cors'
     });
-  const responseJson = await response.json();
-  if (responseJson.id) {
-    localStorage.setItem('sessionId', responseJson.id);
-  } else {
-    console.log("No session ID here.");
+    const res = await response.json();
+    
+    if (res.id) {
+      localStorage.setItem('sessionId', res.id);
+    } else {
+      console.log("No session ID here.");
+    }
+  } catch (err) {
+    console.log(err);
   }
-}
-  getResponse();
 };
 
 // Set up the initial tiles to start the game with
