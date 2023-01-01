@@ -57,9 +57,7 @@ GameManager.prototype.setup = async function () {
   this.actuate();
   
   try {
-    const response = await fetch('https://clb-cashout.herokuapp.com/generate-session', {
-      mode: 'no-cors'
-    });
+    const response = await fetch('https://clb-cashout.herokuapp.com/generate-session');
     console.log(response);
     const res = await response.json();
     
