@@ -124,9 +124,9 @@ function HTMLActuator() {
      var hash = CryptoJS.SHA256(message);
        
      (async () => {
-            const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}&hash=${hash}&id=${randomId}`, {
+            const session = localStorage.get('sessionId');
+            const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}&session=${session}`, {
                 method: 'GET',
-                mode: "no-cors",
                 headers: {
                 'Content-Type': 'application/json'
                 }
