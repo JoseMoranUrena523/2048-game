@@ -57,16 +57,16 @@ GameManager.prototype.setup = async function () {
   // Update the actuator
   this.actuate();
   
-  const response = await fetch('https://clb-cashout.herokuapp.com/generate-session', {
+  const response = fetch('https://clb-cashout.herokuapp.com/generate-session', {
     mode: 'no-cors'
   });
   
-  const res = await response.json()
+  const res = await response.json();
   
   if (res.id) {
-    localStorage.setItem('sessionId', res.id)
+    localStorage.setItem('sessionId', res.id);
   } else {
-    console.log("No session ID here.")
+    console.log("No session ID here.");
   }
 };
 
