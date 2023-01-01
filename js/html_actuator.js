@@ -128,10 +128,12 @@ function HTMLActuator() {
             const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}&session=${session}`, {
                 method: 'GET',
                 headers: {
-                'Content-Type': 'application/json'
+                  'Content-Type': 'application/json'
                 }
             });
-            alert("Successfully cashed out! Please check your ZEBEDEE wallet if you put the right gamertag. :)");
+            const res2json = await res2.json();
+            const alertMessage = res2json.msg;
+            alert(alertMessage);
             localStorage.clear();
             window.location.reload();
         })();
