@@ -32,7 +32,7 @@ GameManager.prototype.isGameTerminated = function () {
 };
 
 // Set up the game
-GameManager.prototype.setup = function () {
+GameManager.prototype.setup = async function () {
   var previousState = this.storageManager.getGameState();
 
   // Reload the game from a previous game if present
