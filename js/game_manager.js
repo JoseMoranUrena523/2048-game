@@ -32,8 +32,13 @@ GameManager.prototype.isGameTerminated = function () {
   const sat = localStorage.getItem('satoshisScore');
   const sats = Math.trunc(sat);
   
-  fetch(`https://clb-cashout.herokuapp.com/update-session?id=${sessionId}&sats=${sats}`);
+  if (this.over) {
+   fetch(`https://clb-cashout.herokuapp.com/update-session?id=${sessionId}&sats=${sats}`, {
+  mode: 'no-cors'
+});
+  }
   return this.over || (this.won && !this.keepPlaying);
+  
 };
 
 GameManager.prototype.setup = async function () {
