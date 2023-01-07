@@ -112,9 +112,14 @@ function HTMLActuator() {
     this.messageContainer.classList.remove("game-over");
   };
    HTMLActuator.prototype.sendData = function () {
-     document.getElementById("senddata").addEventListener("click", function() {
-        document.getElementById("senddata").disabled = true;
-     });
+     if (/Mobi|Android/i.test(navigator.userAgent)) {
+       document.getElementById("senddata").addEventListener("click", function() {
+         document.getElementById("senddata").disabled = true;
+       });
+       document.querySelector("#senddata").disabled = true;
+       document.getElementById("senddata").disabled = true;
+     }
+       
      document.querySelector("#senddata").disabled = true;
      document.getElementById("senddata").disabled = true;
      
