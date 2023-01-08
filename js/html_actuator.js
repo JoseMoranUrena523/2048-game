@@ -114,6 +114,11 @@ function HTMLActuator() {
    HTMLActuator.prototype.sendData = function () {
      document.querySelector("#senddata").disabled = true;
      document.getElementById("senddata").disabled = true;
+       
+     const csb = document.querySelector("#senddata");
+     csb.onclick = function() {
+      this.disabled = true;
+     }
      
      var self = this;
      const gamertag = document.querySelector("#gamertag").value;
