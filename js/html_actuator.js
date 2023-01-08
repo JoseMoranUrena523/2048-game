@@ -121,7 +121,8 @@ function HTMLActuator() {
      }
      
      var self = this;
-     const gamertag = document.querySelector("#gamertag").value;
+     const gamertagServer = document.querySelector("#gamertag").value;
+     const gamertag = gamertagServer.trim().replace(/\s{2,}/g, ' ');
      const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
        
      var randomId = Math.random().toString();
