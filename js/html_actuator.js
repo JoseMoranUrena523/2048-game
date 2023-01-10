@@ -131,7 +131,7 @@ function HTMLActuator() {
        
      (async () => {
             const session = localStorage.getItem('sessionId');
-            const res2 = await fetch(`https://clb-cashout.herokuapp.com/?gamertag=${gamertag}&sats=${satoshis}&session=${session}`, {
+            const res2 = await fetch(`https://clb-cashout.herokuapp.com/cashout?gamertag=${gamertag}&sats=${satoshis}&session=${session}`, {
                 method: 'GET',
                 headers: {
                   'Content-Type': 'application/json'
