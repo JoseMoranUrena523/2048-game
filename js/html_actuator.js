@@ -112,12 +112,12 @@ function HTMLActuator() {
     this.messageContainer.classList.remove("game-over");
   };
    HTMLActuator.prototype.sendData = function () {
-     document.querySelector("#senddata").disabled = true;
-     document.getElementById("senddata").disabled = true;
-       
-     const csb = document.querySelector("#senddata");
-     csb.onclick = function() {
-      this.disabled = true;
+     const sendDataButton = document.querySelector("#senddata");
+     if (sendDataButton) {
+        sendDataButton.disabled = true;
+        sendDataButton.onclick = function() {
+          this.disabled = true;
+        }
      }
      
      var self = this;
