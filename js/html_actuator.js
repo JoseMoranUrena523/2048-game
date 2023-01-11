@@ -112,24 +112,24 @@ function HTMLActuator() {
     this.messageContainer.classList.remove("game-over");
   };
    HTMLActuator.prototype.sendData = async function () {
-     const parent = document.querySelector('.h-captcha');
-     const iframe = parent.querySelector('iframe');
-     const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
+     // const parent = document.querySelector('.h-captcha');
+     // const iframe = parent.querySelector('iframe');
+     // const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
        
-     const data = new URLSearchParams();
-     data.append('response', hCaptchaResponse);
-     data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
+     // const data = new URLSearchParams();
+     // data.append('response', hCaptchaResponse);
+     // data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
        
-     const hcaptcha = await fetch('https://hcaptcha.com/siteverify', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: data
-     });
+     // const hcaptcha = await fetch('https://hcaptcha.com/siteverify', {
+        // method: 'POST',
+        // headers: {
+            // 'Content-Type': 'application/x-www-form-urlencoded'
+        // },
+        // body: data
+     // });
      
-     const hcaptchajson = await hcaptcha.json();
-     if (!hcaptchajson.success) return alert("Be sure to do the hCaptcha before cashing out!");
+     // const hcaptchajson = await hcaptcha.json();
+     // if (!hcaptchajson.success) return alert("Be sure to do the hCaptcha before cashing out!");
      
      const sendDataButton = document.querySelector("#senddata");
      if (sendDataButton) {
