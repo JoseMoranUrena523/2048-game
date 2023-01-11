@@ -120,8 +120,8 @@ function HTMLActuator() {
         }
      }
      
-     const parent = document.getElementsByClassName("h-captcha");
-     const iframe = parent.getElementsByTagName("iframe")[0];
+     const parent = document.querySelector('.h-captcha');
+     const iframe = parent.querySelector('iframe');
      const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
        
      const hcaptcha = await fetch('https://hcaptcha.com/siteverify', {
