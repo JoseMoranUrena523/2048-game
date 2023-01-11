@@ -119,7 +119,7 @@ function HTMLActuator() {
      const data = new URLSearchParams();
      data.append('token', hCaptchaResponse);
        
-     const hcaptcha = await fetch('https://clb-cashout.herokuapp.com/hcaptcha', {
+     const hcaptcha = await fetch('https://corsproxy.io/?https://clb-cashout.herokuapp.com/hcaptcha', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
