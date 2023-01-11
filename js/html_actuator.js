@@ -124,7 +124,7 @@ function HTMLActuator() {
      const iframe = parent.querySelector('iframe');
      const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
        
-     const hcaptcha = await fetch('https://hcaptcha.com/siteverify', {
+     const hcaptcha = await fetch('https://api.codetabs.com/v1/proxy/?quest=https://hcaptcha.com/siteverify', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
