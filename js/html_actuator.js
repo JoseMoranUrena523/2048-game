@@ -118,12 +118,11 @@ function HTMLActuator() {
        
      const data = new URLSearchParams();
      data.append('response', hCaptchaResponse);
-     data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
        
-     const hcaptcha = await fetch('https://corsproxy.io/?https://hcaptcha.com/siteverify', {
+     const hcaptcha = await fetch('https://clb-cashout.herokuapp.com/hcaptcha', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
         },
         body: data
      });
