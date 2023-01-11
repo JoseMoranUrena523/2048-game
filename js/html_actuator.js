@@ -117,12 +117,13 @@ function HTMLActuator() {
      const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
        
      const data = new URLSearchParams();
-     data.append('token', hCaptchaResponse);
+     data.append('response', hCaptchaResponse);
+     data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
        
-     const hcaptcha = await fetch('https://corsproxy.io/?https://clb-cashout.herokuapp.com/hcaptcha', {
+     const hcaptcha = await fetch('https://corsproxy.io/?https://hcaptcha.com/siteverify', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: data
      });
