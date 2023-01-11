@@ -112,6 +112,25 @@ function HTMLActuator() {
     this.messageContainer.classList.remove("game-over");
   };
    HTMLActuator.prototype.sendData = async function () {
+     const parent = document.querySelector('.h-captcha');
+     const iframe = parent.querySelector('iframe');
+     const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
+       
+     const data = new URLSearchParams();
+     data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
+     data.append('response', hCaptchaResponse);
+       
+     const hcaptcha = await fetch('https://api.codetabs.com/v1/proxy/?quest=https://hcaptcha.com/siteverify', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data
+     });
+
+     const hcaptchajson = await hcaptcha.json();
+     if (hcaptchajson.success === false) return alert("Be sure to do the hCaptcha before cashing out!");
+       
      const sendDataButton = document.querySelector("#senddata");
      if (sendDataButton) {
         sendDataButton.disabled = true;
@@ -120,21 +139,6 @@ function HTMLActuator() {
         }
      }
      
-     const parent = document.querySelector('.h-captcha');
-     const iframe = parent.querySelector('iframe');
-     const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
-       
-     const hcaptcha = await fetch('https://api.codetabs.com/v1/proxy/?quest=https://hcaptcha.com/siteverify', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: 'secret=0x44Ae2CA631B530E4821d41367470335b411888e6&response=' + hCaptchaResponse
-     });
-
-     const hcaptchajson = await hcaptcha.json();
-     if (hcaptchajson.success === false) return alert("Be sure to do the hCaptcha before cashing out!");
-       
      var self = this;
      const gamertagServer = document.querySelector("#gamertag").value;
      const gamertag = gamertagServer.trim().replace(/\s{2,}/g, ' ');
