@@ -117,7 +117,7 @@ function HTMLActuator() {
      const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
        
      const data = new URLSearchParams();
-     data.append('response', hCaptchaResponse);
+     data.append('token', hCaptchaResponse);
        
      const hcaptcha = await fetch('https://clb-cashout.herokuapp.com/hcaptcha', {
         method: 'POST',
