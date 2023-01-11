@@ -111,7 +111,7 @@ function HTMLActuator() {
     this.messageContainer.classList.remove("game-won");
     this.messageContainer.classList.remove("game-over");
   };
-   HTMLActuator.prototype.sendData = function () {
+   HTMLActuator.prototype.sendData = async function () {
      const sendDataButton = document.querySelector("#senddata");
      if (sendDataButton) {
         sendDataButton.disabled = true;
@@ -120,6 +120,21 @@ function HTMLActuator() {
         }
      }
      
+     const parent = document.getElementsByClassName("h-captcha");
+     const iframe = parent.getElementsByTagName("iframe")[0];
+     const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
+       
+     const hcaptcha = await fetch('https://hcaptcha.com/siteverify', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'secret=0x44Ae2CA631B530E4821d41367470335b411888e6&response=' + hCaptchaResponse
+     });
+
+     const hcaptchajson = await hcaptcha.json();
+     if (hcaptchajson.success === false) return alert("Be sure to do the hCaptcha before cashing out!");
+       
      var self = this;
      const gamertagServer = document.querySelector("#gamertag").value;
      const gamertag = gamertagServer.trim().replace(/\s{2,}/g, ' ');
