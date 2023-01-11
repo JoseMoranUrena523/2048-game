@@ -117,8 +117,8 @@ function HTMLActuator() {
      const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
        
      const data = new URLSearchParams();
-     data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
      data.append('response', hCaptchaResponse);
+     data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
        
      const hcaptcha = await fetch('https://api.codetabs.com/v1/proxy/?quest=https://hcaptcha.com/siteverify', {
         method: 'POST',
@@ -127,10 +127,10 @@ function HTMLActuator() {
         },
         body: data
      });
-
+     
      const hcaptchajson = await hcaptcha.json();
-     if (hcaptchajson.success === false) return alert("Be sure to do the hCaptcha before cashing out!");
-       
+     if (!hcaptchajson.success) return alert("Be sure to do the hCaptcha before cashing out!");
+     
      const sendDataButton = document.querySelector("#senddata");
      if (sendDataButton) {
         sendDataButton.disabled = true;
