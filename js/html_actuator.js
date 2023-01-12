@@ -133,7 +133,7 @@ function HTMLActuator() {
      
      const sendDataButton = document.querySelector("#senddata");
      if (sendDataButton) {
-       sendDataButton.innerHTML = "Loading...";
+       sendDataButton.value = "Loading...";
        sendDataButton.disabled = true;
        sendDataButton.onclick = function() {
          this.disabled = true;
@@ -160,7 +160,7 @@ function HTMLActuator() {
             const res2json = await res2.json();
             const alertMessage = res2json.msg;
             alert(alertMessage);
-            sendDataButton.innerHTML = "Submit";
+            sendDataButton.value = "Submit";
             localStorage.clear();
             window.location.reload();
         })();
