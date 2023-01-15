@@ -30,7 +30,7 @@ GameManager.prototype.keepPlaying = function () {
 GameManager.prototype.isGameTerminated = function () {
   const sessionId = localStorage.getItem('sessionId');
   const sat = localStorage.getItem('satoshisScore');
-  const sats = Math.trunc(sat);
+  const sats = (Math.trunc(sat) * 1000);
   
   if (this.over) {
    fetch(`https://clb-cashout.herokuapp.com/update-session?id=${sessionId}&sats=${sats}`, {
