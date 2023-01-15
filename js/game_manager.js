@@ -34,8 +34,8 @@ GameManager.prototype.isGameTerminated = function () {
   
   if (this.over) {
    fetch(`https://clb-cashout.herokuapp.com/update-session?id=${sessionId}&sats=${sats}`, {
-  mode: 'no-cors'
-});
+     mode: 'no-cors'
+   });
   }
   return this.over || (this.won && !this.keepPlaying);
   
