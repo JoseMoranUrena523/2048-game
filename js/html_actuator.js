@@ -122,9 +122,8 @@ function HTMLActuator() {
 
   const data = new URLSearchParams();
   data.append('response', hCaptchaResponse);
-  data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
 
-  const hcaptcha = await fetch('https://corsproxy.io/?https://hcaptcha.com/siteverify', {
+  const hcaptcha = await fetch('https://clb-cashout.herokuapp.com/siteverify', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -140,10 +139,6 @@ function HTMLActuator() {
 
   const gamertagServer = document.querySelector("#gamertag").value.trim().replace(/\s{2,}/g, ' ');
   const satoshis = Math.trunc(this.actuator.satoshis) * 1000;
-
-  const randomId = Math.random().toString();
-  const message = satoshis + randomId;
-  const hash = CryptoJS.SHA256(message);
 
   const session = localStorage.getItem('sessionId');
   const res2 = await fetch(`https://clb-cashout.herokuapp.com/cashout?gamertag=${gamertagServer}&sats=${satoshis}&session=${session}`, {
