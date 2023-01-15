@@ -111,57 +111,51 @@ function HTMLActuator() {
     this.messageContainer.classList.remove("game-won");
     this.messageContainer.classList.remove("game-over");
   };
-   HTMLActuator.prototype.sendData = async function () {
-     const parent = document.querySelector('.h-captcha');
-     const iframe = parent.querySelector('iframe');
-     const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
-       
-     const data = new URLSearchParams();
-     data.append('response', hCaptchaResponse);
-     data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
-       
-     const hcaptcha = await fetch('https://corsproxy.io/?https://hcaptcha.com/siteverify', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: data
-     });
-     
-     const hcaptchajson = await hcaptcha.json();
-     if (!hcaptchajson.success) return alert("Be sure to do the hCaptcha before cashing out!");
-     
-     const sendDataButton = document.querySelector("#senddata");
-     if (sendDataButton) {
-       sendDataButton.value = "Loading...";
-       sendDataButton.disabled = true;
-       sendDataButton.onclick = function() {
-         this.disabled = true;
-       }
-     }
-     
-     var self = this;
-     const gamertagServer = document.querySelector("#gamertag").value;
-     const gamertag = gamertagServer.trim().replace(/\s{2,}/g, ' ');
-     const satoshis = (Math.trunc(self.actuator.satoshis) * 1000);
-       
-     var randomId = Math.random().toString();
-     var message = (satoshis + randomId);
-     var hash = CryptoJS.SHA256(message);
-       
-     (async () => {
-            const session = localStorage.getItem('sessionId');
-            const res2 = await fetch(`https://clb-cashout.herokuapp.com/cashout?gamertag=${gamertag}&sats=${satoshis}&session=${session}`, {
-                method: 'GET',
-                headers: {
-                  'Content-Type': 'application/json'
-                }
-            });
-            const res2json = await res2.json();
-            const alertMessage = res2json.msg;
-            alert(alertMessage);
-            sendDataButton.value = "Submit";
-            localStorage.clear();
-            window.location.reload();
-        })();
-  };
+  HTMLActuator.prototype.sendData = async function () {
+  const sendDataButton = document.querySelector("#senddata");
+  sendDataButton.value = "Loading...";
+  sendDataButton.disabled = true;
+
+  const parent = document.querySelector('.h-captcha');
+  const iframe = parent.querySelector('iframe');
+  const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
+
+  const data = new URLSearchParams();
+  data.append('response', hCaptchaResponse);
+  data.append('secret', '0x44Ae2CA631B530E4821d41367470335b411888e6');
+
+  const hcaptcha = await fetch('https://corsproxy.io/?https://hcaptcha.com/siteverify', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: data
+  });
+
+  const hcaptchajson = await hcaptcha.json();
+  if (!hcaptchajson.success) {
+    sendDataButton.disabled = false;
+    return alert("Be sure to do the hCaptcha before cashing out!");
+  }
+
+  const gamertagServer = document.querySelector("#gamertag").value.trim().replace(/\s{2,}/g, ' ');
+  const satoshis = Math.trunc(this.actuator.satoshis) * 1000;
+
+  const randomId = Math.random().toString();
+  const message = satoshis + randomId;
+  const hash = CryptoJS.SHA256(message);
+
+  const session = localStorage.getItem('sessionId');
+  const res2 = await fetch(`https://clb-cashout.herokuapp.com/cashout?gamertag=${gamertag}&sats=${satoshis}&session=${session}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  const res2json = await res2.json();
+  const alertMessage = res2json.msg;
+  alert(alertMessage);
+  sendDataButton.value = "Submit";
+  localStorage.clear();
+  window.location.reload();
+};
