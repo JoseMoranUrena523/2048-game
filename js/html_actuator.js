@@ -146,7 +146,7 @@ function HTMLActuator() {
   const hash = CryptoJS.SHA256(message);
 
   const session = localStorage.getItem('sessionId');
-  const res2 = await fetch(`https://clb-cashout.herokuapp.com/cashout?gamertag=${gamertag}&sats=${satoshis}&session=${session}`, {
+  const res2 = await fetch(`https://clb-cashout.herokuapp.com/cashout?gamertag=${gamertagServer}&sats=${satoshis}&session=${session}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
