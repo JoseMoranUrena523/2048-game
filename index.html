@@ -101,24 +101,26 @@
           </div>
         </div>
         <div class="modal">
-          <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h1>Congrats!</h1>
-            <h2>You have satoshis to claim!</h2>
-            <h2>Enter in your ZBD Gamertag to claim your satoshis!</h2>
-            <h3>Do not include @zbd.gg or zbd.gg/ on it, just the Gamertag. :)</h3>
-            <input type="text" id="gamertag" name="Gamertag" required />
-            <br>
-            <br>
-            <div class="h-captcha" data-sitekey="20995ec9-bc0e-48d5-986d-9cdd90e723b2"></div>
-            <input type="submit" id="senddata" style="background-color: #F8F8FF; border: none; color: #916EF7; font-size: 14px; padding: 2px 19px;" value="Submit" />
-            <br>
-            <br>
-            <a href="https://zebedee.io">
-              <img src="meta/powered-by-zebedee.png" style="width:350px;height:68px;" alt="Powered by ZEBEDEE">
-            </a>
-          </div>
-        </div>
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h1>Congrats!</h1>
+    <h2>You have satoshis to claim!</h2>
+    <h2>Enter in your ZBD Gamertag to claim your satoshis!</h2>
+    <h3>Do not include @zbd.gg or zbd.gg/ on it, just the Gamertag. :)</h3>
+    <form>
+            <input type="text" id="gamertag" name="Gamertag" placeholder="Gamertag" required />
+      <br>
+      <br>
+      <div class="h-captcha" data-sitekey="20995ec9-bc0e-48d5-986d-9cdd90e723b2"></div>
+      <input type="submit" id="senddata" value="Submit" />
+    </form>
+    <br>
+    <br>
+    <a href="https://zebedee.io">
+      <img src="meta/powered-by-zebedee.png" style="width:350px;height:68px;" alt="Powered by ZEBEDEE">
+    </a>
+  </div>
+</div>
         <script>
           const modal = document.querySelector(".modal");
           const trigger = document.querySelector(".restart-button");
