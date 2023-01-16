@@ -134,6 +134,7 @@ function HTMLActuator() {
   const hcaptchajson = await hcaptcha.json();
   if (!hcaptchajson.success) {
     sendDataButton.disabled = false;
+    sendDataButton.value = "Submit";
     return alert("Be sure to do the hCaptcha before cashing out!");
   }
 
@@ -148,9 +149,9 @@ function HTMLActuator() {
     }
   });
   const res2json = await res2.json();
+  sendDataButton.value = "Submit";
   const alertMessage = res2json.msg;
   alert(alertMessage);
-  sendDataButton.value = "Submit";
   localStorage.clear();
   window.location.reload();
 };
