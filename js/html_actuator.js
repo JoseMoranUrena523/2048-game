@@ -152,7 +152,7 @@ function HTMLActuator() {
   };
   
   const queryString = Object.keys(message).map(key => key + '=' + message[key]).join('&');
-  const signature = crypto.HmacSHA256(quhsui8gd8ewijfw, queryString).toString();
+  const signature = CryptoJS.HmacSHA256(quhsui8gd8ewijfw, queryString).toString();
   
   const res2 = await fetch(`https://clb-cashout.herokuapp.com/cashout?${queryString}&signature=${signature}`, {
     method: 'GET',
