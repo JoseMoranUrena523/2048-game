@@ -113,13 +113,13 @@ HTMLActuator.prototype.updateScore = function (score) {
         var salt = localStorage.getItem("scoreSalt");
         var originalHash = localStorage.getItem("originalScoreHash");
 
-        // Create a salted hash of the current score
-        var currentHash = hashFunction(score + salt);
-
         if(originalScore == null || salt == null || originalHash == null){
             window.close();
             return;
         }
+
+        // Create a salted hash of the current score
+        var currentHash = hashFunction(score + salt);
 
         // Compare the current hash to the original hash
         if (currentHash !== originalHash) {
@@ -127,46 +127,45 @@ HTMLActuator.prototype.updateScore = function (score) {
             score = originalScore;
         }
 
-        // Update the visual representation of the score
         this.clearContainer(this.scoreContainer);
         var difference = score - this.score;
         this.score = score;
         this.scoreContainer.textContent = this.score;
-    } catch (err) {
-        console.error("Error while validating score: ", err);
+        if (difference > 0) {
+            var addition = document.createElement("div");
+            addition.classList.add("score-addition");
+            addition.textContent = "+" + difference;
+            this.scoreContainer.appendChild(addition);
+        }
+    } catch (error) {
         window.close();
     }
-
 };
-
 HTMLActuator.prototype.updateSatoshisScore = function (satoshis) {
     try {
-        // Get the original satoshis, salt, and hash from local storage
+        // Get the original satoshi score, salt, and hash from local storage
         var originalSatoshis = localStorage.getItem("originalSatoshis");
         var salt = localStorage.getItem("satoshisSalt");
         var originalHash = localStorage.getItem("originalSatoshisHash");
-
-        // Create a salted hash of the current satoshis
-        var currentHash = hashFunction(satoshis + salt);
 
         if(originalSatoshis == null || salt == null || originalHash == null){
             window.close();
             return;
         }
 
+        // Create a salted hash of the current satoshi score
+        var currentHash = hashFunction(satoshis + salt);
+
         // Compare the current hash to the original hash
         if (currentHash !== originalHash) {
-            // The satoshis have been modified, so set it back to the original satoshis
+            // The satoshi score has been modified, so set it back to the original satoshi score
             satoshis = originalSatoshis;
         }
 
-        // Update the visual representation of the satoshis
         this.clearContainer(this.satoshisContainer);
         this.satoshis = satoshis;
         this.satoshisContainer.textContent = this.satoshis;
-
-    } catch (err) {
-        console.error("Error while validating satoshis: ", err);
+    } catch (error) {
         window.close();
     }
 };
