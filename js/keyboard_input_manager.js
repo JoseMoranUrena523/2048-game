@@ -12,12 +12,6 @@ function KeyboardInputManager() {
     this.eventTouchend      = "touchend";
   }
 
-  // Add variables to track anti-cheat information
-  this.lastKeyPressTime = 0;
-  this.moveCount = 0;
-  this.moveCountStartTime = 0;
-  this.previousMove = -1;
-
   this.listen();
 }
 
@@ -57,7 +51,7 @@ KeyboardInputManager.prototype.listen = function () {
  
   // Respond to direction keys
   document.addEventListener("keydown", function (event) {
-    // Check if modal is open
+    
     if(document.querySelector(".modal.show-modal")){
       return;
     }
@@ -68,34 +62,14 @@ KeyboardInputManager.prototype.listen = function () {
 
     if (!modifiers) {
       if (mapped !== undefined) {
-        // Anti-cheat checks
-        var currentTime = Date.now();
-        if (currentTime - self.lastKeyPressTime < 100) {
-          console.log("Possible macro detected, blocking move.");
-          return;
-        }
-        self.lastKeyPressTime = currentTime;
-
-        if(self.moveCountStartTime === 0){
-          self.moveCountStartTime = currentTime;
-        }
-
-        if (self.moveCount >= 20 && (currentTime - self.moveCountStartTime) <= 1000) {
-          console.log("Too many moves in a short period of time, blocking move.");
-          return;
-        }
-
-        if (self.previousMove === mapped) {
-          console.log("Too many repetitive moves, blocking move.");
-          return;
-        }
-
-        self.previousMove = mapped;
-        self.moveCount++;
-
         event.preventDefault();
         self.emit("move", mapped);
       }
+    }
+
+    // R key restarts the game
+    if (!modifiers && event.which === 82) {
+      self.restart.call(self, event);
     }
   });
 
@@ -128,9 +102,10 @@ KeyboardInputManager.prototype.listen = function () {
 
   gameContainer.addEventListener(this.eventTouchend, function (event) {
     if ((!window.navigator.msPointerEnabled && event.touches.length > 0) ||
-      event.targetTouches.length > 0) {
+        event.targetTouches.length > 0) {
       return; // Ignore if still touching with one or more fingers
     }
+
     var touchEndClientX, touchEndClientY;
 
     if (window.navigator.msPointerEnabled) {
@@ -152,4 +127,25 @@ KeyboardInputManager.prototype.listen = function () {
       self.emit("move", absDx > absDy ? (dx > 0 ? 1 : 3) : (dy > 0 ? 2 : 0));
     }
   });
+};
+
+KeyboardInputManager.prototype.restart = function (event) {
+  event.preventDefault();
+  this.emit("restart");
+};
+
+KeyboardInputManager.prototype.keepPlaying = function (event) {
+  event.preventDefault();
+  this.emit("keepPlaying");
+};
+
+KeyboardInputManager.prototype.sendData = function (event) {
+  event.preventDefault();
+  this.emit("sendData");
+};
+
+KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
+  var button = document.querySelector(selector);
+  button.addEventListener("click", fn.bind(this));
+  button.addEventListener(this.eventTouchend, fn.bind(this));
 };
