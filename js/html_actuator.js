@@ -1,3 +1,14 @@
+function generateRandomSalt() {
+    var randomBytes = CryptoJS.lib.WordArray.random(10);
+    var hexString = CryptoJS.enc.Hex.stringify(randomBytes);
+    return hexString;
+}
+
+function hashFunction(str) {
+    var hash = CryptoJS.SHA256(str);
+    return hash;
+}
+
 function HTMLActuator() {
     this.tileContainer    = document.querySelector(".tile-container");
     this.scoreContainer   = document.querySelector(".score-container");
