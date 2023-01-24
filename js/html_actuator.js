@@ -1,14 +1,3 @@
-function generateRandomSalt() {
-    var randomBytes = CryptoJS.lib.WordArray.random(10);
-    var hexString = CryptoJS.enc.Hex.stringify(randomBytes);
-    return hexString;
-}
-
-function hashFunction(str) {
-    var hash = CryptoJS.SHA256(str);
-    return hash;
-}
-
 function HTMLActuator() {
     this.tileContainer    = document.querySelector(".tile-container");
     this.scoreContainer   = document.querySelector(".score-container");
@@ -17,17 +6,6 @@ function HTMLActuator() {
     this.submitbtn = document.querySelector("#senddata");
     this.score = 0;
     this.satoshis = 0;
-    // Generate new salts when the game starts
-    this.scoreSalt = generateRandomSalt();
-    this.satoshisSalt = generateRandomSalt();
-    // Store the original score and salt in local storage
-    localStorage.setItem("originalScore", this.score);
-    localStorage.setItem("scoreSalt", this.scoreSalt);
-    localStorage.setItem("originalSatoshis", this.satoshis);
-    localStorage.setItem("satoshisSalt", this.satoshisSalt);
-    // Hash the original score and salt and store it in local storage
-    localStorage.setItem("originalScoreHash", hashFunction(this.score + this.scoreSalt));
-    localStorage.setItem("originalSatoshisHash", hashFunction(this.satoshis + this.satoshisSalt));
 }
   HTMLActuator.prototype.actuate = function (grid, metadata) {
     var self = this;
@@ -107,27 +85,7 @@ function HTMLActuator() {
     return "tile-position-" + position.x + "-" + position.y;
   };
 HTMLActuator.prototype.updateScore = function (score) {
-    try {
-        // Get the original score, salt, and hash from local storage
-        var originalScore = localStorage.getItem("originalScore");
-        var salt = localStorage.getItem("scoreSalt");
-        var originalHash = localStorage.getItem("originalScoreHash");
-
-        if(originalScore == null || salt == null || originalHash == null){
-            window.close();
-            return;
-        }
-
-        // Create a salted hash of the current score
-        var currentHash = hashFunction(score + salt);
-
-        // Compare the current hash to the original hash
-        if (currentHash !== originalHash) {
-            // The score has been modified, so set it back to the original score
-            score = originalScore;
-        }
-
-        this.clearContainer(this.scoreContainer);
+   this.clearContainer(this.scoreContainer);
         var difference = score - this.score;
         this.score = score;
         this.scoreContainer.textContent = this.score;
@@ -137,37 +95,11 @@ HTMLActuator.prototype.updateScore = function (score) {
             addition.textContent = "+" + difference;
             this.scoreContainer.appendChild(addition);
         }
-    } catch (error) {
-        window.close();
-    }
 };
 HTMLActuator.prototype.updateSatoshisScore = function (satoshis) {
-    try {
-        // Get the original satoshi score, salt, and hash from local storage
-        var originalSatoshis = localStorage.getItem("originalSatoshis");
-        var salt = localStorage.getItem("satoshisSalt");
-        var originalHash = localStorage.getItem("originalSatoshisHash");
-
-        if(originalSatoshis == null || salt == null || originalHash == null){
-            window.close();
-            return;
-        }
-
-        // Create a salted hash of the current satoshi score
-        var currentHash = hashFunction(satoshis + salt);
-
-        // Compare the current hash to the original hash
-        if (currentHash !== originalHash) {
-            // The satoshi score has been modified, so set it back to the original satoshi score
-            satoshis = originalSatoshis;
-        }
-
-        this.clearContainer(this.satoshisContainer);
+    this.clearContainer(this.satoshisContainer);
         this.satoshis = satoshis;
         this.satoshisContainer.textContent = this.satoshis;
-    } catch (error) {
-        window.close();
-    }
 };
   HTMLActuator.prototype.message = function (won) {
     var type    = won ? "game-won" : "game-over";
