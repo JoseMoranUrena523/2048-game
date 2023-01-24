@@ -1,1 +1,229 @@
-const _0x45ab55=_0x4cb8;(function(_0x370630,_0x1d208f){const _0x5b015c=_0x4cb8,_0x2f1876=_0x370630();while(!![]){try{const _0x183fab=-parseInt(_0x5b015c(0xdc))/0x1*(-parseInt(_0x5b015c(0xb3))/0x2)+parseInt(_0x5b015c(0xce))/0x3*(-parseInt(_0x5b015c(0xa5))/0x4)+-parseInt(_0x5b015c(0xaf))/0x5*(parseInt(_0x5b015c(0xb5))/0x6)+-parseInt(_0x5b015c(0xb0))/0x7*(-parseInt(_0x5b015c(0x9e))/0x8)+-parseInt(_0x5b015c(0x8a))/0x9+parseInt(_0x5b015c(0xb8))/0xa*(parseInt(_0x5b015c(0x89))/0xb)+-parseInt(_0x5b015c(0xba))/0xc*(parseInt(_0x5b015c(0x85))/0xd);if(_0x183fab===_0x1d208f)break;else _0x2f1876['push'](_0x2f1876['shift']());}catch(_0x4bef16){_0x2f1876['push'](_0x2f1876['shift']());}}}(_0x52fb,0xccae5));function _0x4cb8(_0xf5aa3f,_0x54d621){const _0x52fbc9=_0x52fb();return _0x4cb8=function(_0x4cb8a6,_0x543753){_0x4cb8a6=_0x4cb8a6-0x83;let _0x239b72=_0x52fbc9[_0x4cb8a6];return _0x239b72;},_0x4cb8(_0xf5aa3f,_0x54d621);}function HTMLActuator(){const _0x3c2c47=_0x4cb8;this[_0x3c2c47(0x8f)]=document['querySelector'](_0x3c2c47(0xb2)),this['scoreContainer']=document['querySelector'](_0x3c2c47(0xa3)),this[_0x3c2c47(0xcc)]=document[_0x3c2c47(0xcb)]('.satoshis-container'),this[_0x3c2c47(0xaa)]=document[_0x3c2c47(0xcb)]('.game-message'),this[_0x3c2c47(0xac)]=document[_0x3c2c47(0xcb)](_0x3c2c47(0xca)),this['score']=0x0,this[_0x3c2c47(0x99)]=0x0;}HTMLActuator[_0x45ab55(0xdf)]['actuate']=function(_0x2e010a,_0x3c67ea){const _0x5ad338=_0x45ab55;var _0xe951d3=this;window[_0x5ad338(0xae)](function(){const _0x25d6f6=_0x5ad338;_0xe951d3['clearContainer'](_0xe951d3['tileContainer']),_0x2e010a[_0x25d6f6(0xd5)][_0x25d6f6(0xd2)](function(_0x13d36e){const _0x333570=_0x25d6f6;_0x13d36e[_0x333570(0xd2)](function(_0x4cdc91){const _0x190abe=_0x333570;_0x4cdc91&&_0xe951d3[_0x190abe(0xd9)](_0x4cdc91);});}),_0xe951d3['updateScore'](_0x3c67ea['score']);const _0xd545f8=parseFloat(_0x3c67ea[_0x25d6f6(0x87)]/0x190),_0x320bf4=_0xd545f8[_0x25d6f6(0xa6)](0x2);_0xe951d3[_0x25d6f6(0xa0)](_0x320bf4);if(_0x3c67ea[_0x25d6f6(0xa8)]){if(_0x3c67ea['over'])_0xe951d3['message'](![]);else _0x3c67ea['won']&&_0xe951d3[_0x25d6f6(0xc5)](!![]);}});},HTMLActuator['prototype'][_0x45ab55(0xdb)]=function(){const _0x532fbe=_0x45ab55;this[_0x532fbe(0xc7)]();},HTMLActuator[_0x45ab55(0xdf)][_0x45ab55(0xc8)]=function(_0xbd65a7){const _0x2235a4=_0x45ab55;while(_0xbd65a7[_0x2235a4(0x8c)]){_0xbd65a7[_0x2235a4(0x95)](_0xbd65a7[_0x2235a4(0x8c)]);}},HTMLActuator[_0x45ab55(0xdf)][_0x45ab55(0xd9)]=function(_0x40da8c){const _0x1a0966=_0x45ab55;var _0xf2cb00=this,_0x3621bd=document['createElement'](_0x1a0966(0xbb)),_0x4c40b9=document[_0x1a0966(0xde)](_0x1a0966(0xbb)),_0x34a6fb=_0x40da8c[_0x1a0966(0xb7)]||{'x':_0x40da8c['x'],'y':_0x40da8c['y']},_0x421723=this[_0x1a0966(0xa4)](_0x34a6fb),_0x4ef4a8=[_0x1a0966(0xd8),_0x1a0966(0xc0)+_0x40da8c['value'],_0x421723];if(_0x40da8c['value']>0x800)_0x4ef4a8[_0x1a0966(0x9b)]('tile-super');this[_0x1a0966(0x93)](_0x3621bd,_0x4ef4a8),_0x4c40b9[_0x1a0966(0xd4)][_0x1a0966(0x8b)]('tile-inner'),_0x4c40b9[_0x1a0966(0xc6)]=_0x40da8c['value'];if(_0x40da8c['previousPosition'])window[_0x1a0966(0xae)](function(){const _0x327e3c=_0x1a0966;_0x4ef4a8[0x2]=_0xf2cb00[_0x327e3c(0xa4)]({'x':_0x40da8c['x'],'y':_0x40da8c['y']}),_0xf2cb00[_0x327e3c(0x93)](_0x3621bd,_0x4ef4a8);});else _0x40da8c[_0x1a0966(0x98)]?(_0x4ef4a8[_0x1a0966(0x9b)](_0x1a0966(0xdd)),this[_0x1a0966(0x93)](_0x3621bd,_0x4ef4a8),_0x40da8c['mergedFrom'][_0x1a0966(0xd2)](function(_0x406326){_0xf2cb00['addTile'](_0x406326);})):(_0x4ef4a8['push'](_0x1a0966(0x94)),this[_0x1a0966(0x93)](_0x3621bd,_0x4ef4a8));_0x3621bd['appendChild'](_0x4c40b9),this[_0x1a0966(0x8f)][_0x1a0966(0x83)](_0x3621bd);},HTMLActuator[_0x45ab55(0xdf)][_0x45ab55(0x93)]=function(_0x5288f3,_0x4cfeba){const _0x12055a=_0x45ab55;_0x5288f3[_0x12055a(0xcf)](_0x12055a(0x9f),_0x4cfeba['join']('\x20'));},HTMLActuator[_0x45ab55(0xdf)][_0x45ab55(0xa7)]=function(_0xbe3bb1){return{'x':_0xbe3bb1['x']+0x1,'y':_0xbe3bb1['y']+0x1};},HTMLActuator['prototype'][_0x45ab55(0xa4)]=function(_0x94c483){const _0x5b5122=_0x45ab55;return _0x94c483=this[_0x5b5122(0xa7)](_0x94c483),'tile-position-'+_0x94c483['x']+'-'+_0x94c483['y'];},HTMLActuator[_0x45ab55(0xdf)]['updateScore']=function(_0x158d68){const _0x5790c6=_0x45ab55;this[_0x5790c6(0xc8)](this[_0x5790c6(0x9c)]);var _0x35baa5=_0x158d68-this[_0x5790c6(0x87)];this['score']=_0x158d68,this[_0x5790c6(0x9c)][_0x5790c6(0xc6)]=this[_0x5790c6(0x87)];if(_0x35baa5>0x0){var _0xb7e023=document[_0x5790c6(0xde)](_0x5790c6(0xbb));_0xb7e023[_0x5790c6(0xd4)][_0x5790c6(0x8b)](_0x5790c6(0xcd)),_0xb7e023[_0x5790c6(0xc6)]='+'+_0x35baa5,this['scoreContainer'][_0x5790c6(0x83)](_0xb7e023);}},HTMLActuator[_0x45ab55(0xdf)][_0x45ab55(0xa0)]=function(_0x15614b){const _0x4d624e=_0x45ab55;this[_0x4d624e(0xcc)][_0x4d624e(0xc6)]=_0x15614b,this[_0x4d624e(0x99)]=_0x15614b;},HTMLActuator[_0x45ab55(0xdf)][_0x45ab55(0xc5)]=function(_0x369702){const _0x3ee1a8=_0x45ab55;var _0x244add=_0x369702?_0x3ee1a8(0x84):_0x3ee1a8(0x97),_0x22fe84=_0x369702?'You\x20win!':_0x3ee1a8(0xc9);this[_0x3ee1a8(0xaa)][_0x3ee1a8(0xd4)][_0x3ee1a8(0x8b)](_0x244add),this['messageContainer'][_0x3ee1a8(0x9a)]('p')[0x0][_0x3ee1a8(0xc6)]=_0x22fe84;},HTMLActuator[_0x45ab55(0xdf)][_0x45ab55(0xc7)]=function(){const _0x3f0de5=_0x45ab55;this[_0x3f0de5(0xaa)][_0x3f0de5(0xd4)][_0x3f0de5(0xbf)](_0x3f0de5(0x84)),this[_0x3f0de5(0xaa)]['classList'][_0x3f0de5(0xbf)](_0x3f0de5(0x97));},HTMLActuator[_0x45ab55(0xdf)][_0x45ab55(0x91)]=async function(){const _0x135951=_0x45ab55;if(Math[_0x135951(0x92)](localStorage[_0x135951(0xc2)](_0x135951(0x9d)))!==Math['trunc'](this[_0x135951(0xc4)][_0x135951(0x99)]))return alert(_0x135951(0xab));const _0x25f8de=document[_0x135951(0xcb)](_0x135951(0xca));_0x25f8de[_0x135951(0xb4)]=_0x135951(0xd1),_0x25f8de['disabled']=!![];const _0x2fb911=document[_0x135951(0xcb)](_0x135951(0xb6)),_0x3d1cfd=_0x2fb911[_0x135951(0xcb)]('iframe'),_0x27f753=_0x3d1cfd[_0x135951(0xc1)]('data-hcaptcha-response'),_0x2399d6=new URLSearchParams();_0x2399d6['append'](_0x135951(0xa1),_0x27f753);const _0x43e3d5=await fetch(_0x135951(0xbd),{'method':_0x135951(0xa2),'headers':{'Content-Type':'application/x-www-form-urlencoded'},'body':_0x2399d6}),_0x20908b=await _0x43e3d5[_0x135951(0x88)]();if(!_0x20908b['success'])return _0x25f8de[_0x135951(0xd3)]=![],_0x25f8de[_0x135951(0xb4)]='Submit',alert(_0x135951(0x90));const _0x5948df=document[_0x135951(0xcb)](_0x135951(0xd6))[_0x135951(0xb4)][_0x135951(0x8d)]()[_0x135951(0x8e)](/\s{2,}/g,'\x20'),_0x207597=Math[_0x135951(0x92)](localStorage[_0x135951(0xc2)]('satoshisScore'))*0x3e8,_0x53f934=localStorage[_0x135951(0xc2)](_0x135951(0xd0)),_0x52e46b='qTqzknBtsZtJtcPsubNf',_0x530cc1={'gamertag':_0x5948df,'sats':_0x207597,'session':_0x53f934},_0xb9364e=Object[_0x135951(0xbc)](_0x530cc1)['map'](_0x43ac04=>_0x43ac04+'='+_0x530cc1[_0x43ac04])['join']('&'),_0x5c3ef3=CryptoJS[_0x135951(0xc3)](_0xb9364e,_0x52e46b)[_0x135951(0x96)](CryptoJS[_0x135951(0xd7)]['Hex']),_0x4a4214=await fetch('https://clb-cashout.herokuapp.com/cashout?'+_0xb9364e+_0x135951(0xbe)+_0x5c3ef3,{'method':_0x135951(0xda),'headers':{'Content-Type':'application/json'}}),_0x57bdf4=await _0x4a4214['json']();_0x25f8de[_0x135951(0xb4)]=_0x135951(0xad);const _0x2b62b8=_0x57bdf4[_0x135951(0xa9)];alert(_0x2b62b8),localStorage[_0x135951(0xb1)](),window[_0x135951(0x86)][_0x135951(0xb9)]();};function _0x52fb(){const _0x652e88=['requestAnimationFrame','5PtTegk','154hpyRYa','clear','.tile-container','61722KUvyGp','value','1887108bMVowv','.h-captcha','previousPosition','680CFOjjo','reload','12KZTYWp','div','keys','https://clb-cashout.herokuapp.com/siteverify','&signature=','remove','tile-','getAttribute','getItem','HmacSHA256','actuator','message','textContent','clearMessage','clearContainer','Game\x20over!','#senddata','querySelector','satoshisContainer','score-addition','57PjuiCN','setAttribute','sessionId','Loading...','forEach','disabled','classList','cells','#gamertag','enc','tile','addTile','GET','continueGame','1GcHCEk','tile-merged','createElement','prototype','appendChild','game-won','14947413mcwlFR','location','score','json','198022OIqXUj','1415421fHPCys','add','firstChild','trim','replace','tileContainer','Be\x20sure\x20to\x20do\x20the\x20hCaptcha\x20before\x20cashing\x20out!','sendData','trunc','applyClasses','tile-new','removeChild','toString','game-over','mergedFrom','satoshis','getElementsByTagName','push','scoreContainer','satoshisScore','515288Vnkiqs','class','updateSatoshisScore','response','POST','.score-container','positionClass','44648HlbRho','toFixed','normalizePosition','terminated','msg','messageContainer','Unable\x20to\x20proceed\x20with\x20the\x20request.','submitbtn','Submit'];_0x52fb=function(){return _0x652e88;};return _0x52fb();}
+function HTMLActuator() {
+    this.tileContainer    = document.querySelector(".tile-container");
+    this.scoreContainer   = document.querySelector(".score-container");
+    this.satoshisContainer   = document.querySelector(".satoshis-container");
+    this.messageContainer = document.querySelector(".game-message");
+    this.submitbtn = document.querySelector("#senddata");
+    this.score = 0;
+    this.satoshis = 0;
+    // Generate new salts when the game starts
+    this.scoreSalt = generateRandomSalt();
+    this.satoshisSalt = generateRandomSalt();
+    // Store the original score and salt in local storage
+    localStorage.setItem("originalScore", this.score);
+    localStorage.setItem("scoreSalt", this.scoreSalt);
+    localStorage.setItem("originalSatoshis", this.satoshis);
+    localStorage.setItem("satoshisSalt", this.satoshisSalt);
+    // Hash the original score and salt and store it in local storage
+    localStorage.setItem("originalScoreHash", hashFunction(this.score + this.scoreSalt));
+    localStorage.setItem("originalSatoshisHash", hashFunction(this.satoshis + this.satoshisSalt));
+}
+  HTMLActuator.prototype.actuate = function (grid, metadata) {
+    var self = this;
+    window.requestAnimationFrame(function () {
+      self.clearContainer(self.tileContainer);
+      grid.cells.forEach(function (column) {
+        column.forEach(function (cell) {
+          if (cell) {
+            self.addTile(cell);
+          }
+        });
+      });
+      self.updateScore(metadata.score);
+      const score1 = parseFloat(metadata.score / 400);
+      const score2 = score1.toFixed(2);
+      self.updateSatoshisScore(score2);
+      if (metadata.terminated) {
+        if (metadata.over) {
+          self.message(false); // You lose
+        } else if (metadata.won) {
+          self.message(true); // You win!
+        }
+      }
+    });
+  };
+  // Continues the game (both restart and keep playing)
+  HTMLActuator.prototype.continueGame = function () {
+    this.clearMessage();
+  };
+  HTMLActuator.prototype.clearContainer = function (container) {
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+  };
+  HTMLActuator.prototype.addTile = function (tile) {
+    var self = this;
+    var wrapper   = document.createElement("div");
+    var inner     = document.createElement("div");
+    var position  = tile.previousPosition || { x: tile.x, y: tile.y };
+    var positionClass = this.positionClass(position);
+    // We can't use classlist because it somehow glitches when replacing classes
+    var classes = ["tile", "tile-" + tile.value, positionClass];
+    if (tile.value > 2048) classes.push("tile-super");
+    this.applyClasses(wrapper, classes);
+    inner.classList.add("tile-inner");
+    inner.textContent = tile.value;
+    if (tile.previousPosition) {
+      // Make sure that the tile gets rendered in the previous position first
+      window.requestAnimationFrame(function () {
+        classes[2] = self.positionClass({ x: tile.x, y: tile.y });
+        self.applyClasses(wrapper, classes); // Update the position
+      });
+    } else if (tile.mergedFrom) {
+      classes.push("tile-merged");
+      this.applyClasses(wrapper, classes);
+      // Render the tiles that merged
+      tile.mergedFrom.forEach(function (merged) {
+        self.addTile(merged);
+      });
+    } else {
+      classes.push("tile-new");
+      this.applyClasses(wrapper, classes);
+    }
+    // Add the inner part of the tile to the wrapper
+    wrapper.appendChild(inner);
+    // Put the tile on the board
+    this.tileContainer.appendChild(wrapper);
+  };
+  HTMLActuator.prototype.applyClasses = function (element, classes) {
+    element.setAttribute("class", classes.join(" "));
+  };
+  HTMLActuator.prototype.normalizePosition = function (position) {
+    return { x: position.x + 1, y: position.y + 1 };
+  };
+  HTMLActuator.prototype.positionClass = function (position) {
+    position = this.normalizePosition(position);
+    return "tile-position-" + position.x + "-" + position.y;
+  };
+HTMLActuator.prototype.updateScore = function (score) {
+    try {
+        // Get the original score, salt, and hash from local storage
+        var originalScore = localStorage.getItem("originalScore");
+        var salt = localStorage.getItem("scoreSalt");
+        var originalHash = localStorage.getItem("originalScoreHash");
+
+        // Create a salted hash of the current score
+        var currentHash = hashFunction(score + salt);
+
+        if(originalScore == null || salt == null || originalHash == null){
+            window.close();
+            return;
+        }
+
+        // Compare the current hash to the original hash
+        if (currentHash !== originalHash) {
+            // The score has been modified, so set it back to the original score
+            score = originalScore;
+        }
+
+        // Update the visual representation of the score
+        this.clearContainer(this.scoreContainer);
+        var difference = score - this.score;
+        this.score = score;
+        this.scoreContainer.textContent = this.score;
+    } catch (err) {
+        console.error("Error while validating score: ", err);
+        window.close();
+    }
+
+};
+
+HTMLActuator.prototype.updateSatoshisScore = function (satoshis) {
+    try {
+        // Get the original satoshis, salt, and hash from local storage
+        var originalSatoshis = localStorage.getItem("originalSatoshis");
+        var salt = localStorage.getItem("satoshisSalt");
+        var originalHash = localStorage.getItem("originalSatoshisHash");
+
+        // Create a salted hash of the current satoshis
+        var currentHash = hashFunction(satoshis + salt);
+
+        if(originalSatoshis == null || salt == null || originalHash == null){
+            window.close();
+            return;
+        }
+
+        // Compare the current hash to the original hash
+        if (currentHash !== originalHash) {
+            // The satoshis have been modified, so set it back to the original satoshis
+            satoshis = originalSatoshis;
+        }
+
+        // Update the visual representation of the satoshis
+        this.clearContainer(this.satoshisContainer);
+        this.satoshis = satoshis;
+        this.satoshisContainer.textContent = this.satoshis;
+
+    } catch (err) {
+        console.error("Error while validating satoshis: ", err);
+        window.close();
+    }
+};
+  HTMLActuator.prototype.message = function (won) {
+    var type    = won ? "game-won" : "game-over";
+    var message = won ? "You win!" : "Game over!";
+    this.messageContainer.classList.add(type);
+    this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+  };
+  HTMLActuator.prototype.clearMessage = function () {
+    // IE only takes one value to remove at a time.
+    this.messageContainer.classList.remove("game-won");
+    this.messageContainer.classList.remove("game-over");
+  };
+  HTMLActuator.prototype.sendData = async function () {
+  if (Math.trunc(localStorage.getItem('satoshisScore')) !== Math.trunc(this.actuator.satoshis)) return alert("Unable to proceed with the request.");
+  const sendDataButton = document.querySelector("#senddata");
+  sendDataButton.value = "Loading...";
+  sendDataButton.disabled = true;
+
+  const parent = document.querySelector('.h-captcha');
+  const iframe = parent.querySelector('iframe');
+  const hCaptchaResponse = iframe.getAttribute("data-hcaptcha-response");
+
+  const data = new URLSearchParams();
+  data.append('response', hCaptchaResponse);
+
+  const hcaptcha = await fetch('https://clb-cashout.herokuapp.com/siteverify', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: data
+  });
+
+  const hcaptchajson = await hcaptcha.json();
+  if (!hcaptchajson.success) {
+    sendDataButton.disabled = false;
+    sendDataButton.value = "Submit";
+    return alert("Be sure to do the hCaptcha before cashing out!");
+  }
+
+  // -----------------------------------------------------------------------------------------------------------------------------
+
+  const gamertagServer = document.querySelector("#gamertag").value.trim().replace(/\s{2,}/g, ' ');
+  const satoshis = Math.trunc(localStorage.getItem('satoshisScore')) * 1000;
+  const session = localStorage.getItem('sessionId');
+  const quhsui8gd8ewijfw = 'qTqzknBtsZtJtcPsubNf';
+  
+  const message = {
+    gamertag: gamertagServer,
+    sats: satoshis,
+    session: session
+  };
+  
+  const queryString = Object.keys(message).map(key => key + '=' + message[key]).join('&');
+  const signature = CryptoJS.HmacSHA256(queryString, quhsui8gd8ewijfw).toString(CryptoJS.enc.Hex);
+  
+  const res2 = await fetch(`https://clb-cashout.herokuapp.com/cashout?${queryString}&signature=${signature}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  const res2json = await res2.json();
+  sendDataButton.value = "Submit";
+  const alertMessage = res2json.msg;
+  alert(alertMessage);
+  localStorage.clear();
+  window.location.reload();
+};
