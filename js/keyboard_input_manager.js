@@ -66,11 +66,6 @@ KeyboardInputManager.prototype.listen = function () {
         self.emit("move", mapped);
       }
     }
-
-    // R key restarts the game
-    if (!modifiers && event.which === 82) {
-      self.restart.call(self, event);
-    }
   });
 
   // Respond to button presses
