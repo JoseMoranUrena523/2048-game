@@ -55,56 +55,54 @@ LocalStorageManager.prototype.localStorageSupported = function () {
   }
 };
 
-// Best score getters/setters
-LocalStorageManager.prototype.getSatoshisScore = function () {
-  var score = this.storage.getItem(this.satoshisScoreKey);
-  var hmac = this.storage.getItem(this.satoshisScoreHmacKey);
-  if (!score || !hmac) {
-    return undefined;
-  }
-
-  var calculatedHmac = CryptoJS.HmacSHA256(score, this.secretKey).toString();
-  if (calculatedHmac !== hmac) {
-    return undefined;
-  }
-
-  return score;
-};
-
-LocalStorageManager.prototype.setSatoshisScore = function (score) {
-  var hmac = CryptoJS.HmacSHA256(score, this.secretKey).toString();
-  this.storage.setItem(this.satoshisScoreKey, score);
-  this.storage.setItem(this.satoshisScoreHmacKey, hmac);
-};
-
-// Game state getters/setters and clearing
 LocalStorageManager.prototype.getGameState = function () {
   var state = this.storage.getItem(this.gameStateKey);
   var hmac = this.storage.getItem(this.gameStateKey + "_hmac");
-
   if (!state || !hmac) {
-    return undefined;
+    return;
   }
-
-  if (!this.verifyHmac(this.gameStateKey, hmac)) {
-    this.clearGameState();
-    return undefined;
+  if (!this.verifyHMAC(state, hmac)) {
+    console.warn("Warning: HMAC validation failed for game state. Ignoring saved state...");
+    return;
   }
-
   return JSON.parse(state);
 };
 
 LocalStorageManager.prototype.setGameState = function (gameState) {
-  var state = JSON.stringify(gameState);
-  var hmac = CryptoJS.HmacSHA256(state, this.secretKey).toString();
-
-  this.storage.setItem(this.gameStateKey, state);
+  gameState = JSON.stringify(gameState);
+  var hmac = this.computeHMAC(gameState);
+  this.storage.setItem(this.gameStateKey, gameState);
   this.storage.setItem(this.gameStateKey + "_hmac", hmac);
 };
 
 LocalStorageManager.prototype.clearGameState = function () {
   this.storage.removeItem(this.gameStateKey);
   this.storage.removeItem(this.gameStateKey + "_hmac");
+};
+
+LocalStorageManager.prototype.getSatoshisScore = function () {
+  var satoshisScore = this.storage.getItem(this.satoshisScoreKey);
+  var hmac = this.storage.getItem(this.satoshisScoreKey + "_hmac");
+  if (!satoshisScore || !hmac) {
+    return;
+  }
+  if (!this.verifyHMAC(satoshisScore, hmac)) {
+    console.warn("Warning: HMAC validation failed for satoshis score. Ignoring saved score...");
+    return;
+  }
+  return JSON.parse(satoshisScore);
+};
+
+LocalStorageManager.prototype.setSatoshisScore = function (satoshisScore) {
+  satoshisScore = JSON.stringify(satoshisScore);
+  var hmac = this.computeHMAC(satoshisScore);
+  this.storage.setItem(this.satoshisScoreKey, satoshisScore);
+  this.storage.setItem(this.satoshisScoreKey + "_hmac", hmac);
+};
+
+LocalStorageManager.prototype.clearSatoshisScore = function () {
+  this.storage.removeItem(this.satoshisScoreKey);
+  this.storage.removeItem(this.satoshisScoreKey + "_hmac");
 };
 
 LocalStorageManager.prototype.verifyHmac = function (id, hmac) {
