@@ -55,6 +55,11 @@ LocalStorageManager.prototype.localStorageSupported = function () {
   }
 };
 
+LocalStorageManager.prototype.computeHMAC = function (data) {
+  return CryptoJS.HmacSHA256(data, this.secretKey).toString();
+};
+
+
 LocalStorageManager.prototype.getGameState = function () {
   var state = this.storage.getItem(this.gameStateKey);
   var hmac = this.storage.getItem(this.gameStateKey + "_hmac");
