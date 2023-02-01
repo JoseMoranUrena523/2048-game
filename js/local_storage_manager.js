@@ -71,3 +71,4 @@ LocalStorageManager.prototype.getGameState = function () {
   if (!gameState || !gameStateHMAC) {
     return null;
   }
+};
