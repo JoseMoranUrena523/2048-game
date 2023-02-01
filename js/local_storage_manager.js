@@ -2,11 +2,24 @@ window.fakeStorage = {
    _data: {},
 
    setItem: function (id, val) {
-     return this._data[id] = String(val);
+     var secretKey = CryptoJS.lib.WordArray.random(128/8);
+     var hmac = CryptoJS.HmacSHA256(val, secretKey);
+     this._data[id] = {
+         secretKey: secretKey,
+         value: String(val),
+         hmac: hmac
+     };
    },
 
    getItem: function (id) {
-     return this._data.hasOwnProperty(id) ? this._data[id] : undefined;
+     if (this._data.hasOwnProperty(id)) {
+         var data = this._data[id];
+         var hmac = CryptoJS.HmacSHA256(data.value, data.secretKey);
+         if (hmac.toString() === data.hmac.toString()) {
+             return data.value;
+         }
+     }
+     return undefined;
    },
 
    removeItem: function (id) {
@@ -41,7 +54,7 @@ window.fakeStorage = {
 
  // Best score getters/setters
  LocalStorageManager.prototype.getSatoshisScore = function () {
-   return this.storage.getItem(this.SatoshisScoreKey) || 0;
+   return this.storage.getItem(this.satoshisScoreKey) || 0;
  };
 
  LocalStorageManager.prototype.setSatoshisScore = function (score) {
@@ -50,8 +63,8 @@ window.fakeStorage = {
 
  // Game state getters/setters and clearing
  LocalStorageManager.prototype.getGameState = function () {
-   var stateJSON = this.storage.getItem(this.gameStateKey);
-   return stateJSON ? JSON.parse(stateJSON) : null;
+   var state = this.storage.getItem(this.gameStateKey);
+   return state ? JSON.parse(state) : null;
  };
 
  LocalStorageManager.prototype.setGameState = function (gameState) {
@@ -61,3 +74,14 @@ window.fakeStorage = {
  LocalStorageManager.prototype.clearGameState = function () {
    this.storage.removeItem(this.gameStateKey);
  };
+
+LocalStorageManager.prototype.verifyHmac = function (id, hmac) {
+   var storedValue = this.storage.getItem(id);
+   if (!storedValue) {
+      return false;
+   }
+   var data = storedValue.substr(0, storedValue.length - 64);
+   var storedHmac = storedValue.substr(storedValue.length - 64);
+   var calculatedHmac = CryptoJS.HmacSHA256(data, this.secretKey).toString();
+   return calculatedHmac === storedHmac;
+};
