@@ -19,16 +19,11 @@ window.fakeStorage = {
 };
 
 function LocalStorageManager() {
-  this.satoshisScoreKey = "satoshisScore";
-  this.satoshisScoreHMACKey = "satoshisScore_hmac";
-  this.gameStateKey = "gameState";
-  this.gameStateHMACKey = "gameState_hmac";
-  this.scoreKey = "score";
-  this.scoreHMACKey = "score_hmac";
+  this.satoshisScoreKey     = "satoshisScore";
+  this.gameStateKey     = "gameState";
 
   var supported = this.localStorageSupported();
   this.storage = supported ? window.localStorage : window.fakeStorage;
-  this.secretKey = this.generateSecretKey();
 }
 
 LocalStorageManager.prototype.localStorageSupported = function () {
@@ -44,45 +39,25 @@ LocalStorageManager.prototype.localStorageSupported = function () {
   }
 };
 
-LocalStorageManager.prototype.generateSecretKey = function() {
-  return CryptoJS.lib.WordArray.random(128/8);
-};
-
+// Best score getters/setters
 LocalStorageManager.prototype.getSatoshisScore = function () {
-  var satoshisScore = this.storage.getItem(this.satoshisScoreKey);
-  var satoshisScoreHMAC = this.storage.getItem(this.satoshisScoreHMACKey);
-  if (!satoshisScore || !satoshisScoreHMAC) {
-    return 0;
-  }
-  if (satoshisScoreHMAC !== CryptoJS.HmacSHA256(satoshisScore, this.secretKey).toString(CryptoJS.enc.Hex)) {
-    throw new Error("Invalid HMAC value for satoshisScore");
-  }
-  return parseInt(satoshisScore, 10);
+  return this.storage.getItem(this.SatoshisScoreKey) || 0;
 };
 
 LocalStorageManager.prototype.setSatoshisScore = function (score) {
-  this.storage.setItem(this.satoshisScoreKey, score.toString());
-  this.storage.setItem(this.satoshisScoreHMACKey, CryptoJS.HmacSHA256(score.toString(), this.secretKey).toString(CryptoJS.enc.Hex));
+  this.storage.setItem(this.satoshisScoreKey, score);
+};
+
+// Game state getters/setters and clearing
+LocalStorageManager.prototype.getGameState = function () {
+  var stateJSON = this.storage.getItem(this.gameStateKey);
+  return stateJSON ? JSON.parse(stateJSON) : null;
 };
 
 LocalStorageManager.prototype.setGameState = function (gameState) {
-  var secret = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-  var hmac = CryptoJS.HmacSHA256(JSON.stringify(gameState), secret);
   this.storage.setItem(this.gameStateKey, JSON.stringify(gameState));
-  this.storage.setItem(this.gameStateKey + "_hmac", hmac.toString());
 };
 
-LocalStorageManager.prototype.getGameState = function () {
-  var stateJSON = this.storage.getItem(this.gameStateKey);
-  var hmac = this.storage.getItem(this.gameStateKey + "_hmac");
-  if (!stateJSON || !hmac) return null;
-
-  var gameState = JSON.parse(stateJSON);
-  var secret = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-  var expectedHmac = CryptoJS.HmacSHA256(JSON.stringify(gameState), secret);
-
-  if (hmac !== expectedHmac.toString()) return null;
-
-  return gameState;
+LocalStorageManager.prototype.clearGameState = function () {
+  this.storage.removeItem(this.gameStateKey);
 };
-
