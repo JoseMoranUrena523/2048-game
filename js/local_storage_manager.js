@@ -1,5 +1,3 @@
-const CryptoJS = require("crypto-js");
-
 // Generate a random secret key
 const secretKey = CryptoJS.lib.WordArray.random(128/8).toString();
 
