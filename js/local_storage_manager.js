@@ -65,10 +65,24 @@ LocalStorageManager.prototype.setSatoshisScore = function (score) {
   this.storage.setItem(this.satoshisScoreHMACKey, CryptoJS.HmacSHA256(score.toString(), this.secretKey).toString(CryptoJS.enc.Hex));
 };
 
-LocalStorageManager.prototype.getGameState = function () {
-  var gameState = this.storage.getItem(this.gameStateKey);
-  var gameStateHMAC = this.storage.getItem(this.gameStateHMACKey);
-  if (!gameState || !gameStateHMAC) {
-    return null;
-  }
+LocalStorageManager.prototype.setGameState = function (gameState) {
+  var secret = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  var hmac = CryptoJS.HmacSHA256(JSON.stringify(gameState), secret);
+  this.storage.setItem(this.gameStateKey, JSON.stringify(gameState));
+  this.storage.setItem(this.gameStateKey + "_hmac", hmac.toString());
 };
+
+LocalStorageManager.prototype.getGameState = function () {
+  var stateJSON = this.storage.getItem(this.gameStateKey);
+  var hmac = this.storage.getItem(this.gameStateKey + "_hmac");
+  if (!stateJSON || !hmac) return null;
+
+  var gameState = JSON.parse(stateJSON);
+  var secret = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  var expectedHmac = CryptoJS.HmacSHA256(JSON.stringify(gameState), secret);
+
+  if (hmac !== expectedHmac.toString()) return null;
+
+  return gameState;
+};
+
