@@ -80,30 +80,34 @@ LocalStorageManager.prototype.clearGameState = function () {
   this.storage.removeItem(this.gameStateKey + "_hmac");
 };
 
-LocalStorageManager.prototype.getSatoshisScore = function () {
-  var satoshisScore = this.storage.getItem(this.satoshisScoreKey);
-  var hmac = this.storage.getItem(this.satoshisScoreKey + "_hmac");
-  if (!satoshisScore || !hmac) {
-    return;
-  }
-  if (!this.verifyHMAC(satoshisScore, hmac)) {
-    console.warn("Warning: HMAC validation failed for satoshis score. Ignoring saved score...");
-    return;
-  }
-  return JSON.parse(satoshisScore);
+LocalStorageManager.prototype.verifyHMAC = function (data, hmac) {
+  return CryptoJS.HmacSHA256(data, this.secretKey).toString() === hmac;
 };
 
-LocalStorageManager.prototype.setSatoshisScore = function (satoshisScore) {
-  satoshisScore = JSON.stringify(satoshisScore);
-  var hmac = this.computeHMAC(satoshisScore);
-  this.storage.setItem(this.satoshisScoreKey, satoshisScore);
-  this.storage.setItem(this.satoshisScoreKey + "_hmac", hmac);
+LocalStorageManager.prototype.getSatoshisScore = function () {
+  var score = this.storage.getItem(this.satoshisScoreKey);
+  var hmac = this.storage.getItem(this.satoshisScoreHMACKey);
+  
+  if (!this.verifyHMAC(score, hmac)) {
+    console.error('Invalid HMAC for satoshis score. Discarding score.');
+    this.clearSatoshisScore();
+    return;
+  }
+
+  return JSON.parse(score);
+};
+
+LocalStorageManager.prototype.setSatoshisScore = function (score) {
+  var hmac = CryptoJS.HmacSHA256(JSON.stringify(score), this.secretKey).toString();
+  this.storage.setItem(this.satoshisScoreKey, JSON.stringify(score));
+  this.storage.setItem(this.satoshisScoreHMACKey, hmac);
 };
 
 LocalStorageManager.prototype.clearSatoshisScore = function () {
   this.storage.removeItem(this.satoshisScoreKey);
-  this.storage.removeItem(this.satoshisScoreKey + "_hmac");
+  this.storage.removeItem(this.satoshisScoreHMACKey);
 };
+
 
 LocalStorageManager.prototype.verifyHmac = function (id, hmac) {
    var storedValue = this.storage.getItem(id);
