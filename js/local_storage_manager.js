@@ -91,7 +91,7 @@ LocalStorageManager.prototype.verifyHMAC = function (data, hmac) {
 
 LocalStorageManager.prototype.getSatoshisScore = function () {
   var score = this.storage.getItem(this.satoshisScoreKey);
-  var hmac = this.storage.getItem(this.satoshisScoreHMACKey);
+  var hmac = this.storage.getItem(this.satoshisScoreHmacKey);
   
   if (!this.verifyHMAC(score, hmac)) {
     console.error('Invalid HMAC for satoshis score. Discarding score.');
