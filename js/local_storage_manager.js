@@ -33,7 +33,9 @@ window.fakeStorage = {
 
 function LocalStorageManager() {
   this.satoshisScoreKey = "satoshisScore";
+  this.satoshisScoreHmacKey = "satoshisScore_hmac";
   this.gameStateKey = "gameState";
+  this.gameStateHmacKey = "gameState_hmac";
   this.secretKey = CryptoJS.lib.WordArray.random(128/8);
 
   var supported = this.localStorageSupported();
@@ -55,45 +57,54 @@ LocalStorageManager.prototype.localStorageSupported = function () {
 
 // Best score getters/setters
 LocalStorageManager.prototype.getSatoshisScore = function () {
-  return this.storage.getItem(this.satoshisScoreKey) || 0;
+  var score = this.storage.getItem(this.satoshisScoreKey);
+  var hmac = this.storage.getItem(this.satoshisScoreHmacKey);
+  if (!score || !hmac) {
+    return undefined;
+  }
+
+  var calculatedHmac = CryptoJS.HmacSHA256(score, this.secretKey).toString();
+  if (calculatedHmac !== hmac) {
+    return undefined;
+  }
+
+  return score;
 };
 
 LocalStorageManager.prototype.setSatoshisScore = function (score) {
+  var hmac = CryptoJS.HmacSHA256(score, this.secretKey).toString();
   this.storage.setItem(this.satoshisScoreKey, score);
+  this.storage.setItem(this.satoshisScoreHmacKey, hmac);
 };
 
 // Game state getters/setters and clearing
 LocalStorageManager.prototype.getGameState = function () {
   var state = this.storage.getItem(this.gameStateKey);
-  return state ? JSON.parse(state) : null;
+  var hmac = this.storage.getItem(this.gameStateKey + "_hmac");
+
+  if (!state || !hmac) {
+    return undefined;
+  }
+
+  if (!this.verifyHmac(this.gameStateKey, hmac)) {
+    this.clearGameState();
+    return undefined;
+  }
+
+  return JSON.parse(state);
 };
 
 LocalStorageManager.prototype.setGameState = function (gameState) {
-  this.storage.setItem(this.gameStateKey, JSON.stringify(gameState));
+  var state = JSON.stringify(gameState);
+  var hmac = CryptoJS.HmacSHA256(state, this.secretKey).toString();
+
+  this.storage.setItem(this.gameStateKey, state);
+  this.storage.setItem(this.gameStateKey + "_hmac", hmac);
 };
 
 LocalStorageManager.prototype.clearGameState = function () {
   this.storage.removeItem(this.gameStateKey);
-};
-
-LocalStorageManager.prototype.setItem = function (id, val) {
-  var hmac = CryptoJS.HmacSHA256(val, this.secretKey).toString();
-  this.storage.setItem(id, val + hmac);
-};
-
-LocalStorageManager.prototype.getItem = function (id) {
-  var storedValue = this.storage.getItem(id);
-   if (!storedValue) {
-     return undefined;
-   }
-
-   var data = storedValue.substr(0, storedValue.length - 64);
-   var storedHmac = storedValue.substr(storedValue.length - 64);
-   var calculatedHmac = CryptoJS.HmacSHA256(data, this.secretKey).toString();
-
-   if (calculatedHmac === storedHmac) {
-     return data;
-   }
+  this.storage.removeItem(this.gameStateKey + "_hmac");
 };
 
 LocalStorageManager.prototype.verifyHmac = function (id, hmac) {
