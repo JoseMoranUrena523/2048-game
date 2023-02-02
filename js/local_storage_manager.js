@@ -65,21 +65,22 @@ LocalStorageManager.prototype.setSatoshisScore = function (score) {
 
 // Game state getters/setters and clearing with HMAC integration
 LocalStorageManager.prototype.getGameState = function () {
-  var state = this.storage.getItem(this.gameStateKey);
+  var stateString = this.storage.getItem(this.gameStateKey);
   var stateHMAC = this.storage.getItem(this.gameStateHMACKey);
   
-  if (!state || !stateHMAC) return null;
+  if (!stateString || !stateHMAC) return null;
   
-  var calculatedHMAC = CryptoJS.HmacSHA256(state, this.secretKey).toString();
+  var calculatedHMAC = CryptoJS.HmacSHA256(stateString, this.secretKey).toString();
   
   if (calculatedHMAC !== stateHMAC) return null;
   
-  return state;
+  return JSON.parse(stateString);
 };
 
 LocalStorageManager.prototype.setGameState = function (state) {
-  var hmac = CryptoJS.HmacSHA256(state, this.secretKey).toString();
-  this.storage.setItem(this.gameStateKey, state);
+  var stateString = JSON.stringify(state);
+  var hmac = CryptoJS.HmacSHA256(stateString, this.secretKey).toString();
+  this.storage.setItem(this.gameStateKey, stateString);
   this.storage.setItem(this.gameStateHMACKey, hmac);
 };
 
