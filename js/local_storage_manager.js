@@ -43,40 +43,37 @@ LocalStorageManager.prototype.localStorageSupported = function () {
 
 // Best score getters/setters with HMAC integration
 LocalStorageManager.prototype.getSatoshisScore = function () {
-  var score = this.storage.getItem(this.satoshisScoreKey);
-  if (!score) return null;
-  
-  var scoreWithHMAC = JSON.parse(score);
-  var calculatedHMAC = CryptoJS.HmacSHA256(scoreWithHMAC.score, this.secretKey).toString();
-  
-  if (calculatedHMAC !== scoreWithHMAC.hmac) return null;
-  
-  return scoreWithHMAC.score;
+var score = this.storage.getItem(this.satoshisScoreKey);
+if (!score) return null;
+return score;
+};
+
+LocalStorageManager.prototype.getSatoshisScoreHMAC = function () {
+var hmac = this.storage.getItem(this.satoshisScoreHMACKey);
+if (!hmac) return null;
+return hmac;
 };
 
 LocalStorageManager.prototype.setSatoshisScore = function (score) {
-  this.storage.setItem(this.satoshisScoreKey, score);
+this.storage.setItem(this.satoshisScoreKey, score);
+var hmac = CryptoJS.HmacSHA256(score, this.secretKey).toString();
+this.storage.setItem(this.satoshisScoreHMACKey, hmac);
 };
 
-// Game state getters/setters and clearing with HMAC integration
 LocalStorageManager.prototype.getGameState = function () {
-  var state = this.storage.getItem(this.gameStateKey);
-  if (!state) return null;
-  
-  var stateWithHMAC = JSON.parse(state);
-  var calculatedHMAC = CryptoJS.HmacSHA256(stateWithHMAC.state, this.secretKey).toString();
-  
-  if (calculatedHMAC !== stateWithHMAC.hmac) return null;
-  
-  return stateWithHMAC.state;
+var state = this.storage.getItem(this.gameStateKey);
+if (!state) return null;
+return state;
+};
+
+LocalStorageManager.prototype.getGameStateHMAC = function () {
+var hmac = this.storage.getItem(this.gameStateHMACKey);
+if (!hmac) return null;
+return hmac;
 };
 
 LocalStorageManager.prototype.setGameState = function (gameState) {
-  var secretKey = Math.random().toString(36).slice(-8);
-  var hmac = CryptoJS.HmacSHA256(JSON.stringify(gameState), secretKey);
-  var hmacGameState = {
-    data: gameState,
-    hmac: hmac.toString()
-  };
-  this.storage.setItem(this.gameStateKey, JSON.stringify(hmacGameState));
+this.storage.setItem(this.gameStateKey, gameState);
+var hmac = CryptoJS.HmacSHA256(gameState, this.secretKey).toString();
+this.storage.setItem(this.gameStateHMACKey, hmac);
 };
