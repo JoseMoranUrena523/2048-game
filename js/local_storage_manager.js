@@ -55,12 +55,7 @@ LocalStorageManager.prototype.getSatoshisScore = function () {
 };
 
 LocalStorageManager.prototype.setSatoshisScore = function (score) {
-  var scoreWithHMAC = {
-    score: score,
-    hmac: CryptoJS.HmacSHA256(score, this.secretKey).toString()
-  };
-  
-  this.storage.setItem(this.satoshisScoreKey, JSON.stringify(scoreWithHMAC));
+  this.storage.setItem(this.satoshisScoreKey, score);
 };
 
 // Game state getters/setters and clearing with HMAC integration
