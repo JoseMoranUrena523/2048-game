@@ -118,9 +118,18 @@
           const modal = document.querySelector(".modal");
           const trigger = document.querySelector(".restart-button");
           const closeButton = document.querySelector(".close-button");
+          const messageContainer = document.querySelector(".game-message");
 
           function toggleModal() {
-            modal.classList.toggle("show-modal");
+            const message = messageContainer.getElementsByTagName("p")[0].textContent;
+            if (message === "You win!" || message === "Game over!") {
+              modal.classList.toggle("show-modal");
+            } else {
+              trigger.classList.add("shake");
+              setTimeout(() => {
+                trigger.classList.remove("shake");
+              }, 1000);
+            }
           }
 
           function windowOnClick(event) {
@@ -128,6 +137,7 @@
               toggleModal();
             }
           }
+
           trigger.addEventListener("click", toggleModal);
           closeButton.addEventListener("click", toggleModal);
           window.addEventListener("click", windowOnClick);
