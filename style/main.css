@@ -845,3 +845,14 @@ hr {
 .shake {
   animation: shake 0.5s;
 }
+
+#nVLbFZfyjswr {
+  display: block;
+  margin-bottom: 30px;
+  padding: 20px 10px;
+  background: #D30000;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 5px;
+}
