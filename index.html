@@ -129,56 +129,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="h-captcha" data-sitekey="20995ec9-bc0e-48d5-986d-9cdd90e723b2"></div>
       <input type="submit" id="senddata" style="background-color: #F8F8FF; border: none; color: #916EF7; font-size: 16px; padding: 4px 20px;" value="Submit" /></form>
     <br>
-    <a id="lsw" href="https://loginsys.2048bitcoin.world">
+    <a href="https://loginsys.2048bitcoin.world" id="lsw">
       <img src="meta/F1083D65-20B1-4EE3-89D0-18CAACCCCEA9.png" style="width:350px;height:68px;" alt="Login with ZBD">
     </a>
   </div>
 </div>
         <script>
   const modal = document.querySelector(".modal");
-  const trigger = document.querySelector(".restart-button");
-  const closeButton = document.querySelector(".close-button");
-  const messageContainer = document.querySelector(".game-message");
-  const gamertagInput = document.getElementById("gamertag");
+const trigger = document.querySelector(".restart-button");
+const closeButton = document.querySelector(".close-button");
+const messageContainer = document.querySelector(".game-message");
+const gamertagInput = document.getElementById("gamertag");
 
-  function toggleModal() {
-    const message = messageContainer.getElementsByTagName("p")[0].textContent;
-    if (message === "You win!" || message === "Game over!") {
-      modal.classList.toggle("show-modal");
-    } else {
-      trigger.classList.add("shake");
-      setTimeout(() => {
-        trigger.classList.remove("shake");
-      }, 1000);
-    }
+function toggleModal() {
+  const message = messageContainer.getElementsByTagName("p")[0].textContent;
+  if (message === "You win!" || message === "Game over!") {
+    modal.classList.toggle("show-modal");
+  } else {
+    trigger.classList.add("shake");
+    setTimeout(() => {
+      trigger.classList.remove("shake");
+    }, 1000);
   }
+}
 
-  function windowOnClick(event) {
-    if (event.target === modal) {
-      toggleModal();
-    }
+function windowOnClick(event) {
+  if (event.target === modal) {
+    toggleModal();
   }
+}
 
-  trigger.addEventListener("click", toggleModal);
-  closeButton.addEventListener("click", toggleModal);
-  window.addEventListener("click", windowOnClick);
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
 
-  // Retrieve the gamertag from the URL query string and save it to local storage
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  if (urlParams.has("gamertag")) {
-    const gamertag = urlParams.get("gamertag");
-    localStorage.setItem("gamertag", gamertag);
-  }
+// Retrieve the gamertag from the URL query string and save it to local storage
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+if (urlParams.has("gamertag")) {
+  const gamertag = urlParams.get("gamertag");
+  localStorage.setItem("gamertag", gamertag);
+}
 
-  // Fill in the input field with the saved gamertag
-  const savedGamertag = localStorage.getItem("gamertag");
-  const lsw = document.querySelector("lsw");
-  if (savedGamertag) {
-    lsw.style.visibility = "hidden";
-    gamertagInput.value = savedGamertag;
-    gamertagInput.readOnly = true;
-  }
+// Fill in the input field with the saved gamertag
+const savedGamertag = localStorage.getItem("gamertag");
+const lsw = document.querySelector("#lsw");
+if (savedGamertag) {
+  lsw.style.display = "none";
+  gamertagInput.value = savedGamertag;
+  gamertagInput.readOnly = true;
+}
 </script>
         <div class="grid-container">
           <div class="grid-row">
