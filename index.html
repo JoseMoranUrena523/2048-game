@@ -71,6 +71,27 @@
         tracesSampleRate: 1.0,
       });
     </script>
+    <script>
+    // Get the gamertag input field
+var gamertagInput = document.querySelector('#gamertag');
+
+// Get the gamertag from the URL query string
+var queryString = new URL(window.location.href).searchParams;
+var gamertag = queryString.get('gamertag');
+
+// If there is a gamertag in the URL query string, save it to local storage
+if (gamertag) {
+  localStorage.setItem('gamertag', gamertag);
+}
+
+// Get the gamertag from local storage
+gamertag = localStorage.getItem('gamertag');
+
+// If there is a gamertag in local storage, auto-fill the input field
+if (gamertag) {
+  gamertagInput.value = gamertag;
+}
+    </script>
     <div id="nVLbFZfyjswr">
       It is to inform you that, in an effort to secure additional funding, all external links will be redirected to shortlinks.<br>
       In case of any difficulties, please be advised that our system will automatically notify us. However, for a more prompt resolution, we invite you to connect with us by clicking the button to join our Discord server or by clicking the Discord icon located at the bottom of our website at <a href="https://clbproductions.games/">https://clbproductions.games/</a>, which will direct you to my personal profile in Discord.
