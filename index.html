@@ -127,8 +127,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <br>
       <br>
       <div class="h-captcha" data-sitekey="20995ec9-bc0e-48d5-986d-9cdd90e723b2"></div>
-      <input type="submit" id="senddata" style="background-color: #F8F8FF; border: none; color: #916EF7; font-size: 16px; padding: 4px 20px;" value="Submit" /></form>
+      <input type="submit" id="senddata" style="background-color: #F8F8FF; border: none; color: #916EF7; font-size: 16px; padding: 4px 20px;" value="Submit" />
+    </form>
     <br>
+    <p style="display: none;" id="logoutText">Not <span id="gamertag">{localStorage.getItem("gamertag")}</span>? <a href="#" onclick="logout()">Click here to log out</a></p>
     <a href="https://loginsys.2048bitcoin.world" id="lsw">
       <img src="meta/F1083D65-20B1-4EE3-89D0-18CAACCCCEA9.png" style="width:350px;height:68px;" alt="Login with ZBD">
     </a>
@@ -179,6 +181,21 @@ if (savedGamertag) {
   gamertagInput.value = savedGamertag;
   gamertagInput.readOnly = true;
 }
+          
+function logout() {
+    localStorage.removeItem("gamertag");
+    document.getElementById("gamertagInput").value = "";
+    document.getElementById("gamertagInput").readOnly = false;
+    document.getElementById("logoutText").style.display = "none";
+    lsw.style.display = "block";
+  }
+
+  if (localStorage.getItem("gamertag")) {
+    document.getElementById("logoutText").style.display = "block";
+    document.getElementById("gamertag").innerHTML = localStorage.getItem("gamertag");
+  } else {
+    document.getElementById("logoutText").style.display = "none";
+  }
 </script>
         <div class="grid-container">
           <div class="grid-row">
