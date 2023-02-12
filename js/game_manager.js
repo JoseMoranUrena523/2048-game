@@ -57,18 +57,19 @@ GameManager.prototype.setup = async function () {
     this.grid        = new Grid(previousState.grid.size,
                                 previousState.grid.cells); // Reload grid
     this.score       = previousState.score;
+    this.over        = previousState.over;
+    this.won         = previousState.won;
+    this.keepPlaying = previousState.keepPlaying;
   } else {
     this.grid        = new Grid(this.size);
     this.score       = 0;
+    this.over        = false;
+    this.won         = false;
+    this.keepPlaying = false;
 
     // Add the initial tiles
     this.addStartTiles();
   }
-
-  // Set over and won to false, regardless of previous state
-  this.over        = false;
-  this.won         = false;
-  this.keepPlaying = false;
 
   // Update the actuator
   this.actuate();
