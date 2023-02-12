@@ -15,14 +15,14 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
 // Restart the game
 GameManager.prototype.restart = function () {
-  if (this.over || this.restarting) {
-    return;
-  }
-  this.restarting = true;
   this.storageManager.clearGameState();
   this.actuator.continueGame(); // Clear the game won/lost message
-  this.setup();
-  this.restarting = false;
+  this.over = false;
+  this.won = false;
+  this.score = 0;
+  this.grid = new Grid(this.size);
+  this.addStartTiles();
+  this.actuate();
 };
 
 // Keep playing after winning (allows going over 2048)
@@ -33,29 +33,19 @@ GameManager.prototype.keepPlaying = function () {
 
 // Return true if the game is lost, or has won and the user hasn't kept playing
 GameManager.prototype.isGameTerminated = function () {
-  if (!this.over) {
-    return true;
-  }
-
   const sessionId = localStorage.getItem('sessionId');
   const sat = localStorage.getItem('satoshisScore');
   const sats = Math.trunc(sat);
-  
-  if (this.won && !this.keepPlaying) {
-    this.over = false;
-    this.won = false;
-    this.score = 0;
-    this.grid = new Grid(this.size);
-    this.addStartTiles();
-  
+
+  if (this.over || (this.won && !this.keepPlaying)) {
     fetch(`https://clb-cashout.herokuapp.com/update-session?id=${sessionId}&sats=${sats}`, {
      mode: 'no-cors'
     });
+
+    return true;
   }
 
-  this.over = this.won && !this.keepPlaying;
-  
-  return this.over;
+  return false;
 };
 
 GameManager.prototype.setup = async function () {
