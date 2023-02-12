@@ -115,9 +115,7 @@ GameManager.prototype.actuate = function () {
   }
 
   // Clear the state when the game is over (game over only, not win)
-  if (this.over) {
-    this.storageManager.clearGameState();
-  } else {
+  if (!this.over) {
     this.storageManager.setGameState(this.serialize());
   }
 
