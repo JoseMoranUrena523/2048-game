@@ -78,7 +78,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Sentry.init({
         dsn: "https://3995b89caf0e4a8993cec754bea67045@o4504089486360576.ingest.sentry.io/4504651310497792",
         release: "2048-bitcoin@1.0.0",
-        integrations: [new Sentry.BrowserTracing()],
+        replaysSessionSampleRate: 0.1,
+        replaysOnErrorSampleRate: 1.0,
+        integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
         tracesSampleRate: 1.0,
       });
     </script>
